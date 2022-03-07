@@ -1,7 +1,7 @@
 /* CONSTANTS AND GLOBALS */
 // const width = ;
 // const height = ;
-var bar =[20,30, 50, 60, 70];
+var bar =[20,50, 10, 60, 30];
 var height = 400,
     width = 600,
     barWidth = 50,
@@ -11,6 +11,11 @@ var yScale = d3.scaleLinear()
     .domain([0, d3.max(bar)])
     .range([0,height]);
 
+var xScale = d3.scaleBand()
+  .domain(bar)
+  .paddingInner(.3)
+  .paddingOuter(.1)
+  .range([0, width])
 
   d3.select('#container').append('svg')
      .attr('width', width)
@@ -19,12 +24,14 @@ var yScale = d3.scaleLinear()
     .selectAll('rect'). data(bar)
     .enter().append('rect')
       .style('fill', '#00441b')
-      .attr('width', barWidth)
+      .attr('width', function(d){
+        return xScale.bandwidth();
+      })
       .attr('height', function(d){
         return yScale(d);
       })
-      .attr('x', function(d,i) {
-        return i*(barWidth + barOffset)
+      .attr('x', function(d) {
+        return xScale(d);
       })
       .attr('y', function(d) {
         return height - yScale(d);
