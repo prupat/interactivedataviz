@@ -15,7 +15,11 @@ var xScale = d3.scaleBand()
   .domain(bar)
   .paddingInner(.3)
   .paddingOuter(.1)
-  .range([0, width])
+  .range([0, width]);
+
+var  colors = d3.scaleLinear()
+    .domain([0, d3.max(bar)])
+    .range(['#ffb832', '#c61c6f'])
 
   d3.select('#container').append('svg')
      .attr('width', width)
@@ -23,7 +27,9 @@ var xScale = d3.scaleBand()
      .style('background', '#c9d7d6')
     .selectAll('rect'). data(bar)
     .enter().append('rect')
-      .style('fill', '#00441b')
+      .attr('fill', function(d){
+        return colors(d)
+      })
       .attr('width', function(d){
         return xScale.bandwidth();
       })
