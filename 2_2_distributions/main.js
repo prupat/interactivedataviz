@@ -5,14 +5,14 @@
 //   radius = ;
 
 const data =[
-  {"temperature":14.2, "sales": 208},
-  {"temperature":16.4, "sales": 310},
-  {"temperature":15.2, "sales": 322},
-  {"temperature":21.1, "sales": 510},
-  {"temperature":18.7, "sales": 403},
-  {"temperature":24.8, "sales": 275},
-  {"temperature":17.5, "sales": 358},
-  {"temperature":19.8, "sales": 137},
+  {"weather":74, "Calories": 208},
+  {"weather":59, "Calories": 310},
+  {"weather":61, "Calories": 322},
+  {"weather":50, "Calories": 510},
+  {"weather":35, "Calories": 403},
+  {"weather":82, "Calories": 275},
+  {"weather":47, "Calories": 358},
+  {"weather":96, "Calories": 137},
 ];
 
 const width = 600,
@@ -29,15 +29,15 @@ const svg = d3.select('#container')
 
 const xScale = d3.scaleLinear() 
                  .domain([d3.min(data, function(d){
-                   return d.temperature;}) -1, 
+                   return d.weather;}) -1, 
                    d3.max(data, function (d) {
-                     return d.temperature;}) + 1
+                     return d.weather;}) + 1
                   ])
                   .range([0, width - spacing]);
 
 const yScale = d3. scaleLinear()
                  . domain([0, d3.max(data, function(d){
-                   return d.sales;})
+                   return d.Calories;})
                   ])
                   .range([height-spacing, 0]);
 
@@ -55,10 +55,10 @@ svg.append("g")
 
   dots.enter().append("circle")
               .attr("cx", function(d){
-                return xScale(d.temperature);
+                return xScale(d.weather);
               })
               .attr("cy", function(d){
-                return yScale(d.sales);
+                return yScale(d.Calories);
               })
               .attr("r",15)
               .style("fill", "royalblue");
