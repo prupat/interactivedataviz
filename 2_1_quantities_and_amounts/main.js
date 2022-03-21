@@ -7,6 +7,7 @@ const width = 900;
 const ScaleFactor = 10;
 const barHeight = 50; 
 const graph = d3.select("#container")
+              .style('background', '#c9d7d6')
               .append("svg")
               .attr('width', width)
               .attr('height', barHeight * barData.length);
