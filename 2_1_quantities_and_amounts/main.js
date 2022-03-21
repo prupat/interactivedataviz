@@ -1,58 +1,45 @@
 /* CONSTANTS AND GLOBALS */
 // const width = ;
 // const height = ;
-var bar =[20,50, 10, 60, 30];
-var height = 400,
-    width = 600,
-    barWidth = 50,
-    barOffset = 5;
 
-var yScale = d3.scaleLinear()
-    .domain([0, d3.max(bar)])
-    .range([0,height]);
+const barData = [5, 10, 20, 40, 60, 80]
+const width = 900; 
+const ScaleFactor = 10;
+const barHeight = 50; 
+const graph = d3.select("#container")
+              .append("svg")
+              .attr('width', width)
+              .attr('height', barHeight * barData.length);
 
-var xScale = d3.scaleBand()
-  .domain(bar)
-  .paddingInner(.3)
-  .paddingOuter(.1)
-  .range([0, width]);
 
-var  colors = d3.scaleLinear()
-    .domain([0, d3.max(bar)])
-    .range(['#ffb832', '#c61c6f'])
+const bar = graph.selectAll("g")
+                  .data(barData)
+                  .enter().append("g")
+                  .attr('transform', function (d, i){
+                    return 'translate(0, '+ i * barHeight +')';
+                  });
 
-  d3.select('#container').append('svg')
-     .attr('width', width)
-     .attr('height', height)
-     .style('background', '#c9d7d6')
-    .selectAll('rect'). data(bar)
-    .enter().append('rect')
-      .attr('fill', function(d){
-        return colors(d)
-      })
-      .attr('width', function(d){
-        return xScale.bandwidth();
-      })
-      .attr('height', function(d){
-        return yScale(d);
-      })
-      .attr('x', function(d) {
-        return xScale(d);
-      })
-      .attr('y', function(d) {
-        return height - yScale(d);
-      });
+ bar.append("rect")
+         .attr('width', function (d){
+         return d * ScaleFactor;
+ })                 
+          .attr('height', barHeight -1)
+
+bar.append("text")
+          .attr('x' , function (d){
+           return (d * ScaleFactor);
+   })
+
+          .attr('y', barHeight / 2)
+          .attr('dy', '.35em')
+          .text(function (d) {
+            return d;
+          });
 
 
 
 
-
-
-
-
-
-
-/* LOAD DATA */
+   /* LOAD DATA */
 
 
     /* SCALES */

@@ -4,6 +4,17 @@ body {
   padding: 1em;
 }
 
+svg rect{
+  fill: royalblue;
+}
+
+svg text{
+  fill: yellow;
+  font: 20px helvetica;
+  font-style: bold;
+  text-anchor: end;
+}
+
 h1 {
   font-size: 3em;
   margin: 0.25em 0;
