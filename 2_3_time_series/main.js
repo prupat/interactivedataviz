@@ -15,7 +15,9 @@ const data =[
       
 const width = 600,
       height = 500,
-      spacing = 60;
+      spacing = 60,
+      margin = {top: 20, right: 10, bottom: 20, left: 10};
+      
 
 const xScale = d3.scaleLinear()
                  .domain([d3.min(data, function(d){
