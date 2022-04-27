@@ -1,7 +1,7 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * .8,
-      height = window.innerHeight * .8,
-      margin = {top: 20, bottom: 50, left: 80, right: 60};
+const width = window.innerWidth * .5,
+      height = window.innerHeight * .7,
+      margin = {top: 20, bottom: 60, left: 80, right: 60};
 
 // // since we use our scales in multiple functions, they need global scope
       let svg,
@@ -46,15 +46,13 @@ function init() {
                    .range([margin.left, width-margin.right])
                    
 
-
         yScale = d3.scaleLinear()
                    .domain([0, d3.max(state.data, d=> d.DeathToll)])
                    .range([height-margin.bottom, margin.top])
 
 
         xAxis = d3.axisBottom(xScale)
-                  .tickFormat(d3.timeFormat("%b"))
-                 .ticks(11);
+                  .tickFormat(d3.timeFormat("%b"));
 
         yAxis = d3.axisLeft(yScale)
         
