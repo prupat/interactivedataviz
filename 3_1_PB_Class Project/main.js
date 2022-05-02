@@ -1,6 +1,6 @@
 /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth * .5,
-      height = window.innerHeight * .7,
+      height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
 // // since we use our scales in multiple functions, they need global scope
@@ -10,7 +10,9 @@ const width = window.innerWidth * .5,
        xAxis,
        yAxis,
        xAxisGroup,
-       yAxisGroup;
+       yAxisGroup
+       ;
+  
 
 /* APPLICATION STATE */
 let state = {
@@ -42,20 +44,26 @@ function init() {
   /* SCALES */
 
         xScale = d3.scaleTime()
-                   .domain([new Date("2021-01-01"), new Date("2021-12-31")])
+                   .domain([new Date("2020-01-01") , new Date("2020-12-31")])
+                 //.domain(d3.extent(state.data, d => d.NewMonth))
                    .range([margin.left, width-margin.right])
-                   
-
+        
+        
         yScale = d3.scaleLinear()
                    .domain([0, d3.max(state.data, d=> d.DeathToll)])
                    .range([height-margin.bottom, margin.top])
 
 
         xAxis = d3.axisBottom(xScale)
-                  .tickFormat(d3.timeFormat("%b"));
+                  .tickFormat(d3.timeFormat("%b"))
+                  //.ticks(10)
+                  
 
         yAxis = d3.axisLeft(yScale)
-        
+
+      //  const xAxisLabel = 'Months'
+      //  const yAxisLabel = 'Death Toll'
+
       const selectElement = d3.select("#dropdown")
 
       selectElement.selectAll("option")
@@ -77,6 +85,7 @@ function init() {
          
          xAxisGroup = svg.append("g")
                         .attr("class", "xAxis")
+                        // .attr("transform", "translate(0," + height + ")")
                         .attr("transform", `translate(${0}, ${height - margin.bottom})`)
                         .call(xAxis)   
                         
@@ -106,9 +115,10 @@ function draw(){
          .data([filteredData])
          .join("path")
          .attr("class", "line")
-         .attr("stroke")
+         .attr("stroke", "blue")
+         .attr("fill", "none")
+         .attr("d", d => lineGen(d))
              
-
 }
 
 

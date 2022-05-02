@@ -1,613 +1,613 @@
 State,Month,DeathToll
-Alaska,Jan,0
-Alaska,Feb,0
-Alaska,Mar,13
-Alaska,Apr,230
-Alaska,May,305
-Alaska,Jun,351
-Alaska,Jul,558
-Alaska,Aug,912
-Alaska,Sep,1359
-Alaska,Oct,2017
-Alaska,Nov,2972
-Alaska,Dec,5362
-Alabama,Jan,0
-Alabama,Feb,0
-Alabama,Mar,30
-Alabama,Apr,3936
-Alabama,May,14341
-Alabama,Jun,23695
-Alabama,Jul,38436
-Alabama,Aug,58857
-Alabama,Sep,71418
-Alabama,Oct,85064
-Alabama,Nov,98538
-Alabama,Dec,131827
-Arkansas,Jan,0
-Arkansas,Feb,0
-Arkansas,Mar,34
-Arkansas,Apr,989
-Arkansas,May,3116
-Arkansas,Jun,5851
-Arkansas,Jul,10794
-Arkansas,Aug,19052
-Arkansas,Sep,32401
-Arkansas,Oct,51279
-Arkansas,Nov,66721
-Arkansas,Dec,95245
-Arizona,Jan,0
-Arizona,Feb,0
-Arizona,Mar,113
-Arizona,Apr,4792
-Arizona,May,19859
-Arizona,Jun,37298
-Arizona,Jul,79627
-Arizona,Aug,137942
-Arizona,Sep,161364
-Arizona,Oct,179972
-Arizona,Nov,189499
-Arizona,Dec,237324
-California,Jan,0
-California,Feb,0
-California,Mar,910
-California,Apr,28692
-California,May,97739
-California,Jun,153944
-California,Jul,229362
-California,Aug,345648
-California,Sep,435369
-California,Oct,520762
-California,Nov,550121
-California,Dec,676929
-Colorado,Jan,0
-Colorado,Feb,0
-Colorado,Mar,328
-Colorado,Apr,11714
-Colorado,May,35612
-Colorado,Jun,48035
-Colorado,Jul,54225
-Colorado,Aug,58648
-Colorado,Sep,60020
-Colorado,Oct,66960
-Colorado,Nov,78495
-Colorado,Dec,125307
-Connecticut,Jan,0
-Connecticut,Feb,0
-Connecticut,Mar,274
-Connecticut,Apr,29587
-Connecticut,May,100856
-Connecticut,Jun,125398
-Connecticut,Jul,135762
-Connecticut,Aug,138000
-Connecticut,Sep,134566
-Connecticut,Oct,141104
-Connecticut,Nov,143352
-Connecticut,Dec,170624
-District of Columbia,Jan,0
-District of Columbia,Feb,0
-District of Columbia,Mar,42
-District of Columbia,Apr,2650
-District of Columbia,May,11291
-District of Columbia,Jun,15433
-District of Columbia,Jul,17731
-District of Columbia,Aug,18495
-District of Columbia,Sep,18516
-District of Columbia,Oct,19785
-District of Columbia,Nov,19873
-District of Columbia,Dec,22570
-Delaware,Jan,0
-Delaware,Feb,0
-Delaware,Mar,53
-Delaware,Apr,2537
-Delaware,May,11310
-Delaware,Jun,14882
-Delaware,Jul,16554
-Delaware,Aug,18438
-Delaware,Sep,18572
-Delaware,Oct,20617
-Delaware,Nov,22110
-Delaware,Dec,26058
-Florida,Jan,0
-Florida,Feb,0
-Florida,Mar,439
-Florida,Apr,19320
-Florida,May,61797
-Florida,Jun,92369
-Florida,Jul,152519
-Florida,Aug,291835
-Florida,Sep,390532
-Florida,Oct,492809
-Florida,Nov,534944
-Florida,Dec,633863
-Georgia,Jan,0
-Georgia,Feb,0
-Georgia,Mar,622
-Georgia,Apr,17746
-Georgia,May,49289
-Georgia,Jun,74302
-Georgia,Jul,98285
-Georgia,Aug,145359
-Georgia,Sep,192621
-Georgia,Oct,233793
-Georgia,Nov,267802
-Georgia,Dec,316961
-Hawaii,Jan,0
-Hawaii,Feb,0
-Hawaii,Mar,0
-Hawaii,Apr,260
-Hawaii,May,524
-Hawaii,Jun,513
-Hawaii,Jul,684
-Hawaii,Aug,1252
-Hawaii,Sep,3108
-Hawaii,Oct,5629
-Hawaii,Nov,6789
-Hawaii,Dec,8467
-Iowa,Jan,0
-Iowa,Feb,0
-Iowa,Mar,25
-Iowa,Apr,1956
-Iowa,May,10714
-Iowa,Jun,19530
-Iowa,Jul,24119
-Iowa,Aug,30546
-Iowa,Sep,37061
-Iowa,Oct,47275
-Iowa,Nov,60928
-Iowa,Dec,101900
-Idaho,Jan,0
-Idaho,Feb,0
-Idaho,Mar,25
-Idaho,Apr,1043
-Idaho,May,2245
-Idaho,Jun,2604
-Idaho,Jul,3650
-Idaho,Aug,8370
-Idaho,Sep,12591
-Idaho,Oct,16391
-Idaho,Nov,23106
-Idaho,Dec,37101
-Illinois,Jan,0
-Illinois,Feb,0
-Illinois,Mar,417
-Illinois,Apr,32410
-Illinois,May,124531
-Illinois,Jun,194271
-Illinois,Jul,230515
-Illinois,Aug,246986
-Illinois,Sep,257714
-Illinois,Oct,292628
-Illinois,Nov,340510
-Illinois,Dec,487076
-Indiana,Jan,0
-Indiana,Feb,0
-Indiana,Mar,240
-Indiana,Apr,14327
-Indiana,May,52715
-Indiana,Jun,73069
-Indiana,Jul,86854
-Indiana,Aug,97177
-Indiana,Sep,103916
-Indiana,Oct,121734
-Indiana,Nov,150003
-Indiana,Dec,218744
-Kansas,Jan,0
-Kansas,Feb,0
-Kansas,Mar,53
-Kansas,Apr,2198
-Kansas,May,5252
-Kansas,Jun,7373
-Kansas,Jul,9356
-Kansas,Aug,12482
-Kansas,Sep,16616
-Kansas,Oct,26311
-Kansas,Nov,38832
-Kansas,Dec,67842
-Kentucky,Jan,0
-Kentucky,Feb,0
-Kentucky,Mar,70
-Kentucky,Apr,3644
-Kentucky,May,10410
-Kentucky,Jun,15175
-Kentucky,Jul,20155
-Kentucky,Aug,25618
-Kentucky,Sep,32160
-Kentucky,Oct,40779
-Kentucky,Nov,50538
-Kentucky,Dec,71020
-Louisiana,Jan,0
-Louisiana,Feb,0
-Louisiana,Mar,1129
-Louisiana,Apr,32867
-Louisiana,May,75730
-Louisiana,Jun,91075
-Louisiana,Jul,109304
-Louisiana,Aug,139101
-Louisiana,Sep,157941
-Louisiana,Oct,177422
-Louisiana,Nov,184804
-Louisiana,Dec,215113
-Maine,Jan,0
-Maine,Feb,0
-Maine,Mar,651
-Maine,Apr,50046
-Maine,May,170827
-Maine,Jun,228988
-Maine,Jul,259483
-Maine,Aug,273835
-Maine,Sep,277353
-Maine,Oct,300917
-Maine,Nov,310382
-Maine,Dec,357261
-Maryland,Jan,0
-Maryland,Feb,0
-Maryland,Mar,168
-Maryland,Apr,15954
-Maryland,May,61681
-Maryland,Jun,88191
-Maryland,Jul,103834
-Maryland,Aug,112721
-Maryland,Sep,115669
-Maryland,Oct,125065
-Maryland,Nov,130307
-Maryland,Dec,163321
-Massachusetts,Jan,0
-Massachusetts,Feb,0
-Massachusetts,Mar,13
-Massachusetts,Apr,843
-Massachusetts,May,2180
-Massachusetts,Jun,3010
-Massachusetts,Jul,3546
-Massachusetts,Aug,3951
-Massachusetts,Sep,4108
-Massachusetts,Oct,4474
-Massachusetts,Nov,5020
-Massachusetts,Dec,8509
-Michigan,Jan,0
-Michigan,Feb,0
-Michigan,Mar,2342
-Michigan,Apr,79759
-Michigan,May,164087
-Michigan,Jun,180742
-Michigan,Jul,196267
-Michigan,Aug,204360
-Michigan,Sep,207847
-Michigan,Oct,227677
-Michigan,Nov,255029
-Michigan,Dec,357468
-Minnesota,Jan,0
-Minnesota,Feb,0
-Minnesota,Mar,47
-Minnesota,Apr,3818
-Minnesota,May,21869
-Minnesota,Jun,39472
-Minnesota,Jul,48459
-Minnesota,Aug,54441
-Minnesota,Sep,59400
-Minnesota,Oct,69537
-Minnesota,Nov,88983
-Minnesota,Dec,140839
-Mississippi,Jan,0
-Mississippi,Feb,0
-Mississippi,Mar,85
-Mississippi,Apr,4568
-Mississippi,May,17463
-Mississippi,Jun,26893
-Mississippi,Jul,34527
-Mississippi,Aug,42459
-Mississippi,Sep,53546
-Mississippi,Oct,78212
-Mississippi,Nov,102616
-Mississippi,Dec,147460
-Missouri,Jan,0
-Missouri,Feb,0
-Missouri,Mar,84
-Missouri,Apr,3972
-Missouri,May,15804
-Missouri,Jun,27298
-Missouri,Jul,40920
-Missouri,Aug,64526
-Missouri,Sep,82113
-Missouri,Oct,97835
-Missouri,Nov,107108
-Missouri,Dec,132830
-Montana,Jan,0
-Montana,Feb,0
-Montana,Mar,10
-Montana,Apr,277
-Montana,May,502
-Montana,Jun,581
-Montana,Jul,1108
-Montana,Aug,2562
-Montana,Sep,4272
-Montana,Oct,7665
-Montana,Nov,15855
-Montana,Dec,25880
-North Carolina,Jan,0
-North Carolina,Feb,0
-North Carolina,Mar,28
-North Carolina,Apr,4586
-North Carolina,May,19758
-North Carolina,Jun,34002
-North Carolina,Jul,49580
-North Carolina,Aug,72700
-North Carolina,Sep,93968
-North Carolina,Oct,121625
-North Carolina,Nov,144877
-North Carolina,Dec,186108
-North Dakota,Jan,0
-North Dakota,Feb,0
-North Dakota,Mar,7
-North Dakota,Apr,294
-North Dakota,May,1330
-North Dakota,Jun,2366
-North Dakota,Jul,2960
-North Dakota,Aug,3962
-North Dakota,Sep,5591
-North Dakota,Oct,11968
-North Dakota,Nov,22450
-North Dakota,Dec,36075
-Nebraska,Jan,0
-Nebraska,Feb,0
-Nebraska,Mar,9
-Nebraska,Apr,802
-Nebraska,May,3659
-Nebraska,Jun,6646
-Nebraska,Jul,9219
-Nebraska,Aug,11191
-Nebraska,Sep,13046
-Nebraska,Oct,17005
-Nebraska,Nov,24142
-Nebraska,Dec,43013
-New Hampshire,Jan,0
-New Hampshire,Feb,0
-New Hampshire,Mar,17
-New Hampshire,Apr,1009
-New Hampshire,May,5085
-New Hampshire,Jun,9573
-New Hampshire,Jul,12242
-New Hampshire,Aug,13144
-New Hampshire,Sep,13080
-New Hampshire,Oct,14314
-New Hampshire,Nov,15030
-New Hampshire,Dec,19497
-New Jersey,Jan,0
-New Jersey,Feb,0
-New Jersey,Mar,1566
-New Jersey,Apr,128340
-New Jersey,May,359507
-New Jersey,Jun,430048
-New Jersey,Jul,477793
-New Jersey,Aug,491266
-New Jersey,Sep,481169
-New Jersey,Oct,502728
-New Jersey,Nov,498699
-New Jersey,Dec,557416
-New Mexico,Jan,0
-New Mexico,Feb,0
-New Mexico,Mar,17
-New Mexico,Apr,1474
-New Mexico,May,7739
-New Mexico,Jun,13154
-New Mexico,Jul,17513
-New Mexico,Aug,22130
-New Mexico,Sep,24979
-New Mexico,Oct,28959
-New Mexico,Nov,37824
-New Mexico,Dec,63204
-Nevada,Jan,0
-Nevada,Feb,0
-Nevada,Mar,217
-Nevada,Apr,4625
-Nevada,May,11341
-Nevada,Jun,14421
-Nevada,Jul,19814
-Nevada,Aug,33356
-Nevada,Sep,44367
-Nevada,Oct,52550
-Nevada,Nov,58233
-Nevada,Dec,81669
-New York,Jan,0
-New York,Feb,0
-New York,Mar,6208
-New York,Apr,330353
-New York,May,682785
-New York,Jun,735767
-New York,Jul,775428
-New York,Aug,782624
-New York,Sep,762100
-New York,Oct,794728
-New York,Nov,785758
-New York,Dec,875244
-Ohio,Jan,0
-Ohio,Feb,0
-Ohio,Mar,213
-Ohio,Apr,12517
-Ohio,May,49709
-Ohio,Jun,77119
-Ohio,Jul,97128
-Ohio,Aug,118706
-Ohio,Sep,134914
-Ohio,Oct,157317
-Ohio,Nov,174314
-Ohio,Dec,240427
-Oklahoma,Jan,0
-Oklahoma,Feb,0
-Oklahoma,Mar,101
-Oklahoma,Apr,3694
-Oklahoma,May,8877
-Oklahoma,Jun,10846
-Oklahoma,Jul,13871
-Oklahoma,Aug,20766
-Oklahoma,Sep,27569
-Oklahoma,Oct,36040
-Oklahoma,Nov,46232
-Oklahoma,Dec,65753
-Oregon,Jan,0
-Oregon,Feb,0
-Oregon,Mar,102
-Oregon,Apr,1736
-Oregon,May,4111
-Oregon,Jun,5351
-Oregon,Jul,7745
-Oregon,Aug,11943
-Oregon,Sep,15289
-Oregon,Oct,19065
-Oregon,Nov,23293
-Oregon,Dec,37711
-Pennsylvania,Jan,0
-Pennsylvania,Feb,0
-Pennsylvania,Mar,253
-Pennsylvania,Apr,26374
-Pennsylvania,May,130391
-Pennsylvania,Jun,186687
-Pennsylvania,Jul,215603
-Pennsylvania,Aug,231000
-Pennsylvania,Sep,237365
-Pennsylvania,Oct,262385
-Pennsylvania,Nov,284021
-Pennsylvania,Dec,407512
-Rhode Island,Jan,0
-Rhode Island,Feb,0
-Rhode Island,Mar,15
-Rhode Island,Apr,3565
-Rhode Island,May,15471
-Rhode Island,Jun,25484
-Rhode Island,Jul,30536
-Rhode Island,Aug,31787
-Rhode Island,Sep,32452
-Rhode Island,Oct,35781
-Rhode Island,Nov,38266
-Rhode Island,Dec,49216
-South Carolina,Jan,0
-South Carolina,Feb,0
-South Carolina,Mar,113
-South Carolina,Apr,3194
-South Carolina,May,11656
-South Carolina,Jun,18424
-South Carolina,Jul,35108
-South Carolina,Aug,70086
-South Carolina,Sep,92881
-South Carolina,Oct,112970
-South Carolina,Nov,124600
-South Carolina,Dec,149492
-South Dakota,Jan,0
-South Dakota,Feb,0
-South Dakota,Mar,14
-South Dakota,Apr,211
-South Dakota,May,1279
-South Dakota,Jun,2282
-South Dakota,Jul,3471
-South Dakota,Aug,4707
-South Dakota,Sep,5746
-South Dakota,Oct,9767
-South Dakota,Nov,19937
-South Dakota,Dec,39406
-Tennesse,Jan,0
-Tennesse,Feb,0
-Tennesse,Mar,65
-Tennesse,Apr,3672
-Tennesse,May,8915
-Tennesse,Jun,14612
-Tennesse,Jul,25120
-Tennesse,Aug,43362
-Tennesse,Sep,63422
-Tennesse,Oct,89651
-Tennesse,Nov,119008
-Tennesse,Dec,177826
-Texas,Jan,0
-Texas,Feb,0
-Texas,Mar,227
-Texas,Apr,11438
-Texas,May,39119
-Texas,Jun,61207
-Texas,Jul,120655
-Texas,Aug,304998
-Texas,Sep,431275
-Texas,Oct,523085
-Texas,Nov,590591
-Texas,Dec,758658
-Utah,Jan,0
-Utah,Feb,0
-Utah,Mar,20
-Utah,Apr,722
-Utah,May,2469
-Utah,Jun,4294
-Utah,Jul,7258
-Utah,Aug,11266
-Utah,Sep,13048
-Utah,Oct,16573
-Utah,Nov,21926
-Utah,Dec,33713
-Virginia,Jan,0
-Virginia,Feb,0
-Virginia,Mar,153
-Virginia,Apr,7052
-Virginia,May,30685
-Virginia,Jun,47056
-Virginia,Jul,61641
-Virginia,Aug,74177
-Virginia,Sep,86483
-Virginia,Oct,106447
-Virginia,Nov,115120
-Virginia,Dec,140241
-Vermont,Jan,0
-Vermont,Feb,0
-Vermont,Mar,94
-Vermont,Apr,980
-Vermont,May,1653
-Vermont,Jun,1663
-Vermont,Jul,1738
-Vermont,Aug,1793
-Vermont,Sep,1740
-Vermont,Oct,1798
-Vermont,Nov,1831
-Vermont,Dec,3169
-Washington,Jan,0
-Washington,Feb,13
-Washington,Mar,2917
-Washington,Apr,16619
-Washington,May,30239
-Washington,Jun,36570
-Washington,Jul,44440
-Washington,Aug,54522
-Washington,Sep,60519
-Washington,Oct,69269
-Washington,Nov,76195
-Washington,Dec,93976
-Wisconsin,Jan,0
-Wisconsin,Feb,0
-Wisconsin,Mar,105
-Wisconsin,Apr,5323
-Wisconsin,May,13919
-Wisconsin,Jun,21053
-Wisconsin,Jul,26352
-Wisconsin,Aug,32409
-Wisconsin,Sep,36868
-Wisconsin,Oct,50299
-Wisconsin,Nov,84255
-Wisconsin,Dec,139374
-West Virginia,Jan,0
-West Virginia,Feb,0
-West Virginia,Mar,2
-West Virginia,Apr,488
-West Virginia,May,1932
-West Virginia,Jun,2606
-West Virginia,Jul,3096
-West Virginia,Aug,4966
-West Virginia,Sep,8578
-West Virginia,Oct,12325
-West Virginia,Nov,17759
-West Virginia,Dec,32316
-Wyoming,Jan,0
-Wyoming,Feb,0
-Wyoming,Mar,0
-Wyoming,Apr,82
-Wyoming,May,296
-Wyoming,Jun,555
-Wyoming,Jul,709
-Wyoming,Aug,992
-Wyoming,Sep,1375
-Wyoming,Oct,1926
-Wyoming,Nov,4563
-Wyoming,Dec,10232
+Alaska,Jan-20,0
+Alaska,Feb-20,0
+Alaska,Mar-20,13
+Alaska,Apr-20,230
+Alaska,May-20,305
+Alaska,Jun-20,351
+Alaska,Jul-20,558
+Alaska,Aug-20,912
+Alaska,Sep-20,1359
+Alaska,Oct-20,2017
+Alaska,Nov-20,2972
+Alaska,Dec-20,5362
+Alabama,Jan-20,0
+Alabama,Feb-20,0
+Alabama,Mar-20,30
+Alabama,Apr-20,3936
+Alabama,May-20,14341
+Alabama,Jun-20,23695
+Alabama,Jul-20,38436
+Alabama,Aug-20,58857
+Alabama,Sep-20,71418
+Alabama,Oct-20,85064
+Alabama,Nov-20,98538
+Alabama,Dec-20,131827
+Arkansas,Jan-20,0
+Arkansas,Feb-20,0
+Arkansas,Mar-20,34
+Arkansas,Apr-20,989
+Arkansas,May-20,3116
+Arkansas,Jun-20,5851
+Arkansas,Jul-20,10794
+Arkansas,Aug-20,19052
+Arkansas,Sep-20,32401
+Arkansas,Oct-20,51279
+Arkansas,Nov-20,66721
+Arkansas,Dec-20,95245
+Arizona,Jan-20,0
+Arizona,Feb-20,0
+Arizona,Mar-20,113
+Arizona,Apr-20,4792
+Arizona,May-20,19859
+Arizona,Jun-20,37298
+Arizona,Jul-20,79627
+Arizona,Aug-20,137942
+Arizona,Sep-20,161364
+Arizona,Oct-20,179972
+Arizona,Nov-20,189499
+Arizona,Dec-20,237324
+California,Jan-20,0
+California,Feb-20,0
+California,Mar-20,910
+California,Apr-20,28692
+California,May-20,97739
+California,Jun-20,153944
+California,Jul-20,229362
+California,Aug-20,345648
+California,Sep-20,435369
+California,Oct-20,520762
+California,Nov-20,550121
+California,Dec-20,676929
+Colorado,Jan-20,0
+Colorado,Feb-20,0
+Colorado,Mar-20,328
+Colorado,Apr-20,11714
+Colorado,May-20,35612
+Colorado,Jun-20,48035
+Colorado,Jul-20,54225
+Colorado,Aug-20,58648
+Colorado,Sep-20,60020
+Colorado,Oct-20,66960
+Colorado,Nov-20,78495
+Colorado,Dec-20,125307
+Connecticut,Jan-20,0
+Connecticut,Feb-20,0
+Connecticut,Mar-20,274
+Connecticut,Apr-20,29587
+Connecticut,May-20,100856
+Connecticut,Jun-20,125398
+Connecticut,Jul-20,135762
+Connecticut,Aug-20,138000
+Connecticut,Sep-20,134566
+Connecticut,Oct-20,141104
+Connecticut,Nov-20,143352
+Connecticut,Dec-20,170624
+District of Columbia,Jan-20,0
+District of Columbia,Feb-20,0
+District of Columbia,Mar-20,42
+District of Columbia,Apr-20,2650
+District of Columbia,May-20,11291
+District of Columbia,Jun-20,15433
+District of Columbia,Jul-20,17731
+District of Columbia,Aug-20,18495
+District of Columbia,Sep-20,18516
+District of Columbia,Oct-20,19785
+District of Columbia,Nov-20,19873
+District of Columbia,Dec-20,22570
+Delaware,Jan-20,0
+Delaware,Feb-20,0
+Delaware,Mar-20,53
+Delaware,Apr-20,2537
+Delaware,May-20,11310
+Delaware,Jun-20,14882
+Delaware,Jul-20,16554
+Delaware,Aug-20,18438
+Delaware,Sep-20,18572
+Delaware,Oct-20,20617
+Delaware,Nov-20,22110
+Delaware,Dec-20,26058
+Florida,Jan-20,0
+Florida,Feb-20,0
+Florida,Mar-20,439
+Florida,Apr-20,19320
+Florida,May-20,61797
+Florida,Jun-20,92369
+Florida,Jul-20,152519
+Florida,Aug-20,291835
+Florida,Sep-20,390532
+Florida,Oct-20,492809
+Florida,Nov-20,534944
+Florida,Dec-20,633863
+Georgia,Jan-20,0
+Georgia,Feb-20,0
+Georgia,Mar-20,622
+Georgia,Apr-20,17746
+Georgia,May-20,49289
+Georgia,Jun-20,74302
+Georgia,Jul-20,98285
+Georgia,Aug-20,145359
+Georgia,Sep-20,192621
+Georgia,Oct-20,233793
+Georgia,Nov-20,267802
+Georgia,Dec-20,316961
+Hawaii,Jan-20,0
+Hawaii,Feb-20,0
+Hawaii,Mar-20,0
+Hawaii,Apr-20,260
+Hawaii,May-20,524
+Hawaii,Jun-20,513
+Hawaii,Jul-20,684
+Hawaii,Aug-20,1252
+Hawaii,Sep-20,3108
+Hawaii,Oct-20,5629
+Hawaii,Nov-20,6789
+Hawaii,Dec-20,8467
+Iowa,Jan-20,0
+Iowa,Feb-20,0
+Iowa,Mar-20,25
+Iowa,Apr-20,1956
+Iowa,May-20,10714
+Iowa,Jun-20,19530
+Iowa,Jul-20,24119
+Iowa,Aug-20,30546
+Iowa,Sep-20,37061
+Iowa,Oct-20,47275
+Iowa,Nov-20,60928
+Iowa,Dec-20,101900
+Idaho,Jan-20,0
+Idaho,Feb-20,0
+Idaho,Mar-20,25
+Idaho,Apr-20,1043
+Idaho,May-20,2245
+Idaho,Jun-20,2604
+Idaho,Jul-20,3650
+Idaho,Aug-20,8370
+Idaho,Sep-20,12591
+Idaho,Oct-20,16391
+Idaho,Nov-20,23106
+Idaho,Dec-20,37101
+Illinois,Jan-20,0
+Illinois,Feb-20,0
+Illinois,Mar-20,417
+Illinois,Apr-20,32410
+Illinois,May-20,124531
+Illinois,Jun-20,194271
+Illinois,Jul-20,230515
+Illinois,Aug-20,246986
+Illinois,Sep-20,257714
+Illinois,Oct-20,292628
+Illinois,Nov-20,340510
+Illinois,Dec-20,487076
+Indiana,Jan-20,0
+Indiana,Feb-20,0
+Indiana,Mar-20,240
+Indiana,Apr-20,14327
+Indiana,May-20,52715
+Indiana,Jun-20,73069
+Indiana,Jul-20,86854
+Indiana,Aug-20,97177
+Indiana,Sep-20,103916
+Indiana,Oct-20,121734
+Indiana,Nov-20,150003
+Indiana,Dec-20,218744
+Kansas,Jan-20,0
+Kansas,Feb-20,0
+Kansas,Mar-20,53
+Kansas,Apr-20,2198
+Kansas,May-20,5252
+Kansas,Jun-20,7373
+Kansas,Jul-20,9356
+Kansas,Aug-20,12482
+Kansas,Sep-20,16616
+Kansas,Oct-20,26311
+Kansas,Nov-20,38832
+Kansas,Dec-20,67842
+Kentucky,Jan-20,0
+Kentucky,Feb-20,0
+Kentucky,Mar-20,70
+Kentucky,Apr-20,3644
+Kentucky,May-20,10410
+Kentucky,Jun-20,15175
+Kentucky,Jul-20,20155
+Kentucky,Aug-20,25618
+Kentucky,Sep-20,32160
+Kentucky,Oct-20,40779
+Kentucky,Nov-20,50538
+Kentucky,Dec-20,71020
+Louisiana,Jan-20,0
+Louisiana,Feb-20,0
+Louisiana,Mar-20,1129
+Louisiana,Apr-20,32867
+Louisiana,May-20,75730
+Louisiana,Jun-20,91075
+Louisiana,Jul-20,109304
+Louisiana,Aug-20,139101
+Louisiana,Sep-20,157941
+Louisiana,Oct-20,177422
+Louisiana,Nov-20,184804
+Louisiana,Dec-20,215113
+Maine,Jan-20,0
+Maine,Feb-20,0
+Maine,Mar-20,651
+Maine,Apr-20,50046
+Maine,May-20,170827
+Maine,Jun-20,228988
+Maine,Jul-20,259483
+Maine,Aug-20,273835
+Maine,Sep-20,277353
+Maine,Oct-20,300917
+Maine,Nov-20,310382
+Maine,Dec-20,357261
+Maryland,Jan-20,0
+Maryland,Feb-20,0
+Maryland,Mar-20,168
+Maryland,Apr-20,15954
+Maryland,May-20,61681
+Maryland,Jun-20,88191
+Maryland,Jul-20,103834
+Maryland,Aug-20,112721
+Maryland,Sep-20,115669
+Maryland,Oct-20,125065
+Maryland,Nov-20,130307
+Maryland,Dec-20,163321
+Massachusetts,Jan-20,0
+Massachusetts,Feb-20,0
+Massachusetts,Mar-20,13
+Massachusetts,Apr-20,843
+Massachusetts,May-20,2180
+Massachusetts,Jun-20,3010
+Massachusetts,Jul-20,3546
+Massachusetts,Aug-20,3951
+Massachusetts,Sep-20,4108
+Massachusetts,Oct-20,4474
+Massachusetts,Nov-20,5020
+Massachusetts,Dec-20,8509
+Michigan,Jan-20,0
+Michigan,Feb-20,0
+Michigan,Mar-20,2342
+Michigan,Apr-20,79759
+Michigan,May-20,164087
+Michigan,Jun-20,180742
+Michigan,Jul-20,196267
+Michigan,Aug-20,204360
+Michigan,Sep-20,207847
+Michigan,Oct-20,227677
+Michigan,Nov-20,255029
+Michigan,Dec-20,357468
+Minnesota,Jan-20,0
+Minnesota,Feb-20,0
+Minnesota,Mar-20,47
+Minnesota,Apr-20,3818
+Minnesota,May-20,21869
+Minnesota,Jun-20,39472
+Minnesota,Jul-20,48459
+Minnesota,Aug-20,54441
+Minnesota,Sep-20,59400
+Minnesota,Oct-20,69537
+Minnesota,Nov-20,88983
+Minnesota,Dec-20,140839
+Mississippi,Jan-20,0
+Mississippi,Feb-20,0
+Mississippi,Mar-20,85
+Mississippi,Apr-20,4568
+Mississippi,May-20,17463
+Mississippi,Jun-20,26893
+Mississippi,Jul-20,34527
+Mississippi,Aug-20,42459
+Mississippi,Sep-20,53546
+Mississippi,Oct-20,78212
+Mississippi,Nov-20,102616
+Mississippi,Dec-20,147460
+Missouri,Jan-20,0
+Missouri,Feb-20,0
+Missouri,Mar-20,84
+Missouri,Apr-20,3972
+Missouri,May-20,15804
+Missouri,Jun-20,27298
+Missouri,Jul-20,40920
+Missouri,Aug-20,64526
+Missouri,Sep-20,82113
+Missouri,Oct-20,97835
+Missouri,Nov-20,107108
+Missouri,Dec-20,132830
+Montana,Jan-20,0
+Montana,Feb-20,0
+Montana,Mar-20,10
+Montana,Apr-20,277
+Montana,May-20,502
+Montana,Jun-20,581
+Montana,Jul-20,1108
+Montana,Aug-20,2562
+Montana,Sep-20,4272
+Montana,Oct-20,7665
+Montana,Nov-20,15855
+Montana,Dec-20,25880
+North Carolina,Jan-20,0
+North Carolina,Feb-20,0
+North Carolina,Mar-20,28
+North Carolina,Apr-20,4586
+North Carolina,May-20,19758
+North Carolina,Jun-20,34002
+North Carolina,Jul-20,49580
+North Carolina,Aug-20,72700
+North Carolina,Sep-20,93968
+North Carolina,Oct-20,121625
+North Carolina,Nov-20,144877
+North Carolina,Dec-20,186108
+North Dakota,Jan-20,0
+North Dakota,Feb-20,0
+North Dakota,Mar-20,7
+North Dakota,Apr-20,294
+North Dakota,May-20,1330
+North Dakota,Jun-20,2366
+North Dakota,Jul-20,2960
+North Dakota,Aug-20,3962
+North Dakota,Sep-20,5591
+North Dakota,Oct-20,11968
+North Dakota,Nov-20,22450
+North Dakota,Dec-20,36075
+Nebraska,Jan-20,0
+Nebraska,Feb-20,0
+Nebraska,Mar-20,9
+Nebraska,Apr-20,802
+Nebraska,May-20,3659
+Nebraska,Jun-20,6646
+Nebraska,Jul-20,9219
+Nebraska,Aug-20,11191
+Nebraska,Sep-20,13046
+Nebraska,Oct-20,17005
+Nebraska,Nov-20,24142
+Nebraska,Dec-20,43013
+New Hampshire,Jan-20,0
+New Hampshire,Feb-20,0
+New Hampshire,Mar-20,17
+New Hampshire,Apr-20,1009
+New Hampshire,May-20,5085
+New Hampshire,Jun-20,9573
+New Hampshire,Jul-20,12242
+New Hampshire,Aug-20,13144
+New Hampshire,Sep-20,13080
+New Hampshire,Oct-20,14314
+New Hampshire,Nov-20,15030
+New Hampshire,Dec-20,19497
+New Jersey,Jan-20,0
+New Jersey,Feb-20,0
+New Jersey,Mar-20,1566
+New Jersey,Apr-20,128340
+New Jersey,May-20,359507
+New Jersey,Jun-20,430048
+New Jersey,Jul-20,477793
+New Jersey,Aug-20,491266
+New Jersey,Sep-20,481169
+New Jersey,Oct-20,502728
+New Jersey,Nov-20,498699
+New Jersey,Dec-20,557416
+New Mexico,Jan-20,0
+New Mexico,Feb-20,0
+New Mexico,Mar-20,17
+New Mexico,Apr-20,1474
+New Mexico,May-20,7739
+New Mexico,Jun-20,13154
+New Mexico,Jul-20,17513
+New Mexico,Aug-20,22130
+New Mexico,Sep-20,24979
+New Mexico,Oct-20,28959
+New Mexico,Nov-20,37824
+New Mexico,Dec-20,63204
+Nevada,Jan-20,0
+Nevada,Feb-20,0
+Nevada,Mar-20,217
+Nevada,Apr-20,4625
+Nevada,May-20,11341
+Nevada,Jun-20,14421
+Nevada,Jul-20,19814
+Nevada,Aug-20,33356
+Nevada,Sep-20,44367
+Nevada,Oct-20,52550
+Nevada,Nov-20,58233
+Nevada,Dec-20,81669
+New York,Jan-20,0
+New York,Feb-20,0
+New York,Mar-20,6208
+New York,Apr-20,330353
+New York,May-20,682785
+New York,Jun-20,735767
+New York,Jul-20,775428
+New York,Aug-20,782624
+New York,Sep-20,762100
+New York,Oct-20,794728
+New York,Nov-20,785758
+New York,Dec-20,875244
+Ohio,Jan-20,0
+Ohio,Feb-20,0
+Ohio,Mar-20,213
+Ohio,Apr-20,12517
+Ohio,May-20,49709
+Ohio,Jun-20,77119
+Ohio,Jul-20,97128
+Ohio,Aug-20,118706
+Ohio,Sep-20,134914
+Ohio,Oct-20,157317
+Ohio,Nov-20,174314
+Ohio,Dec-20,240427
+Oklahoma,Jan-20,0
+Oklahoma,Feb-20,0
+Oklahoma,Mar-20,101
+Oklahoma,Apr-20,3694
+Oklahoma,May-20,8877
+Oklahoma,Jun-20,10846
+Oklahoma,Jul-20,13871
+Oklahoma,Aug-20,20766
+Oklahoma,Sep-20,27569
+Oklahoma,Oct-20,36040
+Oklahoma,Nov-20,46232
+Oklahoma,Dec-20,65753
+Oregon,Jan-20,0
+Oregon,Feb-20,0
+Oregon,Mar-20,102
+Oregon,Apr-20,1736
+Oregon,May-20,4111
+Oregon,Jun-20,5351
+Oregon,Jul-20,7745
+Oregon,Aug-20,11943
+Oregon,Sep-20,15289
+Oregon,Oct-20,19065
+Oregon,Nov-20,23293
+Oregon,Dec-20,37711
+Pennsylvania,Jan-20,0
+Pennsylvania,Feb-20,0
+Pennsylvania,Mar-20,253
+Pennsylvania,Apr-20,26374
+Pennsylvania,May-20,130391
+Pennsylvania,Jun-20,186687
+Pennsylvania,Jul-20,215603
+Pennsylvania,Aug-20,231000
+Pennsylvania,Sep-20,237365
+Pennsylvania,Oct-20,262385
+Pennsylvania,Nov-20,284021
+Pennsylvania,Dec-20,407512
+Rhode Island,Jan-20,0
+Rhode Island,Feb-20,0
+Rhode Island,Mar-20,15
+Rhode Island,Apr-20,3565
+Rhode Island,May-20,15471
+Rhode Island,Jun-20,25484
+Rhode Island,Jul-20,30536
+Rhode Island,Aug-20,31787
+Rhode Island,Sep-20,32452
+Rhode Island,Oct-20,35781
+Rhode Island,Nov-20,38266
+Rhode Island,Dec-20,49216
+South Carolina,Jan-20,0
+South Carolina,Feb-20,0
+South Carolina,Mar-20,113
+South Carolina,Apr-20,3194
+South Carolina,May-20,11656
+South Carolina,Jun-20,18424
+South Carolina,Jul-20,35108
+South Carolina,Aug-20,70086
+South Carolina,Sep-20,92881
+South Carolina,Oct-20,112970
+South Carolina,Nov-20,124600
+South Carolina,Dec-20,149492
+South Dakota,Jan-20,0
+South Dakota,Feb-20,0
+South Dakota,Mar-20,14
+South Dakota,Apr-20,211
+South Dakota,May-20,1279
+South Dakota,Jun-20,2282
+South Dakota,Jul-20,3471
+South Dakota,Aug-20,4707
+South Dakota,Sep-20,5746
+South Dakota,Oct-20,9767
+South Dakota,Nov-20,19937
+South Dakota,Dec-20,39406
+Tennesse,Jan-20,0
+Tennesse,Feb-20,0
+Tennesse,Mar-20,65
+Tennesse,Apr-20,3672
+Tennesse,May-20,8915
+Tennesse,Jun-20,14612
+Tennesse,Jul-20,25120
+Tennesse,Aug-20,43362
+Tennesse,Sep-20,63422
+Tennesse,Oct-20,89651
+Tennesse,Nov-20,119008
+Tennesse,Dec-20,177826
+Texas,Jan-20,0
+Texas,Feb-20,0
+Texas,Mar-20,227
+Texas,Apr-20,11438
+Texas,May-20,39119
+Texas,Jun-20,61207
+Texas,Jul-20,120655
+Texas,Aug-20,304998
+Texas,Sep-20,431275
+Texas,Oct-20,523085
+Texas,Nov-20,590591
+Texas,Dec-20,758658
+Utah,Jan-20,0
+Utah,Feb-20,0
+Utah,Mar-20,20
+Utah,Apr-20,722
+Utah,May-20,2469
+Utah,Jun-20,4294
+Utah,Jul-20,7258
+Utah,Aug-20,11266
+Utah,Sep-20,13048
+Utah,Oct-20,16573
+Utah,Nov-20,21926
+Utah,Dec-20,33713
+Virginia,Jan-20,0
+Virginia,Feb-20,0
+Virginia,Mar-20,153
+Virginia,Apr-20,7052
+Virginia,May-20,30685
+Virginia,Jun-20,47056
+Virginia,Jul-20,61641
+Virginia,Aug-20,74177
+Virginia,Sep-20,86483
+Virginia,Oct-20,106447
+Virginia,Nov-20,115120
+Virginia,Dec-20,140241
+Vermont,Jan-20,0
+Vermont,Feb-20,0
+Vermont,Mar-20,94
+Vermont,Apr-20,980
+Vermont,May-20,1653
+Vermont,Jun-20,1663
+Vermont,Jul-20,1738
+Vermont,Aug-20,1793
+Vermont,Sep-20,1740
+Vermont,Oct-20,1798
+Vermont,Nov-20,1831
+Vermont,Dec-20,3169
+Washington,Jan-20,0
+Washington,Feb-20,13
+Washington,Mar-20,2917
+Washington,Apr-20,16619
+Washington,May-20,30239
+Washington,Jun-20,36570
+Washington,Jul-20,44440
+Washington,Aug-20,54522
+Washington,Sep-20,60519
+Washington,Oct-20,69269
+Washington,Nov-20,76195
+Washington,Dec-20,93976
+Wisconsin,Jan-20,0
+Wisconsin,Feb-20,0
+Wisconsin,Mar-20,105
+Wisconsin,Apr-20,5323
+Wisconsin,May-20,13919
+Wisconsin,Jun-20,21053
+Wisconsin,Jul-20,26352
+Wisconsin,Aug-20,32409
+Wisconsin,Sep-20,36868
+Wisconsin,Oct-20,50299
+Wisconsin,Nov-20,84255
+Wisconsin,Dec-20,139374
+West Virginia,Jan-20,0
+West Virginia,Feb-20,0
+West Virginia,Mar-20,2
+West Virginia,Apr-20,488
+West Virginia,May-20,1932
+West Virginia,Jun-20,2606
+West Virginia,Jul-20,3096
+West Virginia,Aug-20,4966
+West Virginia,Sep-20,8578
+West Virginia,Oct-20,12325
+West Virginia,Nov-20,17759
+West Virginia,Dec-20,32316
+Wyoming,Jan-20,0
+Wyoming,Feb-20,0
+Wyoming,Mar-20,0
+Wyoming,Apr-20,82
+Wyoming,May-20,296
+Wyoming,Jun-20,555
+Wyoming,Jul-20,709
+Wyoming,Aug-20,992
+Wyoming,Sep-20,1375
+Wyoming,Oct-20,1926
+Wyoming,Nov-20,4563
+Wyoming,Dec-20,10232
