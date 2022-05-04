@@ -1,7 +1,9 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * .5,
+const width = window.innerWidth * .675,
       height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
+
+const formatDate = d3.timeFormat("%b");
 
 // // since we use our scales in multiple functions, they need global scope
       let svg,
@@ -13,6 +15,8 @@ const width = window.innerWidth * .5,
        yAxisGroup
        ;
   
+
+       let tooltip;
 
 /* APPLICATION STATE */
 let state = {
@@ -26,7 +30,7 @@ let state = {
 d3.csv('../data/CovidData.csv', d => {
   
   return {
-       Month: d.Month,
+       Month: new Date (d.Month),
        State: d.State,
        DeathToll: +d.DeathToll
   }
@@ -41,11 +45,12 @@ d3.csv('../data/CovidData.csv', d => {
 /* INITIALIZING FUNCTION */
 // this will be run *one time* when the data finishes loading in
 function init() {
+  
+  
   /* SCALES */
-
+        
         xScale = d3.scaleTime()
-                   .domain([new Date("2020-01-01") , new Date("2020-12-31")])
-                 //.domain(d3.extent(state.data, d => d.NewMonth))
+                   .domain(d3.extent(state.data, d => d.Month))
                    .range([margin.left, width-margin.right])
         
         
@@ -56,13 +61,11 @@ function init() {
 
         xAxis = d3.axisBottom(xScale)
                   .tickFormat(d3.timeFormat("%b"))
-                  //.ticks(10)
+                  .ticks(11)
                   
 
         yAxis = d3.axisLeft(yScale)
 
-      //  const xAxisLabel = 'Months'
-      //  const yAxisLabel = 'Death Toll'
 
       const selectElement = d3.select("#dropdown")
 
@@ -82,27 +85,57 @@ function init() {
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
+                
+                
          
          xAxisGroup = svg.append("g")
                         .attr("class", "xAxis")
-                        // .attr("transform", "translate(0," + height + ")")
+                        .style("font", "14px times")
                         .attr("transform", `translate(${0}, ${height - margin.bottom})`)
                         .call(xAxis)   
                         
          yAxisGroup = svg.append("g")
+                        .style("font", "14px times")
                         .attr("transform", `translate(${margin.left}, ${0})`)
                         .call(yAxis)
+
+
+           svg.append("text")
+              .attr("class", "xLabel")
+              .attr("y", height-10)
+              .attr("x", width/2)
+              .attr("fill", "blue")
+              .text("Year 2020", 3.5)    
+              
+          svg.append("text")
+             .attr("class", "yLabel")
+             .attr("transform", "rotate(-90)")
+             .attr("y", 10)
+             .attr("x", 0 - (height/2))
+             .attr("fill", "blue")
+             .text("Death Toll")
+
+         // Add a tooltip               
+         tooltip = d3.select("body")
+                     .append("div")
+                     .attr("class", "tooltip")
+                     .style("z-index", "10")
+                     .style("position", "absolute")
+                     .style("visibility", "hidden")
+                     .text("tooltip");
+
     }
 function draw(){
 
       const filteredData = state.data
             .filter(d => d.State === state.selection)
+            //.attr("fill", "yellow")
 
 
       yScale.domain([0, d3.max(filteredData, d => d.DeathToll)])
 
       yAxisGroup.transition()
-                .duration(1000)
+                .duration(2000)
                 .call(yAxis.scale(yScale))
 
 
@@ -110,15 +143,38 @@ function draw(){
             .x(d => xScale(d.Month))
             .y(d => yScale(d.DeathToll))
 
-
+// Draw the line chart
       svg.selectAll(".line")
          .data([filteredData])
          .join("path")
          .attr("class", "line")
+         .attr("opacity", 3.5)
          .attr("stroke", "blue")
          .attr("fill", "none")
          .attr("d", d => lineGen(d))
-             
+
+// Add some connection points
+      svg.selectAll(".circle-point")
+        .data(filteredData)
+        .join("circle")
+        .attr("class", "circle-point")
+        .attr("r", "3")
+        .attr("cx", d => xScale(d.Month))
+        .attr("cy", d => yScale(d.DeathToll))
+        .attr("fill", "blue")
+        .attr("opacity", 0.5)
+          
+        .on("mouseover", function(event,d,i){
+                return tooltip
+                .html(`<div>Death Toll: ${d.DeathToll} </div>`) 
+                .style("visibility", "visible");})
+
+        .on("mousemove", function(event){
+               return tooltip.style("top", (event.pageY-10)+"px")
+                             .style("left", (event.pageX+10) + "px");})       
+                
+        .on("mouseout", function(){
+                return tooltip.style("visibility", "hidden");})
 }
 
 

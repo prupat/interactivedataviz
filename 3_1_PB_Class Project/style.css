@@ -1,19 +1,93 @@
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  padding: 1em;
+body{
+  font-family:Calibri, san-serif;
+  font-size:medium;
+  width:960px;
+  margin:10px auto;
+  background-image:url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position:top center;
+  }
+
+#author{
+  font-size: large;
+  color: black;
 }
 
-h1 {
-  font-size: 3em;
-  margin: 0.25em 0;
-}
-
-h3 {
-  font-size: 2em;
-  margin: 0.25em 0;
-}
-
-p {
-  font-size: 1em;
-}
+  h1{
+  margin:5px 0 0;
+  font-family:"Century Gothic", Calibri, sans-serif;
+  letter-spacing:2px;
+  font-weight:400;
+  font-size:300%;
+  border: 10px solid black;
+  background-color: rgba(255,255,255,0.7);
+  text-align: center;
+  border-bottom: 10px solid black;
+  }
+  #navigationBar li{
+  display:inline;
+  padding:0 33px;
+  }
+  #navigationBar a{
+  display:inline;
+  font-size:large;
+  font-family:"Century Gothic", Calibri, sans-serif;
+  color:blue;
+  letter-spacing:1px;
+  text-decoration:none;
+  border-bottom:1px dashed #000;
+  }
+  #navigationBar li:first-child{
+  padding:0 43px 0 0;
+  }
+  #navigationBar li:last-child{
+  padding:0 0 0 23px;
+  }
+  #navigationBar{
+  background-color: rgba(255,255,255,0.7);
+  margin:0 auto 20px;
+  padding:5px;
+  }
+  #navigationBar a:hover{
+  border-color:#D91C5C;
+  }
+  
+  h2{
+  font-family:"Century Gothic", Calibri, sans-serif;
+  font-weight:400;
+  color: red;
+  font-weight: bold;
+  letter-spacing:1px;
+  margin:0;
+  border-top:1px solid #000;
+  }
+  .article{
+  border-top:5px solid #000;
+  margin:5px 0 20px;
+  padding:5px 5px 0;
+  background-color: rgba(255,255,255,0.7);
+  }
+  h3{
+    color: blue;
+  }
+  #footer{
+  clear:both;
+  text-align:center;
+  margin:20px 0 10px;
+  background-color: rgba(255,255,255,0.7);
+  }
+  #header .author{
+  margin:0 0 20px;
+  background-color: rgba(255,255,255,0.7);
+  border: 10px solid #FFF;
+  font-weight: bold;
+  font-size: large;
+  color: red;
+  border-top: none;
+  text-align: center;
+  }
+  #NYC-Care,#Covid-gov,#Find-Test,#Med-News,#about-link{
+  font-weight:bold;
+  }
+  
