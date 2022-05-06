@@ -9,85 +9,103 @@ body{
   background-position:top center;
   }
 
-#author{
-  font-size: large;
-  color: black;
-}
+h1{
+    margin:5px 0 0;
+    font-family:"Century Gothic", Calibri, sans-serif;
+    letter-spacing:2px;
+    font-weight:400;
+    font-size:300%;
+    border: 10px solid black;
+    background-color: white;
+    text-align: center;
+    border-bottom: 10px solid black;
+    }
 
-  h1{
-  margin:5px 0 0;
-  font-family:"Century Gothic", Calibri, sans-serif;
-  letter-spacing:2px;
-  font-weight:400;
-  font-size:300%;
-  border: 10px solid black;
-  background-color: rgba(255,255,255,0.7);
-  text-align: center;
-  border-bottom: 10px solid black;
-  }
-  #navigationBar li{
+h2{
+      font-family:"Century Gothic", Calibri, sans-serif;
+      font-weight:400;
+      color: red;
+      font-weight: bold;
+      letter-spacing:1px;
+      margin:0;
+      border-top:1px solid black;
+    }
+
+h3{
+      color: blue;
+    }
+
+
+  
+#navigationBar li{
   display:inline;
   padding:0 33px;
   }
-  #navigationBar a{
+
+#navigationBar a{
   display:inline;
   font-size:large;
   font-family:"Century Gothic", Calibri, sans-serif;
   color:blue;
   letter-spacing:1px;
   text-decoration:none;
-  border-bottom:1px dashed #000;
+  border-bottom:1px dashed black;
   }
-  #navigationBar li:first-child{
+
+#navigationBar li:first-child{
   padding:0 43px 0 0;
   }
-  #navigationBar li:last-child{
+
+#navigationBar li:last-child{
   padding:0 0 0 23px;
   }
-  #navigationBar{
-  background-color: rgba(255,255,255,0.7);
+
+#navigationBar{
+  background-color: white;
   margin:0 auto 20px;
   padding:5px;
   }
-  #navigationBar a:hover{
-  border-color:#D91C5C;
+
+#navigationBar a:hover{
+  border-color:red;
   }
   
-  h2{
-  font-family:"Century Gothic", Calibri, sans-serif;
-  font-weight:400;
-  color: red;
-  font-weight: bold;
-  letter-spacing:1px;
-  margin:0;
-  border-top:1px solid #000;
+
+#p{
+  text-align:left;
+}
+
+#author{
+    font-size: large;
+    color: black;
   }
-  .article{
-  border-top:5px solid #000;
+  
+.article{
+  border-top:5px solid black;
   margin:5px 0 20px;
   padding:5px 5px 0;
-  background-color: rgba(255,255,255,0.7);
+  background-color: white;
   }
-  h3{
-    color: blue;
-  }
-  #footer{
+  
+#footer{
   clear:both;
   text-align:center;
   margin:20px 0 10px;
-  background-color: rgba(255,255,255,0.7);
+  background-color: white;
   }
-  #header .author{
+
+#header .author{
   margin:0 0 20px;
-  background-color: rgba(255,255,255,0.7);
-  border: 10px solid #FFF;
+  background-color: white;
+  border: 10px solid white;
   font-weight: bold;
   font-size: large;
   color: red;
   border-top: none;
   text-align: center;
   }
-  #NYC-Care,#Covid-gov,#Find-Test,#Med-News,#about-link{
+
+#NYC-Care,#Covid-gov,#Find-Test,#Med-News,#about-link{
   font-weight:bold;
   }
   

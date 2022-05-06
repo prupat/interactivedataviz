@@ -1,5 +1,5 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * .675,
+const width = window.innerWidth * .6,
       height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
@@ -61,7 +61,7 @@ function init() {
 
         xAxis = d3.axisBottom(xScale)
                   .tickFormat(d3.timeFormat("%b"))
-                  .ticks(11)
+                  .ticks(7)
                   
 
         yAxis = d3.axisLeft(yScale)
@@ -114,6 +114,7 @@ function init() {
              .attr("x", 0 - (height/2))
              .attr("fill", "blue")
              .text("Death Toll")
+            
 
          // Add a tooltip               
          tooltip = d3.select("body")
@@ -158,7 +159,7 @@ function draw(){
         .data(filteredData)
         .join("circle")
         .attr("class", "circle-point")
-        .attr("r", "3")
+        .attr("r", "6")
         .attr("cx", d => xScale(d.Month))
         .attr("cy", d => yScale(d.DeathToll))
         .attr("fill", "blue")
