@@ -14,6 +14,7 @@
 		
     <div id="header">
 			<h1>Covid-19 Death Toll by US State</h1>
+      
       <div class="author"></div>
       
 			<ul id="navigationBar">
@@ -25,15 +26,27 @@
 			</ul>
 		</div>
    
+    <div class="intro">
+      <h4>Data Visualization Brief</h4>
+    <p>This chart was created using D3.js displaying the Covid-19 death toll rate by state, i.e., across the 50 states & D.C. At the peak of the disease or pandemic back in 2020, it was hard to pinpoint the ground zero of the outbreak. Although the first outbreak was observed on the West coast, especially in Washington state, it was unclear on how the disease spread through the rest of the country.
+      The graph is a mere representation of the death toll in each single state for the year 2020 only, and didn't intend to showcase or study any underlying health conditions associated with the Covid-19 death neither investigating the origins of the outbreak.</p>
+      <p id="colorblue">This webpage is a tool for the users to learn more about the Coronavirus and get the resources they might need to protect themselves against the virus or disease. </p>
     
-
-    <label for="dropdown">Filter Selection</label>
+    </div>
+  
+    <br>
+    
+    <label for="dropdown">Select State 1</label>
     <select id="dropdown" name="dropdown"></select>
+
+    <label for="dropdown2">Select State 2</label>
+    <select id="dropdown2" name="dropdown2"></select>
+
     <div id="container"> </div>
     <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
     
-
+    <h5>Data Source:  <a href="https://bit.ly/3kJ20N5" target="_blank">"The Covid Tracking Project"</a></h5>
 
 
     <div class="article">
@@ -76,10 +89,14 @@
           </ul>
           If you have a chronic medical condition, you may have a higher risk of serious illness. Check with your health care provider about other ways to protect yourself.</p>
         </ul>
-          <h3>What can I do if I have or may have COVID-19?</h3>
+      </p>
+
+        <h3>What can I do if I have or may have COVID-19?</h3>
           <p>If you develop symptoms or you've been exposed to the virus that causes COVID-19, contact your health care provider for medical advice. Your health care provider will likely recommend that you get tested for COVID-19. If you have emergency COVID-19 symptoms, such as trouble breathing, seek care immediately. If you need to go to a hospital, call ahead so that health care providers can take steps to ensure that others aren't exposed.
             Take the following precautions to avoid spreading the virus that causes COVID-19:
-          <ul><li>Stay home from work, school and public areas and stay in isolation, except to get medical care.</li>
+          
+        <ul>
+          <li>Stay home from work, school and public areas and stay in isolation, except to get medical care.</li>
           <li>Avoid public transportation, taxis and ride-hailing services.</li>
           <li>Wear a cloth face mask around other people or pets.</li>
           <li>Wash your hands frequently with soap and water for at least 20 seconds.</li>
@@ -87,11 +104,12 @@
           <li>Use a separate bedroom and bathroom if possible.</li>
           <li>Avoid sharing dishes, glasses, bedding and other household items.</li>
           <li>Clean and disinfect often-touched surfaces daily.</li>
-          </ul>
-          </p>
-    
-        </div>
+        </ul>
+       </p>
+    </div>
+
     <h5>Data Source:  <a href="https://mayocl.in/3yaU1A2" target="_blank">"Mayo Clinic"</a></h5>
+    
     <div id="footer">&copy;Prudence Brou Graduate Center 2022 &ndash; All Rights Reserved</div>
   </body>
 </html>

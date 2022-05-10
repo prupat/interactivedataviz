@@ -1,9 +1,10 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * .6,
+const width = window.innerWidth * .45,
       height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
-const formatDate = d3.timeFormat("%b");
+//const formatDate = d3.timeFormat("%b");
+const formatDate = d3.timeParse("%b-%y");
 
 // // since we use our scales in multiple functions, they need global scope
       let svg,
@@ -30,7 +31,7 @@ let state = {
 d3.csv('../data/CovidData.csv', d => {
   
   return {
-       Month: new Date (d.Month),
+       Month: new Date (formatDate(d.Month)),
        State: d.State,
        DeathToll: +d.DeathToll
   }
@@ -57,17 +58,26 @@ function init() {
         yScale = d3.scaleLinear()
                    .domain([0, d3.max(state.data, d=> d.DeathToll)])
                    .range([height-margin.bottom, margin.top])
+                   .nice()
 
 
         xAxis = d3.axisBottom(xScale)
-                  .tickFormat(d3.timeFormat("%b"))
-                  .ticks(7)
+                .tickFormat(d3.timeFormat("%b"))
+                .ticks(12)
+        
+                // axis.ticks(d3.timeMonth, 1)
+                // .tickFormat(d3.timeFormat('%b'));
+
+                // <head>
+                // <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
                   
 
         yAxis = d3.axisLeft(yScale)
 
 
       const selectElement = d3.select("#dropdown")
+     
 
       selectElement.selectAll("option")
                    .data(["Select a State", ...new Set(state.data.map(d => d.State))])
@@ -79,7 +89,10 @@ function init() {
          state.selection = event.target.value
          console.log("updated state = ", state)
          draw();
+         
+        
       })
+      
     
         svg = d3.select("#container")
                 .append("svg")
@@ -97,7 +110,7 @@ function init() {
          yAxisGroup = svg.append("g")
                         .style("font", "14px times")
                         .attr("transform", `translate(${margin.left}, ${0})`)
-                        .call(yAxis)
+                        .call(yAxis.scale(yScale.nice()))
 
 
            svg.append("text")
@@ -110,7 +123,7 @@ function init() {
           svg.append("text")
              .attr("class", "yLabel")
              .attr("transform", "rotate(-90)")
-             .attr("y", 10)
+             .attr("y", 15)
              .attr("x", 0 - (height/2))
              .attr("fill", "blue")
              .text("Death Toll")
@@ -166,9 +179,12 @@ function draw(){
         .attr("opacity", 0.5)
           
         .on("mouseover", function(event,d,i){
-                return tooltip
-                .html(`<div>Death Toll: ${d.DeathToll} </div>`) 
-                .style("visibility", "visible");})
+                 return tooltip
+                .html(`<div>Death Toll: ${d.DeathToll}</div>`) 
+                .style("visibility", "visible")
+                //.style("opacity", .8)
+                //.style("background", tipColor)
+              })
 
         .on("mousemove", function(event){
                return tooltip.style("top", (event.pageY-10)+"px")
@@ -176,6 +192,14 @@ function draw(){
                 
         .on("mouseout", function(){
                 return tooltip.style("visibility", "hidden");})
+
+  // .on("mouseover", function(event,d,i){
+  //   tooltip
+  //   .html(`<div>activity: ${d.activity}</div><div>sightings: ${d.count}</div>`)
+  //   .style("visibility", "visible")
+  //   .style("opacity", .8)
+  //   .style("background", tipColor)
+
 }
 
 

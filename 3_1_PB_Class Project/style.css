@@ -1,5 +1,5 @@
 body{
-  font-family:Calibri, san-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size:medium;
   width:960px;
   margin:10px auto;
@@ -35,7 +35,20 @@ h3{
       color: blue;
     }
 
-
+.intro h4{
+  font-size:large;
+  color: red;
+  letter-spacing:1px;
+  margin:0;
+  border-bottom: solid black
+}
+ h5{
+  margin-bottom: 0;
+ }
+#colorblue{
+  color: blue;
+  font-weight: bold;
+}
   
 #navigationBar li{
   display:inline;
