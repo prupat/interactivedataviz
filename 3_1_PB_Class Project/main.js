@@ -4,7 +4,7 @@ const width = window.innerWidth * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
 //const formatDate = d3.timeFormat("%b");
-const formatDate = d3.timeParse("%b-%y");
+const formatDate = d3.timeParse("%y-%b");
 
 // // since we use our scales in multiple functions, they need global scope
 let svg,
