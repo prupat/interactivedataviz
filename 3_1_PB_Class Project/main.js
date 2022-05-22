@@ -3,10 +3,10 @@ const width = window.innerWidth * .5,
       height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
-//const formatDate = d3.timeFormat("%b");
+// Declare date format
 const formatDate = d3.timeParse("%y-%b");
 
-// // since we use our scales in multiple functions, they need global scope
+// since we use our scales in multiple functions, they need global scope
 let svg,
   xScale, 
   yScale,
@@ -135,7 +135,8 @@ function init() {
               .attr("class", "xLabel")
               .attr("y", height-10)
               .attr("x", width/2)
-              .attr("fill", "blue")
+              .attr("fill", "black")
+              .attr("font-weight", "bold")
               .text("Year 2020", 3.5)    
               
           svg.append("text")
@@ -143,7 +144,8 @@ function init() {
              .attr("transform", "rotate(-90)")
              .attr("y", 15)
              .attr("x", 0 - (height/2))
-             .attr("fill", "blue")
+             .attr("fill", "black")
+             .attr("font-weight", "bold")
              .text("Death Toll")
             
           
@@ -157,6 +159,7 @@ function init() {
                      .text("tooltip");
 
     }
+
 function draw(){
 
       const filteredData = state.data
@@ -171,15 +174,11 @@ function draw(){
 
       const newFilter2 = d3.max(filteredData2, d => d.DeathToll)    
       
-      
-      //if (newFilter2 == false) {newFilter2=[0]}
 
        const maxUp = Math.max(newFilter, newFilter2)
-       //console.log('maxUp: ', maxUp)
 
 
        yScale.domain([0, maxUp])
-     //yScale.domain([0, d3.max(filteredData,  d => d.DeathToll)])
       
 
       yAxisGroup.transition()
@@ -195,7 +194,8 @@ function draw(){
 
 
 // Draw the line chart
-      svg.selectAll(".line")
+if(state2.selection != "" & state.selection != ""){ 
+       svg.selectAll(".line")
          .data([filteredData, filteredData2])
          .join("path")
          .attr("class", "line")
@@ -210,26 +210,23 @@ function draw(){
          .attr("d", d => lineGen(d))
 
         
+              
 // Add some connection points for 1st line
       svg.selectAll(".circle-point")
-        .data(filteredData)
-        .attr("fill", "#1f77b4")  
+        .data(filteredData) 
         .join("circle")     
         .attr("class", "circle-point")
         .attr("r", "5")
         .attr("cx", d => xScale(d.Month))
         .attr("cy", d => yScale(d.DeathToll))
-        //.on("click", function(d, i) {
-        //  d3.selectAll(".circle-point").style("visibility", "visible")
-   
-        
-                 
+        .attr("fill", "#1f77b4") 
+                         
         .on("mouseover", function(event,d,i){
                  return tooltip
                 .html(`<div>Death Toll: ${d.DeathToll}</div><div>State: ${d.State}</div>`) 
                 .style("visibility", "visible")
                 .style("opacity", .8)
-                .style("background", tipColor)
+                .style("background", "#be93d4")
               })
 
         .on("mousemove", function(event){
@@ -238,6 +235,7 @@ function draw(){
                 
         .on("mouseout", function(){
                 return tooltip.style("visibility", "hidden");}) 
+
 
 // Add connection points for 2nd line
 svg.selectAll(".circle-point2")
@@ -254,7 +252,7 @@ svg.selectAll(".circle-point2")
         .html(`<div>Death Toll: ${d.DeathToll}</div><div>State: ${d.State}</div>`) 
         .style("visibility", "visible")
         .style("opacity", .8)
-        .style("background", tipColor)
+        .style("background", "#be93d4")
       })
 
 .on("mousemove", function(event){
@@ -264,7 +262,7 @@ svg.selectAll(".circle-point2")
 .on("mouseout", function(){
         return tooltip.style("visibility", "hidden");}) 
         
-
+}
 }
 
 

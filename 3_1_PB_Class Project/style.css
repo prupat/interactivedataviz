@@ -24,7 +24,7 @@ h1{
 h2{
       font-family:"Century Gothic", Calibri, sans-serif;
       font-weight:400;
-      color: red;
+      color: #f95d6a;
       font-weight: bold;
       letter-spacing:1px;
       margin:0;
@@ -32,12 +32,12 @@ h2{
     }
 
 h3{
-      color: blue;
+      color: steelblue;
     }
 
 .intro h4{
   font-size:large;
-  color: red;
+  color: #f95d6a;
   letter-spacing:1px;
   margin:0;
   border-bottom: solid black
@@ -48,10 +48,14 @@ h3{
  }
 
 #colorblue{
-  color: blue;
+  color: steelblue;
   font-weight: bold;
 }
 
+#colorred{
+  color: #f95d6a;
+  font-weight: bold;
+}
 label{
   font-weight: bold;
 }
@@ -65,7 +69,7 @@ label{
   display:inline;
   font-size:large;
   font-family:"Century Gothic", Calibri, sans-serif;
-  color:blue;
+  color:steelblue;
   letter-spacing:1px;
   text-decoration:none;
   border-bottom:1px dashed black;
@@ -86,7 +90,7 @@ label{
   }
 
 #navigationBar a:hover{
-  border-color:red;
+  border-color:#f95d6a;
   }
   
 
@@ -119,7 +123,7 @@ label{
   border: 10px solid white;
   font-weight: bold;
   font-size: large;
-  color: red;
+  color: #f95d6a;
   border-top: none;
   text-align: center;
   }
