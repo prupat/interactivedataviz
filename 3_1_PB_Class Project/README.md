@@ -1,30 +1,20 @@
-# Section 3 | Tutorial 1 | Quantities and Amounts
+# Graduate Center Class Project: Covid-19 Death Toll Rate by US State
 
-The goals for this tutorial are:
+The goal of this project was to design a webpage with an interactive chart, capturing the death toll in each single state for the year 2020 only. We can then compare the number of cases at a specific point of the year, in this case, the monthly death across states. Although, this project aimed to showcase the death toll related to Covid-19, it didn't, however, plan on showcasing or studying any underlying health conditions associated with the Covid-19 death neither investigating the origins of the outbreak.
 
-- to introduce a new file structure ("boilerplate") that will allow us to incorporate application `state`.
+The project is merely a graphic representation of the actual death toll by means of real data source and a tool for the users to learn more about the Coronavirus and get the resources they might need to protect themselves against the virus or disease.
+     
 
-## Setup + Serve:
+The visualization I created is an interactive line chart using D3.js with the number of deaths on the Y-axis, the months (Jan – Dec) on the X-axis along with 2 filters for comparison purposes. The user will have the ability to compare death toll from different geographic areas; for example, the user can select a state from the East Coast and the West Coast and draw his/her conclusion in term of risk areas based on what he or she's seeing. 
 
-You should already have a local copy of your repository from the [tutorial 1](../1_1_getting_started/README.md). Start by getting a [basic server](../1_1_getting_started/3_BASIC_SERVER.md) up and running. This should include all the changes you've made thus far.
+I used the State Data from the Covid Tracking Project. The file format is an Excel spreadsheet, which I saved as a CSV format. The spreadsheet contains 19,000 records with multiple field names. I did a bit of cleaning by:
+1.	Removing all irrelevant fields out of the scoop of this project
+2.	Inserting a pivot table to group the daily data into an aggregate monthly data (the death toll was recorded daily from February 2020 to March 2021), hence the grouping. 
+3.	Transposing the dataset to have the states displayed in row and the months in column along with the numerical values
 
-Once your local serve is up and reacting to code changes, you're ready to begin working on your tutorial assignment.
-As you're building, don't forget you can always reference the [class code branch](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Fall2021/tree/class/) or the [demo code branch](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Fall2021/tree/demo/) for additional context.
+# Hurdles Encountered 
 
-## Assignment:
-
-- [ ] Implement your own bar chart with a *different dataset* than the one used in our demo. It can be the same dataset you used in the section 2 version of this same tutorial. 
-- [ ] Add axes or labels to this chart, as we learned in other tutorials of the previous section.
-- [ ] Add a color scale to this chart, as we learned in other tutorials of the previous section.
-- [ ] Make intentional design decisions -- colors, sizes, axes, transitions, etc. should illustrate something interesting about or relevant to your data.
-
-**BONUS:**
-
-- [ ] Add an (entering) [transition](https://github.com/d3/d3-transition) to the bar chart. What is the most intuitive way for these bar charts to "appear" on the screen?
-
-## Deploy + Submit
-
-Once you've completed the assignment, use the Github workflow to deploy your work to **your fork** of the course repository. Post the following as a comment to the appropriate post on the [commons site](https://data73200fall2021.commons.gc.cuny.edu/):
-1. a link to your committed code repository (your link will look something like: `https://github.com/[YOUR_USERNAME]/Interactive-Data-Vis-Fall2021/[TUTORIAL_PATH]/`)
-2. a link to your deployed example (your link will look something like: `https://[YOUR_USERNAME].github.io/Interactive-Data-Vis-Fall2021/[TUTORIAL_PATH]/`)
+1. I initially wanted to create a bar chart, but I changed my mind for a line chart. The reason is that my dataset contained some null values, especially for the months of January and February where most of the states either did not report or start reporting the death toll. As a result, the bar charts couldn’t be displayed. 
+2. I had issues plotting the line as the values of the X-axis was stores as string or text format instead of date format
+3. the issue was resolving using the appropritate dateformat library 
 
