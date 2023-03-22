@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+  
+<head>
+    <meta charset="utf-8">
+    <title>Interactive Data Visualization Class Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  
+  
+  
+  
+  <body id="about">
+		
+    <div id="header">
+			<h1>Covid-19 Death Toll by US State</h1>
+      
+      <div class="author"></div>
+      
+			<ul id="navigationBar">
+				<li><a id="NYC-Care" href="https://bit.ly/3MIt9LQ" target="_blank">NYC Care</a></li>
+				<li><a id="Covid-gov" href="https://www.covid.gov/tests" target="_blank">Covid-19 Tests</a></li>
+				<li><a id="Find-Test" href="https://on.ny.gov/3Fc9e5k" target="_blank" >Find a Test Site</a></li>
+				<li><a id="Med-News" href="https://www.medicalnewstoday.com/" target="_blank">Medical News</a></li>
+				<li><a id="about-link" href="https://www.gc.cuny.edu/" target="_blank">About CUNY GC</a></li>
+			</ul>
+		</div>
+   
+    <div class="intro">
+      <h4>Data Visualization Brief</h4>
+    <p>This chart was created using D3.js displaying the Covid-19 death toll rate by state, i.e., across the 50 states & D.C. At the peak of the disease or pandemic back in 2020, it was hard to pinpoint the ground zero of the outbreak. Although the first outbreak was observed on the West coast, especially in Washington state, it was unclear on how the disease spread through the rest of the country.
+      The graph is a mere representation of the death toll in each single state for the year 2020 only, and didn't intend to showcase or study any underlying health conditions associated with the Covid-19 death neither investigating the origins of the outbreak.</p>
+      <p id="colorblue">This webpage is merely a graphic representation of the 2020 death toll using the "Covid Tracking Project State Data". The users will be able to use this platform as they see fit, whether to investigate the social impact of the disease on communities of color, or use it as a mere resource to keep them abreast of the disease. </p>
+      <p id="colorred"> Whether we want to explore the social or health or both aspect(s) of this project, the choice is ours.</p>
+    
+    </div>
+  
+    <br>
+    
+    <label for="dropdown">Select State 1</label>
+    <select id="dropdown" name="dropdown"></select>
+   
+    <label for="dropdown2">Select State 2</label>
+    <select id="dropdown2" name="dropdown2"></select>
+  
+
+    <div id="container"> </div>
+    <script src="../lib/d3.js"></script>
+    <script src="main.js"></script>
+    
+    <h5>Data Source:  <a href="https://bit.ly/3kJ20N5" target="_blank">"The Covid Tracking Project"</a></h5>
+
+
+    <div class="article">
+      <h2>Coronavirus: What is it and how can I protect myself?
+      </h2>
+      <div id="author">Answer From Pritish K. Tosh, M.D.</div>
+      
+      
+      <h3>What is COVID-19 and how can I protect myself?</h3>
+      <p>A new virus called severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) was identified as the cause of a disease outbreak that began in China in 2019. The disease is called coronavirus disease 2019 (COVID-19).
+        In March 2020, the World Health Organization (WHO) declared COVID-19 a pandemic. Public health groups, including the U.S. Centers for Disease Control and Prevention (CDC) and WHO, are monitoring the pandemic and posting updates on their websites. These groups have also issued recommendations for preventing the spread of the virus that causes COVID-19.</p>
+        
+      <h3>How does the coronavirus spread?</h3>
+        <p>Data has shown that the COVID-19 virus mainly spreads from person to person among those in close contact (within about 6 feet, or 2 meters). The virus spreads by respiratory droplets released when someone infected with the virus coughs, sneezes, breathes, sings or talks. These droplets can be inhaled or land in the mouth, nose or eyes of a person nearby.
+          Sometimes the COVID-19 virus can spread when a person is exposed to small droplets or aerosols that stay in the air for several minutes or hours — called airborne transmission.
+          The virus can also spread if you touch a surface with the virus on it and then touch your mouth, nose or eyes. But the risk is low.    
+          The COVID-19 virus can spread from someone who is infected but has no symptoms. This is called asymptomatic transmission. The COVID-19 virus can also spread from someone who is infected but hasn't developed symptoms yet. This is called presymptomatic transmission.    
+          It's possible to get COVID-19 twice or more, but this is uncommon.</p>
+        
+        <h3>What are the symptoms of COVID-19?</h3>
+        <p>COVID-19 symptoms can be very mild to severe. Some people have no symptoms. The most common signs and symptoms are fever, cough, tiredness, and loss of taste or smell.
+          Other signs and symptoms may include shortness of breath, muscle aches, chills, sore throat, headache, chest pain, diarrhea, vomiting and nausea. This list is not complete. Other less common symptoms have also been reported. Symptoms may appear 2 to 14 days after exposure.</p>
+        
+        <h3>Can COVID-19 be prevented?</h3>
+        <p>The U.S. Food and Drug Administration (FDA) has given emergency use authorization to some COVID-19 vaccines in the United States. The FDA has approved the Pfizer-BioNTech COVID-19 vaccine, now called Comirnaty, to prevent COVID-19 in people age 16 and older. The FDA has given emergency use authorization to Pfizer-BioNTech COVID-19 vaccines for ages 5 through 15. The FDA has approved the Moderna vaccine, now called Spikevax, to prevent COVID-19 in people age 18 and older. A vaccine might prevent you from getting COVID-19 or prevent you from becoming seriously ill from COVID-19 if you get the COVID-19 virus.</p>
+        
+        <h3>What can I do to avoid becoming ill?</h3>
+        <p>There are many steps you can take to reduce your risk of infection from the COVID-19 virus and reduce the risk of spreading it to others. WHO and CDC recommend following these precautions:
+
+        <ul>
+          <li>Get vaccinated.</li>
+          <li>Avoid close contact (within about 6 feet, or 2 meters) with anyone who is sick or has symptoms.</li>
+          <li>Keep at least 6 feet (2 meters) of distance between yourself and others when you're in indoor public spaces if you're not fully vaccinated.</li>
+          <li>Avoid crowds and indoor places that have poor airflow (ventilation).</li>
+          <li>Wash your hands often with soap and water for at least 20 seconds. If you're not able to wash your hands, use an alcohol-based hand sanitizer that contains at least 60% alcohol.</li>
+          <li>Wear a face mask in indoor public spaces if you're in an area with a high number of people with COVID-19 in the hospital and new COVID-19 cases, whether or not you're vaccinated. The CDC recommends wearing the most protective mask possible that you'll wear regularly, fits well and is comfortable.</li>
+          <li>Cover your mouth and nose with your elbow or a tissue when you cough or sneeze. Throw away the used tissue. Wash your hands right away.</li>
+          <li>Avoid touching your eyes, nose and mouth.</li>
+          <li>Clean and disinfect often-touched surfaces regularly.</li>
+          </ul>
+          If you have a chronic medical condition, you may have a higher risk of serious illness. Check with your health care provider about other ways to protect yourself.</p>
+        </ul>
+      </p>
+
+        <h3>What can I do if I have or may have COVID-19?</h3>
+          <p>If you develop symptoms or you've been exposed to the virus that causes COVID-19, contact your health care provider for medical advice. Your health care provider will likely recommend that you get tested for COVID-19. If you have emergency COVID-19 symptoms, such as trouble breathing, seek care immediately. If you need to go to a hospital, call ahead so that health care providers can take steps to ensure that others aren't exposed.
+            Take the following precautions to avoid spreading the virus that causes COVID-19:
+          
+        <ul>
+          <li>Stay home from work, school and public areas and stay in isolation, except to get medical care.</li>
+          <li>Avoid public transportation, taxis and ride-hailing services.</li>
+          <li>Wear a cloth face mask around other people or pets.</li>
+          <li>Wash your hands frequently with soap and water for at least 20 seconds.</li>
+          <li>Isolate yourself as much as possible from other people or pets in your home.</li>
+          <li>Use a separate bedroom and bathroom if possible.</li>
+          <li>Avoid sharing dishes, glasses, bedding and other household items.</li>
+          <li>Clean and disinfect often-touched surfaces daily.</li>
+        </ul>
+       </p>
+    </div>
+
+    <h5>Data Source:  <a href="https://mayocl.in/3yaU1A2" target="_blank">"Mayo Clinic"</a></h5>
+    
+    <div id="footer">&copy;Prudence Brou Graduate Center 2022 &ndash; All Rights Reserved</div>
+  </body>
+</html>
