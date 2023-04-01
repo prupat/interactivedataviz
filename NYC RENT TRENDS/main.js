@@ -50,7 +50,7 @@ d3.csv('../data/rent_data.csv', function(data) {
     .range(d3.schemeSet2);
 
   // Create a nested data structure by City, borough and year
-  const nestedData = d3.nest()
+  const nestedData = d3.groupBy()
     .key(function(d) { return d.City; })
     .key(function(d) { return d.Borough; })
     .key(function(d) { return d.Year; })
