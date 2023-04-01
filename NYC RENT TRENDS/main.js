@@ -3,14 +3,17 @@ const width = window.innerWidth * .5,
       height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
+let svg,
+    xScale, 
+    yScale 
+    ;      
+
 // append the svg object to the body of the page
- const svg = d3.select("#chart")
+ svg = d3.select("#chart")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",
-          `translate(${margin.left},${margin.top})`);
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
   
   let borough = {
             data: [],
@@ -55,11 +58,11 @@ d3.csv('../data/rent_data.csv', function(data) {
     .entries(data);
 
   // Set the x and y scales
-  const x = d3.scaleLinear()
+  xScale = d3.scaleLinear()
     .domain(d3.extent(data, function(d) { return +d.Year; }))
     .range([0, width]);
 
-  const y = d3.scaleLinear()
+  yScale = d3.scaleLinear()
     .domain([0, d3.max(data, function(d) { return +d.RentPrice; })])
     .range([height, 0]);
 
