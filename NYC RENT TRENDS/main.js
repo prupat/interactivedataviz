@@ -1,10 +1,10 @@
 // set the dimensions and margins of the graph
-var margin = {top: 50, right: 50, bottom: 50, left: 50},
+const margin = {top: 50, right: 50, bottom: 50, left: 50},
     width = 600 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#chart")
+const svg = d3.select("#chart")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -16,26 +16,26 @@ var svg = d3.select("#chart")
 d3.csv("rent_data.csv", function(data) {
 
   // Filter data by borough
-  var boroughs = d3.map(data, function(d){return(d.Borough)}).keys()
+  const boroughs = d3.map(data, function(d){return(d.Borough)}).keys()
 
   // Create a color scale for each borough
-  var color = d3.scaleOrdinal()
+  const color = d3.scaleOrdinal()
     .domain(boroughs)
     .range(d3.schemeSet2);
 
   // Create a nested data structure by borough and year
-  var nestedData = d3.nest()
+  const nestedData = d3.nest()
     .key(function(d) { return d.Borough; })
     .key(function(d) { return d.Year; })
     .rollup(function(v) { return d3.mean(v, function(d) { return d.RentPrice; }); })
     .entries(data);
 
   // Set the x and y scales
-  var x = d3.scaleLinear()
+  const x = d3.scaleLinear()
     .domain(d3.extent(data, function(d) { return +d.Year; }))
     .range([0, width]);
 
-  var y = d3.scaleLinear()
+  const y = d3.scaleLinear()
     .domain([0, d3.max(data, function(d) { return +d.RentPrice; })])
     .range([height, 0]);
 
@@ -64,7 +64,7 @@ d3.csv("rent_data.csv", function(data) {
       })
 
   // Add a legend
-  var legend = svg.selectAll(".legend")
+  const legend = svg.selectAll(".legend")
     .data(boroughs)
     .enter()
     .append("g")
