@@ -50,12 +50,13 @@ d3.csv('../data/rent_data.csv', function(data) {
     .range(d3.schemeSet2);
 
   // Create a nested data structure by City, borough and year
-  const nestedData = d3.groupBy()
-    .key(function(d) { return d.City; })
-    .key(function(d) { return d.Borough; })
-    .key(function(d) { return d.Year; })
-    .rollup(function(v) { return d3.mean(v, function(d) { return d.RentPrice; }); })
-    .entries(data);
+  const nestedData = d3.group(data, d => d.City, d => d.Borough, d => d.Year)
+  .map((values, key) => ({
+    City: key[0],
+    Borough: key[1],
+    Year: key[2],
+    RentPrice: d3.mean(values, d => d.RentPrice)
+  }));
 
   // Set the x and y scales
   xScale = d3.scaleLinear()
