@@ -11,17 +11,39 @@ const width = window.innerWidth * .5,
     .append("g")
     .attr("transform",
           `translate(${margin.left},${margin.top})`);
+  
+  let borough = {
+            data: [],
+              selection: "",
+          };
+          
+  let city ={
+            data: [],
+              selection: "",
+          };
 
 // Read the data
 d3.csv('../data/rent_data.csv', function(data) {
 
   // Filter data by borough
-  const boroughs = Array.from(d3.group(data, d => d.Borough).keys());
+  const filteredData = borough.data
+            .filter(d => d.Borough === borough.selection)
+            
+       
+      const newFilter = d3.max(filteredData, d => d.RentPrice)
+
+     
+      const filteredData2 = city.data
+            .filter(d => d.City === city.selection)     
+
+      const newFilter2 = d3.max(filteredData2, d => d.RentPrice)   
+  
+  //const boroughs = Array.from(d3.group(data, d => d.Borough).keys());
 
 
   // Create a color scale for each borough
   const color = d3.scaleOrdinal()
-    .domain(boroughs)
+    .domain(borough)
     .range(d3.schemeSet2);
 
   // Create a nested data structure by City, borough and year
