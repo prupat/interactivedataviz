@@ -4,11 +4,11 @@ const margin = {top: 50, right: 50, bottom: 50, left: 50},
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
- let svg = d3.select("#chart")
-  .append("svg")
+ const svg = d3.select("#chart")
+    .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform",
           `translate(${margin.left},${margin.top})`);
 
@@ -23,8 +23,9 @@ d3.csv('../data/rent_data.csv', function(data) {
     .domain(boroughs)
     .range(d3.schemeSet2);
 
-  // Create a nested data structure by borough and year
+  // Create a nested data structure by City, borough and year
   const nestedData = d3.nest()
+    .key(function(d) { return d.City; })
     .key(function(d) { return d.Borough; })
     .key(function(d) { return d.Year; })
     .rollup(function(v) { return d3.mean(v, function(d) { return d.RentPrice; }); })
@@ -50,13 +51,13 @@ d3.csv('../data/rent_data.csv', function(data) {
 
   // Add a line for each borough
   svg.selectAll(".line")
-    .data(nestedData)
-    .enter()
-    .append("path")
-      .attr("fill", "none")
-      .attr("stroke", function(d){ return color(d.key) })
-      .attr("stroke-width", 2)
-      .attr("d", function(d){
+     .data(nestedData)
+     .enter()
+     .append("path")
+     .attr("fill", "red")
+     .attr("stroke", function(d){ return color(d.key) })
+     .attr("stroke-width", 2)
+     .attr("d", function(d){
         return d3.line()
           .x(function(d) { return x(d.key); })
           .y(function(d) { return y(d.value); })
