@@ -4,7 +4,7 @@ const margin = {top: 50, right: 50, bottom: 50, left: 50},
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-  svg = d3.select("#chart")
+ let svg = d3.select("#chart")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
