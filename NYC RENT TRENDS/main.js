@@ -16,7 +16,8 @@ const width = window.innerWidth * .5,
 d3.csv('../data/rent_data.csv', function(data) {
 
   // Filter data by borough
-  const boroughs = d3.map(data, function(d){return(d.Borough)}).keys()
+  const boroughs = Array.from(d3.group(data, d => d.Borough).keys());
+
 
   // Create a color scale for each borough
   const color = d3.scaleOrdinal()
