@@ -46,7 +46,7 @@ d3.csv('../data/rent_data.csv', function(data) {
 
   // Create a color scale for each borough
   const color = d3.scaleOrdinal()
-    .domain(borough)
+    .domain(borough.data.map(d => d.Borough))
     .range(d3.schemeSet2);
 
   // Create a nested data structure by City, borough and year
@@ -69,30 +69,30 @@ d3.csv('../data/rent_data.csv', function(data) {
   // Add the x axis
   svg.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(xScale));
 
   // Add the y axis
   svg.append("g")
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yScale));
 
   // Add a line for each borough
   svg.selectAll(".line")
      .data(nestedData)
      .enter()
      .append("path")
-     .attr("fill", "red")
+     .attr("fill", "none")
      .attr("stroke", function(d){ return color(d.key) })
      .attr("stroke-width", 2)
      .attr("d", function(d){
         return d3.line()
-          .x(function(d) { return x(d.key); })
-          .y(function(d) { return y(d.value); })
+          .x(function(d) { return xScale(d.key); })
+          .y(function(d) { return yScale(d.value); })
           (d.values)
       })
 
   // Add a legend
   const legend = svg.selectAll(".legend")
-    .data(boroughs)
+    .data(borough.data.map(d => d.Borough))
     .enter()
     .append("g")
     .attr("class", "legend")
