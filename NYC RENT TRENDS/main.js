@@ -13,7 +13,7 @@ const svg = d3.select("#chart")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Read the data
-d3.csv("rent_data.csv", function(data) {
+d3.csv('rent_data.csv', function(data) {
 
   // Filter data by borough
   const boroughs = d3.map(data, function(d){return(d.Borough)}).keys()
