@@ -1,268 +1,88 @@
-/* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * .5,
-      height = window.innerHeight * .5,
-      margin = {top: 20, bottom: 60, left: 80, right: 60};
+// set the dimensions and margins of the graph
+var margin = {top: 50, right: 50, bottom: 50, left: 50},
+    width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
-// Declare date format
-const formatDate = d3.timeParse("%y-%b");
+// append the svg object to the body of the page
+var svg = d3.select("#chart")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
 
-// since we use our scales in multiple functions, they need global scope
-let svg,
-  xScale, 
-  yScale,
-  xAxis,
-  yAxis,
-  xAxisGroup,
-  yAxisGroup
-  ;
-  
-//declare tooltip variable
-let tooltip;
+// Read the data
+d3.csv("rent_data.csv", function(data) {
 
-       
+  // Filter data by borough
+  var boroughs = d3.map(data, function(d){return(d.Borough)}).keys()
 
-/* APPLICATION STATE */
-let state = {
-  data: [],
-    selection: "",
-};
+  // Create a color scale for each borough
+  var color = d3.scaleOrdinal()
+    .domain(boroughs)
+    .range(d3.schemeSet2);
 
-let state2 ={
-  data: [],
-    selection: "",
-};
+  // Create a nested data structure by borough and year
+  var nestedData = d3.nest()
+    .key(function(d) { return d.Borough; })
+    .key(function(d) { return d.Year; })
+    .rollup(function(v) { return d3.mean(v, function(d) { return d.RentPrice; }); })
+    .entries(data);
 
-/* LOAD DATA */
+  // Set the x and y scales
+  var x = d3.scaleLinear()
+    .domain(d3.extent(data, function(d) { return +d.Year; }))
+    .range([0, width]);
 
-d3.csv('../data/CovidData.csv', d => {
-  
-  return {
-       Month: new Date (formatDate(d.Month)),
-       State: d.State,
-       DeathToll: +d.DeathToll
-  }
-})
-   .then(data => {
-     console.log("loaded data:", data);
-     state.data = data;
-     state2.data = data;
-     init();
-   
- });
+  var y = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return +d.RentPrice; })])
+    .range([height, 0]);
 
-/* INITIALIZING FUNCTION */
-// this will be run *one time* when the data finishes loading in
-function init() {
-  
-  
-  /* SCALES */
-        
-        xScale = d3.scaleTime()
-                   .domain(d3.extent(state.data, d => d.Month))
-                   .range([margin.left, width-margin.right])
-        
-        
-        yScale = d3.scaleLinear()
-                   .domain([0, d3.max(state.data, d=> d.DeathToll)])
-                   .range([height-margin.bottom, margin.top])
-                   .nice()
-        
-        yScale = d3.scaleLinear()
-                   .domain([0, d3.max(state2.data, d=> d.DeathToll)])
-                   .range([height-margin.bottom, margin.top])
-                   .nice()           
+  // Add the x axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
 
-        xAxis = d3.axisBottom(xScale)
-                .tickFormat(d3.timeFormat("%b"))
-                .ticks(12)
-        
+  // Add the y axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
 
-        yAxis = d3.axisLeft(yScale)
-
-
-      const selectElement = d3.select("#dropdown")
-     
-      selectElement.selectAll("option")
-                   .data(["Select a State", ...new Set(state.data.map(d => d.State))])
-                   .join("option")
-                   .attr("attr", d => d)
-                   .text(d => d)
-
-      selectElement.on("change", event =>{
-         state.selection = event.target.value
-         console.log("updated state = ", state)
-         draw();
-            
-      });
-
-      const selectElement2 = d3.select("#dropdown2")
-     
-
-      selectElement2.selectAll("option")
-                   .data(["Select a State", ...new Set(state2.data.map(d => d.State))])
-                   .join("option")
-                   .attr("attr", d => d)
-                   .text(d => d)
-
-      selectElement2.on("change", event =>{
-         state2.selection = event.target.value
-         console.log("updated state = ", state2)
-         draw();
-         
-        });
-    
-        svg = d3.select("#container")
-                .append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                          
-         
-         xAxisGroup = svg.append("g")
-                        .attr("class", "xAxis")
-                        .style("font", "14px times")
-                        .attr("transform", `translate(${0}, ${height - margin.bottom})`)
-                        .call(xAxis)   
-                        
-         yAxisGroup = svg.append("g")
-                        .attr("class", "yAxis")
-                        .style("font", "14px times")
-                        .attr("transform", `translate(${margin.left}, ${0})`)
-                        .call(yAxis.scale(yScale.nice()))
-                        //.call(yAxis)
-
-//ADD LABELS
-           svg.append("text")
-              .attr("class", "xLabel")
-              .attr("y", height-10)
-              .attr("x", width/2)
-              .attr("fill", "black")
-              .attr("font-weight", "bold")
-              .text("Year 2020", 3.5)    
-              
-          svg.append("text")
-             .attr("class", "yLabel")
-             .attr("transform", "rotate(-90)")
-             .attr("y", 15)
-             .attr("x", 0 - (height/2))
-             .attr("fill", "black")
-             .attr("font-weight", "bold")
-             .text("Death Toll")
-            
-          
-         // Add a tooltip               
-         tooltip = d3.select("body")
-                     .append("div")
-                     .attr("class", "tooltip")
-                     .style("z-index", "10")
-                     .style("position", "absolute")
-                     .style("visibility", "hidden")
-                     .text("tooltip");
-
-    }
-
-function draw(){
-
-      const filteredData = state.data
-            .filter(d => d.State === state.selection)
-            
-       
-      const newFilter = d3.max(filteredData, d => d.DeathToll)
-
-     
-      const filteredData2 = state2.data
-            .filter(d => d.State === state2.selection)     
-
-      const newFilter2 = d3.max(filteredData2, d => d.DeathToll)    
-      
-
-       const maxUp = Math.max(newFilter, newFilter2)
-
-
-       yScale.domain([0, maxUp])
-      
-
-      yAxisGroup.transition()
-                .duration(1000)
-                .call(yAxis.scale(yScale))
-
-
-      const lineGen = d3.line()
-            .x(d => xScale(d.Month))
-            .y(d => yScale(d.DeathToll))
-
-      const colors = d3.scaleOrdinal(d3.schemeCategory10);      
-
-
-// Draw the line chart
-if(state2.selection != "" & state.selection != ""){ 
-       svg.selectAll(".line")
-         .data([filteredData, filteredData2])
-         .join("path")
-         .attr("class", "line")
-         .attr("d", lineGen)
-         .attr("stroke", function(d,i){
-           return colors(i)})
-         .attr("stroke-width",  function(d){ 
-           return "3";})
-         .attr("fill", "none")
-         .transition()
-         .duration(1000)
-         .attr("d", d => lineGen(d))
-
-        
-              
-// Add some connection points for 1st line
-      svg.selectAll(".circle-point")
-        .data(filteredData) 
-        .join("circle")     
-        .attr("class", "circle-point")
-        .attr("r", "5")
-        .attr("cx", d => xScale(d.Month))
-        .attr("cy", d => yScale(d.DeathToll))
-        .attr("fill", "#1f77b4") 
-                         
-        .on("mouseover", function(event,d,i){
-                 return tooltip
-                .html(`<div>Death Toll: ${d.DeathToll}</div><div>State: ${d.State}</div>`) 
-                .style("visibility", "visible")
-                .style("opacity", .8)
-                .style("background", "#be93d4")
-              })
-
-        .on("mousemove", function(event){
-               return tooltip.style("top", (event.pageY-10)+"px")
-                             .style("left", (event.pageX+10) + "px");})       
-                
-        .on("mouseout", function(){
-                return tooltip.style("visibility", "hidden");}) 
-
-
-// Add connection points for 2nd line
-svg.selectAll(".circle-point2")
-.data(filteredData2)
-.join("circle")
-  .attr("class", "circle-point2")
-  .attr("r", "5")
-  .attr("cx", d => xScale(d.Month))
-  .attr("cy", d => yScale(d.DeathToll))
-  .attr("fill", "#ff7f0e")
-         
-.on("mouseover", function(event,d,i){
-         return tooltip
-        .html(`<div>Death Toll: ${d.DeathToll}</div><div>State: ${d.State}</div>`) 
-        .style("visibility", "visible")
-        .style("opacity", .8)
-        .style("background", "#be93d4")
+  // Add a line for each borough
+  svg.selectAll(".line")
+    .data(nestedData)
+    .enter()
+    .append("path")
+      .attr("fill", "none")
+      .attr("stroke", function(d){ return color(d.key) })
+      .attr("stroke-width", 2)
+      .attr("d", function(d){
+        return d3.line()
+          .x(function(d) { return x(d.key); })
+          .y(function(d) { return y(d.value); })
+          (d.values)
       })
 
-.on("mousemove", function(event){
-       return tooltip.style("top", (event.pageY-10)+"px")
-                     .style("left", (event.pageX+10) + "px");})       
-        
-.on("mouseout", function(){
-        return tooltip.style("visibility", "hidden");}) 
-        
-}
-}
+  // Add a legend
+  var legend = svg.selectAll(".legend")
+    .data(boroughs)
+    .enter()
+    .append("g")
+    .attr("class", "legend")
+    .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+    .attr("x", width - 18)
+    .attr("width", 18)
+    .attr("height", 18)
+    .style("fill", function(d) { return color(d); });
+
+  legend.append("text")
+    .attr("x", width - 24)
+    .attr("y", 9)
+    .attr("dy", ".35em")
+    .style("text-anchor", "end")
+    .text(function(d) { return d; });
+});
 
 
