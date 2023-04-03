@@ -23,7 +23,6 @@ const svg = d3.select("#chart")
 const parseTime = d3.timeParse("%d-%b");
 
 
-
 // Set the ranges
 const x = d3.scaleTime().range([0, width]);
 const y = d3.scaleLinear().range([height, 0]);
