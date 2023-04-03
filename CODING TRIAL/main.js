@@ -4,7 +4,7 @@ width = 960 - margin.left - margin.right,
 height = 500 - margin.top - margin.bottom;
 
 // declare and append the tooltip
-const tooltip = d3.select("body")
+const tooltip = d3.select("#chart")
 .append("div")
 .attr("class", "tooltip")
 .style("opacity", 0);
@@ -20,7 +20,8 @@ const svg = d3.select("#chart")
 
 
 // Parse the date / time
-const parseTime = d3.timeParse("%Y-%m");
+//const parseTime = d3.timeParse("%Y-%m");
+const formatDate = d3.timeParse("%y-%b");
 
 
 // Set the ranges
