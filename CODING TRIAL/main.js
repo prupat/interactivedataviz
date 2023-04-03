@@ -20,8 +20,8 @@ const svg = d3.select("#chart")
 
 
 // Parse the date / time
-//const parseTime = d3.timeParse("%Y-%m");
-const formatDate = d3.timeParse("%y-%b");
+const parseTime = d3.timeParse("%d-%b");
+
 
 
 // Set the ranges
