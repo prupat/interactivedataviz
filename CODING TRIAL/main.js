@@ -10,7 +10,7 @@ const tooltip = d3.select("body")
 .style("opacity", 0);
 
 // Append the SVG object to the body of the page
-const svg = d3.select("body")
+const svg = d3.select("#chart")
 .append("svg")
 .attr("width", width + margin.left + margin.right)
 .attr("height", height + margin.top + margin.bottom)
