@@ -1,91 +1,102 @@
- /* CONSTANTS AND GLOBALS */
-// const width = ,
-//   height = ,
-//   margin = ;
+ // Set the dimensions of the chart
+const margin = {top: 20, right: 20, bottom: 30, left: 50},
+width = 960 - margin.left - margin.right,
+height = 500 - margin.top - margin.bottom;
 
-const data =[
-  {Year:2010, weather:80, Calories: 210},
-  {Year:2011, weather:130, Calories: 150},
-  {Year:2012, weather:40, Calories: 200},
-  {Year:2013, weather:70, Calories: 180},
-  {Year:2014, weather:100, Calories: 160},
-  {Year:2015, weather:90, Calories: 190}
-  
-];
-      
-const width = 600,
-      height = 500,
-      spacing = 60,
-      margin = {top: 20, right: 10, bottom: 20, left: 10};
-      
+// declare and append the tooltip
+const tooltip = d3.select("body")
+.append("div")
+.attr("class", "tooltip")
+.style("opacity", 0);
 
-const xScale = d3.scaleLinear()
-                 .domain([d3.min(data, function(d){
-                   return d.Year;}),
-                         d3.max(data, function(d){
-                    return d.Year;})])
-                .range([0, width - spacing]);
-
-const yScale = d3.scaleLinear()
-                .range([height - spacing, 0]);               
-                
-const svg = d3.select("#container")
-                 .style('background', '#c9d7d6')
-                 .append("svg")
-                 .attr("width", width)
-                 .attr("height", height)
-                 .append("g")
-                 .attr("transform", "translate(" + spacing/2 + ", " + spacing/2 + ")");
-
-svg.append("g")
-    .attr("transform", "translate(0," + (height - spacing) + ")")
-    .call(d3.axisBottom(xScale).ticks(6).tickFormat(d3.format("d")));
-
-const stack = d3.stack().keys(["weather", "Calories"]);
-const colors = ["royalblue", "green"];
-const stackedData = stack(data);
-
-yScale.domain([0, d3.max(stackedData[stackedData.length-1],
-                        function(d){
-                          return d[1]})]);
-svg.append("g")
-  .call(d3.axisLeft(yScale));
-
-const area = d3.area()
-                .x(function(d){
-                  return xScale(d.data.Year);})
-                .y0(function(d){return yScale(d[0]);})
-                .y1(function(d){return yScale(d[1]);});
-
-const series = svg.selectAll("g.series")
-                  .data(stackedData)
-                  .enter().append("g")
-                  .attr("class", "series");
-      series.append("path")
-            .style("fill", function (d,i){
-                 return colors[i];})
-            .attr("d", function(d){
-                return area (d);});
+// Append the SVG object to the body of the page
+const svg = d3.select("body")
+.append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform",
+      "translate(" + margin.left + "," + margin.top + ")");
 
 
-/* LOAD DATA */
-//d3.csv('[PATH_TO_YOUR_DATA]', d => {
-  //return {
-    // year: new Date(+d.Year, 0, 1),
-    // country: d.Entity,
-    // population: +d.Population
-  //}
-//}).then(data => {
- // console.log('data :>> ', data);
+// Parse the date / time
+const parseTime = d3.timeParse("%Y-%m");
 
-  // SCALES
 
-  // CREATE SVG ELEMENT
+// Set the ranges
+const x = d3.scaleTime().range([0, width]);
+const y = d3.scaleLinear().range([height, 0]);
 
-  // BUILD AND CALL AXES
 
-  // LINE GENERATOR FUNCTION
+// Define the line
+const valueline = d3.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.close); });
 
-  // DRAW LINE
 
-//});
+// Load the data
+d3.csv('../data/rent_data2.csv', function(error, data) {
+  if (error) throw error;
+
+
+  // Format the data
+  data.forEach(function(d) {
+    d.date = parseTime(d.Year + "-" + d.Month);
+    d.close = +d.RentPrice;
+  });
+
+
+  // Filter the data by city and year
+  function filterData(city, year) {
+    return data.filter(function(d) {
+      return d.City === city && d.Year === year;
+    });
+  }
+
+  // Set the default city and year
+  const defaultCity = "All Downtown";
+  const defaultYear = "2010";
+
+
+  // Filter the data by default city and year
+  const filteredData = filterData(defaultCity, defaultYear);
+
+
+  // Scale the range of the data
+  x.domain(d3.extent(filteredData, function(d) { return d.date; }));
+  y.domain([0, d3.max(filteredData, function(d) { return d.close; })]);
+
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+
+  // Add the Y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // Add the valueline path
+  svg.append("path")
+      .data([filteredData])
+      .attr("class", "line")
+      .attr("d", valueline);
+
+
+  // Add the dots
+  svg.selectAll("dot")
+      .data(filteredData)
+      .enter().append("circle")
+      .attr("r", 5)
+      .attr("cx", function(d) { return x(d.date); })
+      .attr("cy", function(d) { return y(d.close); })
+      .on("mouseover", function(d) {
+        tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+        tooltip.html(d.Borough + "<br/>" + "$" + d.close + "<br/>" + d.Year)
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+    })
