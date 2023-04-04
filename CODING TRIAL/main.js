@@ -1,7 +1,11 @@
- // Set the dimensions of the chart
-      const width = window.innerWidth * .5,
-      height = window.innerHeight * .5,
-      margin = {top: 20, bottom: 60, left: 80, right: 60};
+ // Append the SVG object to the body of the page
+      const svg = d3.select("#chart")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
 
       // Load data from CSV file
       d3.csv('../data/rent_data2.csv',(d) => {
@@ -93,13 +97,6 @@
               .x((d) => xScale(d[0]))
               .y((d) => yScale(d[1]));
 
-
-            // Select the SVG element on the page and set its size
-            const svg = d3.select("#chart")
-            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-            .attr("preserveAspectRatio", "xMidYMid")
-            .append("g")
-            .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
             // Create a group element inside the SVG and move it to the right and down
             const g = svg.append("g")
