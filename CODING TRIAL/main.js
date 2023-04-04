@@ -1,3 +1,9 @@
+ /* CONSTANTS AND GLOBALS */
+      const width = window.innerWidth * .5,
+      height = window.innerHeight * .5,
+      margin = {top: 20, bottom: 60, left: 80, right: 60};
+      
+ 
  // Append the SVG object to the body of the page
       const svg = d3.select("#chart")
       .append("svg")
