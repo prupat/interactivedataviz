@@ -6,7 +6,30 @@
   </head>
   
   
-  <body>
+  <body id="about">
+		
+    <div id="header">
+			<h1>Covid-19 Death Toll by US State</h1>
+      
+      <div class="author"></div>
+      
+			<ul id="navigationBar">
+				<li><a id="NYC-Care" href="https://bit.ly/3MIt9LQ" target="_blank">NYC Care</a></li>
+				<li><a id="Covid-gov" href="https://www.covid.gov/tests" target="_blank">Covid-19 Tests</a></li>
+				<li><a id="Find-Test" href="https://on.ny.gov/3Fc9e5k" target="_blank" >Find a Test Site</a></li>
+				<li><a id="Med-News" href="https://www.medicalnewstoday.com/" target="_blank">Medical News</a></li>
+				<li><a id="about-link" href="https://www.gc.cuny.edu/" target="_blank">About CUNY GC</a></li>
+			</ul>
+		</div>
+   
+    <div class="intro">
+      <h4>Data Visualization Brief</h4>
+    <p>This chart was created using D3.js displaying the Covid-19 death toll rate by state, i.e., across the 50 states & D.C. At the peak of the disease or pandemic back in 2020, it was hard to pinpoint the ground zero of the outbreak. Although the first outbreak was observed on the West coast, especially in Washington state, it was unclear on how the disease spread through the rest of the country.
+      The graph is a mere representation of the death toll in each single state for the year 2020 only, and didn't intend to showcase or study any underlying health conditions associated with the Covid-19 death neither investigating the origins of the outbreak.</p>
+      <p id="colorblue">This webpage is merely a graphic representation of the 2020 death toll using the "Covid Tracking Project State Data". The users will be able to use this platform as they see fit, whether to investigate the social impact of the disease on communities of color, or use it as a mere resource to keep them abreast of the disease. </p>
+      <p id="colorred"> Whether we want to explore the social or health or both aspect(s) of this project, the choice is ours.</p>
+    
+    </div>
     <div>
       <label for="year">Select year:</label>
       <select id="year"></select>
@@ -23,6 +46,8 @@
     <div id="chart"></div>
     <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
+  
+    <div id="footer">&copy;Prudence Brou Graduate Center 2022 &ndash; All Rights Reserved</div>
   </body>
 
 </html>
