@@ -95,14 +95,11 @@
 
 
             // Select the SVG element on the page and set its size
-           // const svg = d3.select("#chart")
-             // .attr("width", width + margin.left + margin.right)
-             // .attr("height", height + margin.top + margin.bottom);
-
             const svg = d3.select("#chart")
-                .append("svg")
-                .attr("width", width)
-                .attr("height", height)
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .attr("preserveAspectRatio", "xMidYMid")
+            .append("g")
+            .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
             // Create a group element inside the SVG and move it to the right and down
             const g = svg.append("g")
