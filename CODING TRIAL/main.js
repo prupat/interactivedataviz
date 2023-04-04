@@ -4,24 +4,23 @@
       margin = {top: 20, bottom: 60, left: 80, right: 60};
 
       // Load data from CSV file
-      d3.csv(
-        '../data/rent_data2.csv',
-        (d) => {
-          return ({
+      d3.csv('../data/rent_data2.csv',(d) => {
+          return {
             city: d.City,
             borough: d.Borough,
             year: +d.Year,
             month: d.Month.substring(2),
             rentPrice: +d.RentPrice,
-          });
-        },
-        function (error, data) {
-          if (error) throw error;
+          };
+        
+        }, (error, data) => {
+          if (error)
+            throw error;
 
           // Create options for dropdown lists
           const yearOptions = Array.from(new Set(data.map((d) => d.year))).sort();
           const cityOptions = Array.from(new Set(data.map((d) => d.city))).sort();
-          
+
           // Add options to dropdown lists
           d3.select("#year")
             .selectAll("option")
@@ -94,11 +93,11 @@
               .x((d) => xScale(d[0]))
               .y((d) => yScale(d[1]));
 
-            
+
             // Select the SVG element on the page and set its size
             const svg = d3.select("#chart")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom);
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom);
 
             // Create a group element inside the SVG and move it to the right and down
             const g = svg.append("g")
@@ -120,6 +119,6 @@
               .attr("stroke", "steelblue")
               .attr("stroke-width", 2)
               .attr("d", lineGenerator);
-            }
           }
+        }
       );
