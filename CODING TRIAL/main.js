@@ -94,7 +94,7 @@
 
             const yScale = d3
               .scaleLinear()
-              .domain([1000, 11000])
+              .domain([1000, 12000])
               .range([450, 50]);
 
             // Set up line generator
