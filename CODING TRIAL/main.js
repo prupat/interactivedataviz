@@ -1,12 +1,11 @@
  // Set the dimensions of the chart
-const margin = {top: 20, right: 20, bottom: 30, left: 50},
-width = 960 - margin.left - margin.right,
-height = 500 - margin.top - margin.bottom;
+      const width = window.innerWidth * .5,
+      height = window.innerHeight * .5,
+      margin = {top: 20, bottom: 60, left: 80, right: 60};
 
       // Load data from CSV file
       d3.csv(
-        '../data/rent_data2.csv'
-,
+        '../data/rent_data2.csv',
         (d) => {
           return ({
             city: d.City,
@@ -22,7 +21,7 @@ height = 500 - margin.top - margin.bottom;
           // Create options for dropdown lists
           const yearOptions = Array.from(new Set(data.map((d) => d.year))).sort();
           const cityOptions = Array.from(new Set(data.map((d) => d.city))).sort();
-
+          
           // Add options to dropdown lists
           d3.select("#year")
             .selectAll("option")
@@ -94,6 +93,33 @@ height = 500 - margin.top - margin.bottom;
               .line()
               .x((d) => xScale(d[0]))
               .y((d) => yScale(d[1]));
+
+            
+            // Select the SVG element on the page and set its size
+            const svg = d3.select("#chart")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
+
+            // Create a group element inside the SVG and move it to the right and down
+            const g = svg.append("g")
+              .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+            // Draw the x-axis
+            g.append("g")
+              .attr("transform", `translate(0, ${height})`)
+              .call(d3.axisBottom(xScale));
+
+            // Draw the y-axis
+            g.append("g")
+              .call(d3.axisLeft(yScale));
+
+            // Draw the line chart
+            g.append("path")
+              .datum(groupedData)
+              .attr("fill", "none")
+              .attr("stroke", "steelblue")
+              .attr("stroke-width", 2)
+              .attr("d", lineGenerator);
             }
           }
       );
