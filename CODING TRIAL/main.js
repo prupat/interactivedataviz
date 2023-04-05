@@ -16,11 +16,11 @@
       // Load data from CSV file
       d3.csv('../data/rent_data2.csv',(d) => {
           return {
-            city: d.City,
-            borough: d.Borough,
-            year: +d.Year,
-            month: new Date (formatDate(d.Month.substring(2))),
-            rentPrice: +d.RentPrice,
+            City: d.City,
+            Borough: d.Borough,
+            Year: +d.Year,
+            Month: new Date (formatDate(d.Month)), 
+            RentPrice: +d.RentPrice,
           };
         
         }, (error, data) => {
@@ -28,8 +28,8 @@
             throw error;
 
           // Create options for dropdown lists
-          const yearOptions = Array.from(new Set(data.map((d) => d.year))).sort();
-          const cityOptions = Array.from(new Set(data.map((d) => d.city))).sort();
+          const yearOptions = Array.from(new Set(data.map((d) => d.Year))).sort();
+          const cityOptions = Array.from(new Set(data.map((d) => d.City))).sort();
 
           // Add options to dropdown lists
           d3.select("#year")
@@ -74,15 +74,15 @@
 
             // Filter data based on selected values
             const filteredData = data.filter(
-              (d) => d.year == selectedYear && (d.city == selectedCity || d.city == selectedCity2)
+              (d) => d.Year == selectedYear && (d.City == selectedCity || d.City == selectedCity2)
             );
 
             // Group data by month and city
             const groupedData = d3.rollup(
               filteredData,
-              (v) => d3.mean(v, (d) => d.rentPrice),
-              (d) => d.month,
-              (d) => d.city
+              (v) => d3.mean(v, (d) => d.RentPrice),
+              (d) => d.Month,
+              (d) => d.City
             );
 
             // Set up scales
