@@ -9,34 +9,66 @@
   <body id="about">
 		
     <div id="header">
-			<h1>Data Visualization Project</h1>
-      
+      <h1>Data Visualization Project</h1>
+  
       <div class="author"></div>
-      
-			<ul id="navigationBar">
-				<li><a id="about-link" href="https://www.gc.cuny.edu/" target="_blank">About CUNY GC</a></li>
-			</ul>
-		</div>
-   
+  
+      <ul id="navigationBar">
+        <li><a id="about-link" href="https://www.gc.cuny.edu/" target="_blank">About CUNY GC</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-btn">Dropdown</a>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
     <div class="intro">
       <h4>Data Visualization Brief</h4>
-    <p>Interactive Data Visualization is cool field of study</p>
-      <p id="colorblue"> Master in Data Analysis & Visualization</p>
+      <p>Interactive Data Visualization is a cool field of study.</p>
+      <p id="colorblue">Master in Data Analysis & Visualization</p>
       <p id="colorred">Graduate Center of NYC.</p>
     
-    </div>
-    <div>
-      <label for="year">Select year:</label>
-      <select id="year"></select>
-    </div>
-    <div>
-      <label for="city">Select city:</label>
-      <select id="city"></select>
-    </div>
-    <div>
-      <label for="city2">Select another city:</label>
-      <select id="city2"></select>
-    </div>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+  
+      <div>
+        <label for="year">Select year:</label>
+        <select id="year">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="city">Select city:</label>
+        <select id="city">
+          <option value="New York City">New York City</option>
+          <option value="Los Angeles">Los Angeles</option>
+          <option value="Chicago">Chicago</option>
+          <option value="Houston">Houston</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="city2">Select another city:</label>
+        <select id="city2">
+          <option value="San Francisco">San Francisco</option>
+          <option value="Boston">Boston</option>
+          <option value="Atlanta">Atlanta</option>
+          <option value="Dallas">Dallas</option>
+        </select>
+      </div>
+  
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in libero in sapi</p>
     
     <div id="chart"></div>
     <script src="../lib/d3.js"></script>
