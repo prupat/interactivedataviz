@@ -3,7 +3,49 @@
       height = window.innerHeight * .5,
       margin = {top: 20, bottom: 60, left: 80, right: 60};
       
- 
+//  // Declare date format
+// const formatDate = d3.timeParse("%y-%b");
+
+
+// //declare tooltip variable
+// let tooltip;
+
+// /* APPLICATION STATE */
+// let city = {
+//   data: [],
+//     selection: "",
+// };
+
+// let city2 ={
+//   data: [],
+//     selection: "",
+// };
+
+
+// let year ={
+//   data: [],
+//     selection: "",
+// };
+
+// /* LOAD DATA */
+
+// d3.csv('../data/rent_data2.csv', d => {
+  
+//   return {
+//        Month: new Date (formatDate(d.Month)),
+//        State: d.State,
+//        DeathToll: +d.DeathToll
+//   }
+// })
+//    .then(data => {
+//      console.log("loaded data:", data);
+//      state.data = data;
+//      state2.data = data;
+//      init();
+   
+//  });
+
+
  // Append the SVG object to the body of the page
       const svg = d3.select("#chart")
       .append("svg")
@@ -20,7 +62,7 @@
             Borough: d.Borough,
             Year: +d.Year,
             Month: new Date (formatDate(d.Month)), 
-            RentPrice: +d.RentPrice,
+            RentPrice: +d.RentPrice
           };
         
         }, (error, data) => {
