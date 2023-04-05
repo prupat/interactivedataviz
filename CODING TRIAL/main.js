@@ -19,7 +19,7 @@
             city: d.City,
             borough: d.Borough,
             year: +d.Year,
-            month: d.Month.substring(2),
+            month: new Date (formatDate(d.Month.substring(2))),
             rentPrice: +d.RentPrice,
           };
         
