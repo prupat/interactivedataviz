@@ -84,7 +84,7 @@ function init() {
 
           xAxis = d3.axisBottom(xScale)
           .tickFormat(d3.timeFormat("%b"))
-          .ticks(12)
+          .ticks(7)
 
 
           yAxis = d3.axisLeft(yScale)
@@ -186,28 +186,18 @@ function init() {
             function draw(){
 
               const filteredData = city.data
-                    .filter(d => d.City === city.selection)
+                    .filter(d => d.City === city.selection && d.Year === +year.selection)
                     
-               
               const newFilter = d3.max(filteredData, d => d.RentPrice)
-        
-             
+      
               const filteredData2 = city2.data
-                    .filter(d => d.City === city2.selection)     
-        
+                    .filter(d => d.City === city2.selection && d.Year === +year.selection)  
+            
               const newFilter2 = d3.max(filteredData2, d => d.RentPrice)  
               
-              const filteredData3 = year.data
-                    .filter(d => d.Year === year.selection)     
-        
-              const newFilter3 = d3.max(filteredData3, d => d.RentPrice) 
-              
-        
-               const maxUp = Math.max(newFilter, newFilter2)
-        
-        
+              const maxUp = Math.max(newFilter, newFilter2)
+
                yScale.domain([0, maxUp])
-              
         
               yAxisGroup.transition()
                         .duration(1000)
@@ -221,7 +211,7 @@ function init() {
               const colors = d3.scaleOrdinal(d3.schemeCategory10);  
 
 // Draw the line chart
-            if(city2.selection != "" & city.selection != "" & year.selection != ""){ 
+            if(city.selection !== "" && city2.selection !== "" && year.selection !== ""){ 
               svg.selectAll(".line")
                 .data([filteredData, filteredData2])
                 .join("path")
