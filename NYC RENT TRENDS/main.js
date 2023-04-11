@@ -47,7 +47,7 @@ d3.csv('../data/rent_data.csv', function(data) {
   // Create a color scale for each borough
   const color = d3.scaleOrdinal()
     .domain(borough.data.map(d => d.Borough))
-    .range(d3.schemeSet2);
+    .range(d3.schemeSet2)
 
   // Create a nested data structure by City, borough and year
   const nestedData = d3.group(data, d => d.City, d => d.Borough, d => d.Year)

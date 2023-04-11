@@ -1,24 +1,131 @@
 body {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  padding: 1em;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #fff0db;
 }
 
-svg text{
-  font: 20px helvetica;
-  fill: royalblue;
+header {
+  background-color: #003366;
+  color: white;
+  padding: 10px;
 }
 
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #C0C0C0;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+}
+
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+nav ul ul li {
+  width: 200px;
+  float: none;
+  display: list-item;
+  position: relative;
+  margin-left: 20px;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 200px;
+}
 h1 {
-  font-size: 3em;
-  margin: 0.25em 0;
+  background-image:url(./images/manhattan-apartments.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  padding: 90px 0;
+}
+h1 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 40px;
+  color: #ffffff;
 }
 
-h3 {
-  font-size: 2em;
-  margin: 0.25em 0;
+main {
+  margin: 50px;
 }
 
-p {
-  font-size: 1em;
+section {
+  margin-top: 30px;
 }
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar section {
+  margin-bottom: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #003366;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
