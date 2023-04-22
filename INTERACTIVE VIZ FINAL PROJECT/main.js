@@ -220,7 +220,7 @@ function init() {
                 .attr("stroke", function(d,i){
                   return colors(i)})
                 .attr("stroke-width",  function(d){ 
-                  return "3";})
+                  return "2";})
                 .attr("fill", "none")
                 .transition()
                 .duration(1000)
@@ -232,7 +232,7 @@ function init() {
   .data(filteredData) 
   .join("circle")     
   .attr("class", "circle-point")
-  .attr("r", "5")
+  .attr("r", "3")
   .attr("cx", d => xScale(d.Month))
   .attr("cy", d => yScale(d.RentPrice))
   .attr("fill", "#1f77b4") 
@@ -259,7 +259,7 @@ function init() {
           .data(filteredData2)
           .join("circle")
             .attr("class", "circle-point2")
-            .attr("r", "5")
+            .attr("r", "3")
             .attr("cx", d => xScale(d.Month))
             .attr("cy", d => yScale(d.RentPrice))
             .attr("fill", "#ff7f0e")

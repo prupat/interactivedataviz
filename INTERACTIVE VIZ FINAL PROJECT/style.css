@@ -1,17 +1,25 @@
 body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size:medium;
-  width: 1500px;
-  margin:20px auto;
-  background-color: #f3f6f4;
+  width:960px;
+  height: 100%;
+  margin:10px auto;
+  background-image:url(./images/nyc2.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position:top center;
 }
 
 header {
   background-color: #003366;
   color: white;
-  padding: 10px;
+  padding: 10px; 
 }
 
+/*main {
+  background-color: #FFD580;
+  padding: 20px;
+}*/
 nav ul {
   margin: 0;
   padding: 0;
@@ -43,65 +51,25 @@ nav ul li:hover > ul {
   display: inherit;
 }
 
-nav ul ul li {
-  width: 200px;
-  float: none;
-  display: list-item;
-  position: relative;
-  margin-left: 20px;
-}
 
-nav ul ul ul li {
-  position: relative;
-  top: -60px;
-  left: 200px;
-}
 h1 {
-  background-image:url(./images/manhattan-apartments.jpg);
+  /*background-image:url(./images/manhattan-apartments.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover;*/
   color: #ffffff;
   text-align: center;
-  padding: 90px 0;
-}
-
-h1 {
+  padding: 150px 0;
   margin-top: 50px;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 40px;
   color: #ffffff;
 }
 
+
 main {
   margin: 50px;
-}
-
-section {
-  margin-top: 20px;
-}
-
-.sidebar {
-  position: fixed;
-  top: 50%;
-  right: 0;
-  width: 250px;
-  background-color: #f2f2f2;
-  padding: 50px;
-  box-sizing: border-box;
-  transform: translateY(-50%);
-}
-
-.sidebar h2 {
-  margin-top: 0;
-}
-
-.sidebar section {
-  margin-bottom: 10px;
-}
-
-.sidebar h3 {
-  margin-top: 0;
 }
 
 
@@ -119,6 +87,7 @@ li {
 a {
   color: #003366;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
@@ -132,40 +101,30 @@ a:hover {
   padding: 0px;
 }
 
-.navigation-block {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background-color: #f2f2f2;
-  padding: 20px;
+/* Style for the labels 
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}*/
+
+/* Style for the dropdowns 
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
-  width: 100px;
-}
-
-.navigation-block h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.navigation-block ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navigation-block li {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.navigation-block a {
-  color: #003366;
-  text-decoration: none;
+  margin-bottom: 20px;
   font-size: 16px;
-}
+}*/
 
-.navigation-block a:hover {
-  text-decoration: underline;
-}
+/* Style for the chart
+#chart {
+  width: auto;
+  height: 500px;
+ 
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}*/
