@@ -4,10 +4,10 @@ body {
   width:960px;
   height: 100%;
   margin:10px auto;
-  background-image:url(./images/nyc2.jpg);
+  /*background-image:url(./images/nyc2.jpg);
   background-repeat: no-repeat;
   background-attachment:fixed;
-  background-position:top center;
+  background-position:top center;*/
 }
 
 header {
@@ -53,10 +53,10 @@ nav ul li:hover > ul {
 
 
 h1 {
-  /*background-image:url(./images/manhattan-apartments.jpg);
+  background-image:url(./images/manhattan-apartments.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;*/
+  background-size: cover;
   color: #ffffff;
   text-align: center;
   padding: 150px 0;
@@ -101,12 +101,12 @@ a:hover {
   padding: 0px;
 }
 
-/* Style for the labels 
+Style for the labels 
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-}*/
+}
 
 /* Style for the dropdowns 
 select {
@@ -117,14 +117,13 @@ select {
   box-sizing: border-box;
   margin-bottom: 20px;
   font-size: 16px;
-}*/
-
-/* Style for the chart
+}
+ */
+Style for the chart
 #chart {
   width: auto;
   height: 500px;
- 
-  border: 1px solid #ccc;
+ border: 1px solid #ccc;
   margin-top: 20px;
   margin-bottom: 20px;
-}*/
+}

@@ -208,7 +208,11 @@ function init() {
                     .x(d => xScale(d.Month))
                     .y(d => yScale(d.RentPrice))
         
-              const colors = d3.scaleOrdinal(d3.schemeCategory10);  
+              //const colors = d3.scaleOrdinal(d3.schemeCategory10);  
+              const colors = d3.scaleOrdinal()
+                                .domain([0, 1])
+                                .range(["#87bc45", "#b30000"]);
+
 
 // Draw the line chart
             if(city.selection !== "" && city2.selection !== "" && year.selection !== ""){ 
