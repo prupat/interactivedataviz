@@ -1,13 +1,13 @@
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size:medium;
   width:960px;
   height: 100%;
   margin:10px auto;
-  /*background-image:url(./images/nyc2.jpg);
+  background-image:url(./images/background.jpg);
   background-repeat: no-repeat;
   background-attachment:fixed;
-  background-position:top center;*/
+  background-position:top center;
 }
 
 header {
@@ -15,6 +15,39 @@ header {
   color: white;
   padding: 10px; 
 }
+
+.sPost{
+  width: 200px;
+  float: left;
+  padding: 0 0 0 370px;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  transform: translateY(-30%);
+  }
+   h2{
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 0;
+    font-size: 20px;
+    font-style: u;
+    color:rgb(207, 84, 26);
+    }
+
+    .sPostTitle{
+      background-image: url(../images/sBorderTop.png);
+      padding: 20px 20px 0;
+      }
+      
+      .sPostFooter{
+      background-image: url(../images/sBorderBottom.png);
+      min-height: 33px;
+      }
+      
+      .sPostContent{
+      background-image: url(../images/sBorderMiddle.png);
+      padding: 0 20px;
+      } 
 
 /*main {
   background-color: #FFD580;
@@ -67,9 +100,39 @@ h1 {
   color: #ffffff;
 }
 
-
 main {
   margin: 50px;
+}
+
+section {
+  margin-top: 20px;
+  color:rgb(207, 84, 26);
+}
+
+.sidebar {
+  position:absolute;
+  top: 50%;
+  right: 0;
+  width: 250px;
+  background-color: #f2f2f2;
+  padding: 50px;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+.sidebar section {
+  margin-bottom: 10px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  text-decoration: underline;
 }
 
 
@@ -87,7 +150,9 @@ li {
 a {
   color: #003366;
   text-decoration: none;
+  font-size: small;
   font-weight: bold;
+ 
 }
 
 a:hover {
@@ -101,15 +166,16 @@ a:hover {
   padding: 0px;
 }
 
-Style for the labels 
-label {
+/* Style for the labels  */
+label{
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  text-decoration:double;
 }
 
-/* Style for the dropdowns 
-select {
+/* Style for the dropdowns  */
+select{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -118,12 +184,13 @@ select {
   margin-bottom: 20px;
   font-size: 16px;
 }
- */
-Style for the chart
-#chart {
+ 
+/* Style for the chart */
+#chart{
   width: auto;
-  height: 500px;
+  height: 520px;
  border: 1px solid #ccc;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+

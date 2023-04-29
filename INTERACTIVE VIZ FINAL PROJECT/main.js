@@ -35,6 +35,7 @@ let year ={
     selection: "",
 };
 
+
 /* LOAD DATA */
 
 d3.csv('../data/rent_data2.csv', d => {
