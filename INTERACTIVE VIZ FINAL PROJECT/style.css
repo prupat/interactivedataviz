@@ -34,20 +34,7 @@ header {
     color:rgb(207, 84, 26);
     }
 
-    .sPostTitle{
-      background-image: url(../images/sBorderTop.png);
-      padding: 20px 20px 0;
-      }
-      
-      .sPostFooter{
-      background-image: url(../images/sBorderBottom.png);
-      min-height: 33px;
-      }
-      
-      .sPostContent{
-      background-image: url(../images/sBorderMiddle.png);
-      padding: 0 20px;
-      } 
+    
 
 nav ul {
   margin: 0;
