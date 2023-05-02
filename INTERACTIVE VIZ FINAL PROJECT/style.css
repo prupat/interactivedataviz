@@ -34,7 +34,10 @@ header {
     color:rgb(207, 84, 26);
     }
 
-    
+    #sColumn {
+      float: left;
+    }
+      
 
 nav ul {
   margin: 0;
