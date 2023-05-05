@@ -43,11 +43,11 @@ h2{
       }
 
       .sidebar-container {
-        position: fixed;
+        position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
-        width: 100px;
+        width: 80px;
         padding: 50px;
         background-color: transparent;
       }
@@ -126,7 +126,7 @@ section {
 } */
 
 .sidebar{
-  position: fixed;
+  position:absolute;
         top: 0;
         bottom: 0;
         right: 0;
