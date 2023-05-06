@@ -71,10 +71,14 @@ h2{
         font-weight: bold;
         transition: all 0.3s ease;
       }
+
+      .sidebar-container h2 {
+        font-size: 1.1em;
+      }
       
       .sidebar-container a:hover {
         text-decoration: underline;
-        color: rgb(239, 23, 45);
+        color:rgba(39, 112, 68, 0.858);
       }
       
       section {
@@ -180,7 +184,7 @@ section {
 
 .sidebar a:hover {
   text-decoration: underline;
-  color:rgb(239, 23, 45);
+  color:rgba(39, 112, 68, 0.858);
 }
 
 
