@@ -52,6 +52,31 @@ h2{
         background-color: transparent;
       }
       
+      .sidebar-container ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .sidebar-container li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: small;
+      }
+      
+      .sidebar-container a {
+        color: #003366;
+        text-decoration: none;
+        font-size: small;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .sidebar-container a:hover {
+        text-decoration: underline;
+        color: rgb(239, 23, 45);
+      }
+      
       section {
         margin-top: 0;
       }
@@ -110,20 +135,9 @@ main {
 
 section {
   margin-top: 20px;
-  color:rgb(207, 84, 26);
+  color:rgb(239, 120, 23);
 }
 
-/* .sidebar {
-  position:absolute;
-  top: 50%;
-  right: 0;
-  width: 250px;
-  background-color: #f2f2f2;
-  padding: 50px;
-  box-sizing: border-box;
-  transform: translateY(-50%);
-  
-} */
 
 .sidebar{
   position:absolute;
@@ -138,16 +152,37 @@ section {
 .sidebar h2 {
   margin-top: 0;
   text-decoration: underline;
+  color: #003366;
 }
 
 .sidebar section {
   margin-bottom: 10px;
 }
 
-.sidebar h3 {
+.sidebar h3,
+.sidebar p {
   margin-top: 0;
   text-decoration: underline;
 }
+
+.sidebar h3 {
+  font-size: 1.1em;
+}
+
+.sidebar p {
+  font-size: 0.9em;
+}
+
+.sidebar .latest-updates,
+.sidebar .legislation {
+  margin-bottom: 20px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color:rgb(239, 23, 45);
+}
+
 
 ul {
   list-style: none;
