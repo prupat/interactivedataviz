@@ -1,7 +1,12 @@
- /* CONSTANTS AND GLOBALS */
-      const width = window.innerWidth * .5,
-      height = window.innerHeight * .5,
-      margin = {top: 20, bottom: 60, left: 80, right: 60};
+//  /* CONSTANTS AND GLOBALS */
+//       const width = window.innerWidth * .5,
+//       height = window.innerHeight * .5,
+//       margin = {top: 20, bottom: 60, left: 80, right: 60};
+
+/* CONSTANTS AND GLOBALS */
+const width = 600, // set to a fixed value in pixels
+  height = 400, // set to a fixed value in pixels
+  margin = { top: 20, bottom: 60, left: 80, right: 60 };
       
  // Declare date format
 const formatDate = d3.timeParse("%y-%b");
