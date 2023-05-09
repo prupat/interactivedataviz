@@ -258,12 +258,21 @@ select{
 }
 
 /* Style for the chart */
-#chart{
+/* #chart{
   width: auto;
   height: 520px;
  border: 1px solid #ccc;
   margin-top: 20px;
   margin-bottom: 20px;
+} */
+
+#chart {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* This ensures that padding and border are included in the element's total width and height */
 }
 
 
