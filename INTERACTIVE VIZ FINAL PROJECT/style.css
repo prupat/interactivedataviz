@@ -49,7 +49,7 @@ h2{
       
       .content p:nth-of-type(3) {
         font-style: italic;
-        color: #008000; 
+        color:blue;
       }
             
       .sidebar-container {
