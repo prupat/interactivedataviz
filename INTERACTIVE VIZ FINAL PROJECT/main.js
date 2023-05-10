@@ -154,13 +154,13 @@ function init() {
                     .call(yAxis.scale(yScale.nice()))
 
 //ADD LABELS
-            svg.append("text")
-            .attr("class", "xLabel")
-            .attr("y", height-10)
-            .attr("x", width/2)
-            .attr("fill", "black")
-            .attr("font-weight", "bold")
-            .text("Month", 3.5)    
+            // svg.append("text")
+            // .attr("class", "xLabel")
+            // .attr("y", height-10)
+            // .attr("x", width/2)
+            // .attr("fill", "black")
+            // .attr("font-weight", "bold")
+            // .text("Month", 3.5)    
 
             svg.append("text")
             .attr("class", "yLabel")
