@@ -93,7 +93,7 @@ function init() {
           const selectElement = d3.select("#dropdown")
      
           selectElement.selectAll("option")
-                       .data(["Select a City", ...new Set(city.data.map(d => d.City))])
+                       .data(["Select a Neighborhood", ...new Set(city.data.map(d => d.City))])
                        .join("option")
                        .attr("attr", d => d)
                        .text(d => d)
@@ -108,7 +108,7 @@ function init() {
           const selectElement2 = d3.select("#dropdown2")
      
           selectElement2.selectAll("option")
-                       .data(["Select a City", ...new Set(city2.data.map(d => d.City))])
+                       .data(["Select a Neighborhood", ...new Set(city2.data.map(d => d.City))])
                        .join("option")
                        .attr("attr", d => d)
                        .text(d => d)

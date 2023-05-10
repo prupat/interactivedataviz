@@ -47,8 +47,26 @@
               <p>I understand that the rising cost of rent can be a significant source of stress for many New Yorkers, and I'm here to help. That's why I've compiled a wealth of information and resources to support renters across the city. From tips on how to negotiate with landlords to guidance on navigating the complex legal landscape of renting in NYC, I'm committed to providing the information you need to make informed decisions about your housing.</p>
               <p>In addition to the news and resources, I'm also pleased to offer an interactive D3js line chart that allows you to explore historical rent prices in New York City from 2010-2022. With this tool, you can get a better sense of how rental prices have changed over time and use this information to plan your next move.</p>
               <p>I hope you find my website helpful and informative, and I welcome your feedback and suggestions for how I can improve. Thank you for visiting!</p>
-          
-              <h2>Addressing the Rent Increase Problem in NYC</h2>
+              
+              <br>
+              <label for="dropdown">Select Neighborhood 1</label>
+              <select id="dropdown" name="dropdown"></select>
+             
+              <label for="dropdown2">Select Neighborhood 2</label>
+              <select id="dropdown2" name="dropdown2"></select>
+        
+              <label for="dropdown3">Select Year</label>
+              <select id="dropdown3" name="dropdown3"></select>
+            
+            
+            <div id="chart"></div>
+            
+            <script src="../lib/d3.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+            <script src="main.js"></script>
+            <h5><span class="data-source-text">Data Source: </span><a href="https://streeteasy.com/blog/data-dashboard" target="_blank">"Median Asking Rent"</a></h5>
+            <br> 
+            <h2>Addressing the Rent Increase Problem in NYC</h2>
               <p>Rent increase in NYC has been a significant issue for many years. NYC is one of the most expensive cities in the world when it comes to renting a home. The average rent in NYC is significantly higher than the national average, and the rent has been steadily increasing over the years. The increase in rent is mainly due to a shortage of affordable housing, the high cost of living, and the increasing demand for rental properties. The problem is compounded by the fact that many landlords in NYC are taking advantage of the situation to maximize their profits, resulting in significant rent hikes, which have made it difficult for many people to find affordable housing. The issue of rent increase has become a central concern for many advocacy groups and politicians in NYC, who are working to address the problem through various measures, such as rent control laws, affordable housing initiatives, and tenant protection laws.</p>
         
              <p>According to recent reports, New York City is experiencing a surge in rent prices, particularly in popular neighborhoods like <a href="https://www.mns.com/brooklyn_rental_market_report" target="_blank">Brooklyn</a> and Queens.This increase is largely due to the high demand for rental units, as well as the shortage of available housing.These rent increases are putting a significant strain on renters, particularly those with lower incomes or who are already struggling to make ends meet. Some organizations are calling for rent control measures or other policies to help address the issue, but it remains a significant challenge for many New Yorkers.</p>
@@ -97,23 +115,7 @@
             </section>
           </div>
     </main>
-  <br>
-      <label for="dropdown">Select City 1</label>
-      <select id="dropdown" name="dropdown"></select>
-     
-      <label for="dropdown2">Select City 2</label>
-      <select id="dropdown2" name="dropdown2"></select>
-
-      <label for="dropdown3">Select Year</label>
-      <select id="dropdown3" name="dropdown3"></select>
-    
-    
-    <div id="chart"></div>
-    
-    <script src="../lib/d3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
-    <h5><span class="data-source-text">Data Source: </span><a href="https://streeteasy.com/blog/data-dashboard" target="_blank">"Median Asking Rent"</a></h5>
+  
 
     <div id="footer">&copy;Prudence Brou Graduate Center 2023 &ndash; All Rights Reserved</div>
   </body>
