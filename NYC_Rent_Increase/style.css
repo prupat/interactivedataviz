@@ -127,6 +127,10 @@ nav ul li:hover > ul {
   display: inherit;
 }
 
+.content li{
+  font-weight: bold;
+  font-style: italic;
+}
 
 h1 {
   background-image:url(./images/manhattan-apartments.jpg);
