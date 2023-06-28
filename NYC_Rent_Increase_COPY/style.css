@@ -1,0 +1,275 @@
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:medium;
+  width:960px;
+  height: 100%;
+  margin:10px auto;
+  background-image:url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position:top center;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 10px; 
+}
+
+
+h2{
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 0;
+    font-size: 20px;
+    font-style: u;
+    color:rgb(207, 84, 26);
+    }
+
+.content p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+      
+.content h5{ 
+      border-bottom: solid black
+    }
+    
+.content a{ 
+        font-weight: bold;
+        font-size:large;
+        color: blue;
+      }
+
+      .content p:first-of-type {
+        font-size: 16px;
+        
+      }
+      
+      .content p:nth-of-type(3) {
+        font-style: italic;
+        color:blue;
+      }
+            
+      .sidebar-container {
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        width: 150px;
+        padding: 20px;
+        background-color: transparent;
+      }
+      
+      .sidebar-container ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .sidebar-container li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: small;
+      }
+      
+      .sidebar-container a {
+        color: #003366;
+        text-decoration: none;
+        font-size: small;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .sidebar-container h2 {
+        font-size: 1.1em;
+        margin-top: 0;
+        text-decoration: underline;
+      }
+      
+      .sidebar-container a:hover {
+        text-decoration: underline;
+        color:rgba(39, 112, 68, 0.858);
+      }
+      
+      section {
+        margin-top: 0;
+      }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #C0C0C0;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+}
+
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+.content li{
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1 {
+  background-image:url(./images/manhattan-apartments.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  padding: 150px 0;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.data-source-text {
+  font-weight: bold;
+  font-style: italic;
+  font-size:small;
+  text-decoration: underline;
+}
+
+.content h5 a {
+  font-size: 12px;
+}
+
+
+
+main {
+  margin: 10px;
+} 
+
+section {
+  margin-top: 20px;
+  color:rgb(239, 120, 23);
+}
+
+
+.sidebar{
+  position:absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 150px;
+        padding: 20px;
+        background-color: transparent;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  text-decoration: underline;
+  color: #003366;
+}
+
+.sidebar section {
+  margin-bottom: 10px;
+}
+
+.sidebar h3,
+.sidebar p {
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+.sidebar h3 {
+  font-size: 1.1em;
+}
+
+.sidebar p {
+  font-size: 0.9em;
+}
+
+.sidebar .latest-updates,
+.sidebar .legislation {
+  margin-bottom: 20px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color:rgba(39, 112, 68, 0.858);
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #003366;
+  text-decoration: none;
+  font-size: small;
+  font-weight: bold;
+ 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 0px;
+}
+
+/* Style for the labels  */
+label{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-decoration:double;
+  color:rgb(239, 120, 23);
+}
+
+/* Style for the dropdowns  */
+select{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Style for the chart */
+/* #chart{
+  width: auto;
+  height: 520px;
+ border: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */
