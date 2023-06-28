@@ -139,8 +139,71 @@ function init() {
             .append("svg")
             .attr("width", width)
             .attr("height", height)
-                      
-     
+          
+    /* Checkbox change event handlers */
+          d3.selectAll("input[name='borough']").on("change", function () {
+            const selectedBoroughs = Array.from(document.querySelectorAll("input[name='borough']:checked")).map(
+              (checkbox) => checkbox.value
+            );
+            
+            const selectElement = d3.select("#dropdown");
+            const selectElement2 = d3.select("#dropdown2");
+            const selectElement3 = d3.select("#dropdown3");
+            
+            if (selectedBoroughs.length === 0) {
+              // If no checkboxes are checked, reset the dropdowns to default value
+              selectElement.property("value", "");
+              selectElement2.property("value", "");
+              selectElement3.property("value", "Select a Year");
+            }
+            
+            if (selectedBoroughs.length === 0 || selectedBoroughs.length === 4) {
+              // Show all cities and years in the dropdowns
+              selectElement.selectAll("option")
+                .data(["Select a Neighborhood", ...new Set(city.data.map(d => d.City))])
+                .join("option")
+                .attr("attr", d => d)
+                .text(d => d);
+
+              selectElement2.selectAll("option")
+                .data(["Select a Neighborhood", ...new Set(city2.data.map(d => d.City))])
+                .join("option")
+                .attr("attr", d => d)
+                .text(d => d);
+                
+              selectElement3.selectAll("option")
+                .data(["Select a Year", ...new Set(year.data.map(d => d.Year))])
+                .join("option")
+                .attr("attr", d => d)
+                .text(d => d);
+            } else {
+              // Filter the cities and years based on the selected boroughs
+              selectElement.selectAll("option")
+                .data(["Select a Neighborhood", ...new Set(city.data.filter(d => selectedBoroughs.includes(d.Borough)).map(d => d.City))])
+                .join("option")
+                .attr("attr", d => d)
+                .text(d => d);
+
+              selectElement2.selectAll("option")
+                .data(["Select a Neighborhood", ...new Set(city2.data.filter(d => selectedBoroughs.includes(d.Borough)).map(d => d.City))])
+                .join("option")
+                .attr("attr", d => d)
+                .text(d => d);
+                
+              selectElement3.selectAll("option")
+                .data(["Select a Year", ...new Set(year.data.filter(d => selectedBoroughs.includes(d.Borough)).map(d => d.Year))])
+                .join("option")
+                .attr("attr", d => d)
+                .text(d => d);
+            }
+            
+            city.selection = selectElement.property("value");
+            city2.selection = selectElement2.property("value");
+            year.selection = selectElement3.property("value");
+
+            draw();
+          });
+
      xAxisGroup = svg.append("g")
                     .attr("class", "xAxis")
                     .style("font", "14px times")
