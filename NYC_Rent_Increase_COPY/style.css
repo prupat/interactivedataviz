@@ -251,10 +251,41 @@ label{
   margin-bottom: 5px;
   font-weight: bold;
   text-decoration:double;
+  text-decoration: underline;
   color:rgb(239, 120, 23);
 }
 
-/* Style for the dropdowns  */
+.form-container {
+  display: flex;
+}
+
+.form-column {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.form-column label,
+.form-column select,
+.form-column .checkbox-group {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-column select {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+
+
+/* Style for the dropdowns  
 select{
   width: 50%;
   padding: 10px;
@@ -265,7 +296,7 @@ select{
   font-size: 16px;
 }
 
-/* Style for the checkboxes */
+ Style for the checkboxes 
 .checkbox-group {
   display: flex;
   align-items: start;
