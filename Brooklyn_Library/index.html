@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Brooklyn Public Library</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Brooklyn Public Library</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.bklynlibrary.org/card/" target="_blank">Get a Library card</a></li>
+                <li><a href="https://bit.ly/3MyquqG" target="_blank">Shop</a></li>
+                <li><a href="https://www.bklynlibrary.org/contact" target="_blank">Contact Us</a></li>
+                <li><a href="https://bit.ly/3Su7ZHu" target="_blank">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="map-section">
+        <div id="map"></div>
+    </section>
+ 
+<!-- Add a sidebar for displaying library branches -->
+<div id="sidebar">
+    <h2>Library Branches</h2>
+    <ul id="branch-list">
+        <!-- Branch names will be populated here dynamically -->
+    </ul>
+
+</div>
+
+ <!-- Add a container for the map and footer
+ <div id="map-container">
+    <div id="map"></div>
+</div>
+<div id="map-footer">
+    &copy;Prudence Brou Graduate Center 2023 &ndash; All Rights Reserved
+</div> -->
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
