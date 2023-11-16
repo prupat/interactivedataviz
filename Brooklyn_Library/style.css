@@ -5,7 +5,6 @@
     background-color: #f5f5f5;
 }
 
-/* Customize the popup content */
 .leaflet-popup-content {
     padding: 10px;
     background-color: #fff;
@@ -14,12 +13,10 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the popup close button */
 .leaflet-popup-close-button {
-    display: none; /* or customize its appearance */
+    display: none; 
 }
 
-/* Customize the marker icon */
 .leaflet-marker-icon {
     width: 30px;
     height: 30px;
@@ -31,8 +28,7 @@
     line-height: 30px;
 }
 
-/* Customize the marker's shadow */
 .leaflet-marker-shadow {
-    display: none; /* or customize its appearance */
+    display: none; /
 }
 
