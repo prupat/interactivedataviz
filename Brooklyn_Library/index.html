@@ -19,12 +19,27 @@
         </nav>
     </header>
 
+    <div id="sidebar">
+        <h2>Library Branches</h2>
+        <ul id="branch-list">
+            <!-- Branch names will be populated here dynamically -->
+        </ul>
+    </div>
+
+    <div id="map-section">
+        <div id="map"></div>
+        <div id="branch-info">
+            <h3 id="branch-name"></h3>
+            <p id="branch-address"></p>
+            <p id="branch-hours"></p>
+            <a id="branch-website" href="#" target="_blank">Visit Website</a>
+        </div>
+    </div>
+
     <section id="map-section">
         <div id="map"></div>
     </section>
  
-
-
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="main.js"></script>
 
