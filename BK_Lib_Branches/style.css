@@ -25,6 +25,7 @@ p {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center; /* Center-align text within the paragraph */
 }
+
 /* Navigation styles */
 nav ul {
     list-style: none;
@@ -96,12 +97,4 @@ nav ul li a {
 .branch-container h3 {
     margin: 0;
     font-weight: bold;
-}
-
-
-/* Style the map 
-#map {
-    height: 100%;
-    width: 100%;
-    border: 1px solid #ddd;
 }
