@@ -18,6 +18,13 @@ header h1 {
     margin: 0;
 }
 
+p {
+    background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center-align text within the paragraph */
+}
 /* Navigation styles */
 nav ul {
     list-style: none;
