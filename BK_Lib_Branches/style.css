@@ -26,6 +26,11 @@ p {
             text-align: center; 
 }
 
+footer p {
+    background-color: #0074D9;
+    color: #fff;
+}
+
 /* Navigation styles */
 nav ul {
     list-style: none;
@@ -70,7 +75,7 @@ nav ul li a {
     position: fixed; /* Fixed position for the sidebar */
     top: 0;
     left: 0;
-    height: 100%; /* This takes full height of the viewport */
+    bottom: 0; /* Adjusted to cover the full height */
     z-index: 1; /* This ensures it appears above the map */
 }
 
