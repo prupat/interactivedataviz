@@ -23,7 +23,7 @@ p {
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Center-align text within the paragraph */
+            text-align: center; 
 }
 
 /* Navigation styles */
@@ -44,8 +44,8 @@ nav ul li a {
 /* Map section styles */
 #map-section {
     padding: 20px;
-    margin-left: 330px; /* Adjust this to match the sidebar width */
-    height: 100vh; /* Take full viewport height */
+    margin-left: 330px; 
+    height: 100vh; /* This takes full viewport height */
 }
 
 /* Style the map */
@@ -62,16 +62,16 @@ nav ul li a {
 
 /* Sidebar styles */
 #sidebar {
-    width: 300px; /* Adjust the width as needed */
+    width: 300px; 
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    overflow-y: auto; /* Enable scrolling */
+    overflow-y: auto; /* This enables scrolling */
     position: fixed; /* Fixed position for the sidebar */
     top: 0;
     left: 0;
-    height: 100%; /* Takes full height of the viewport */
-    z-index: 1; /* Ensures it appears above the map */
+    height: 100%; /* This takes full height of the viewport */
+    z-index: 1; /* This ensures it appears above the map */
 }
 
 #branch-list {
