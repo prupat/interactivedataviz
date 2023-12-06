@@ -89,7 +89,10 @@ fetch('../data/lib-branches.json')
             branchContainer.appendChild(phoneElement);
 
             // Add a click event listener to handle displaying branch details on the map
-            branchContainer.addEventListener('click', () => {
+            nameElement.style.cursor = 'pointer'; // Change cursor style
+            nameElement.style.textDecoration = 'underline'; // Add underline
+            nameElement.title = 'Click on it'; // Add tooltip
+            nameElement.addEventListener('click', () => {
                 if (currentMarker) {
                     map.removeLayer(currentMarker);
                 }
@@ -114,3 +117,5 @@ fetch('../data/lib-branches.json')
         console.error('Error loading JSON data:', error);
 
     });
+
+   
