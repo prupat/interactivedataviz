@@ -9,6 +9,28 @@ let currentMarker = null;
 // Let's create an array to store markers for all branches
 const branchMarkers = [];
 
+// Function to generate a random light color
+function getRandomLightColor() {
+    const r = Math.floor(Math.random() * 156 + 100); // Random red value between 100 and 255
+    const g = Math.floor(Math.random() * 156 + 100); // Random green value between 100 and 255
+    const b = Math.floor(Math.random() * 156 + 100); // Random blue value between 100 and 255
+    return `rgb(${r},${g},${b})`;
+}
+// // Let's calculate luminance of the background color
+function isDarkColor(color) {
+    // Calculate luminance based on RGB values
+    const rgb = parseInt(color.slice(1), 16); // Convert to decimal
+    const r = (rgb >> 16) & 0xff;
+    const g = (rgb >> 8) & 0xff;
+    const b = (rgb >> 0) & 0xff;
+
+    // Let's calculate luminance using the formula
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+    // Determine if the color is dark (use a threshold like 0.5)
+    return luminance <= 0.5;
+}
+
 // Get the current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
 const today = new Date().getDay();
 
@@ -35,6 +57,14 @@ fetch('../data/lib-branches.json')
             // Create a container for each branch with name, hours, and phone
             const branchContainer = document.createElement('li');
             branchContainer.classList.add('branch-container');
+
+            // Apply a random light background color
+            branchContainer.style.backgroundColor = getRandomLightColor();
+
+            // Add the dark class to the container if the background is dark
+            if (isDarkColor(branchContainer.style.backgroundColor)) {
+                branchContainer.classList.add('dark');
+            }
 
             // Add a custom data attribute for the website
             branchContainer.dataset.website = website;
