@@ -159,7 +159,7 @@ a:hover {
     }
 
     #map {
-        height: 300px; /* Adjust map height for small screens */
+        height: 500px; /* Adjust map height for small screens */
     }
 }
 
