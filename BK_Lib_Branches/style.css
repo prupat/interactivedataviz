@@ -32,6 +32,18 @@ footer p {
     color: #fff;
 }
 
+footer {
+    background-color: #f0f2f4;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd; /* Add border to the top of the footer */
+    z-index: 0; /* Increase the z-index */
+}
+
 /* Navigation styles */
 nav ul {
     list-style: none;
@@ -45,6 +57,16 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
+}
+
+a {
+    color: #0074D9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Map section styles */
@@ -81,14 +103,27 @@ nav ul li a {
     z-index: 1; /* This ensures it appears above the map */
 }
 
+/* styles for the heading */
+#sidebar h2 {
+    color: #0074D9; 
+    font-size: 24px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    border-bottom: 1px dotted #0074D9; /* Dotted underline with the same color */
+    
+}
+
+
 #branch-list {
     list-style: none;
     padding: 0;
+   
 }
 
 #branch-list li {
     margin-bottom: 10px;
     cursor: pointer;
+    text-align: center; 
 }
 
 /* styles for the branch container */
@@ -103,29 +138,6 @@ nav ul li a {
 .branch-container h3 {
     margin: 0;
     font-weight: bold;
-}
-
-* Add CSS styles for the footer */
-footer {
-    background-color: #f0f2f4;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #ddd; /* Add border to the top of the footer */
-    z-index: 2; /* Increase the z-index */
-}
-
-a {
-    color: #0074D9;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 /* Media query for smaller screens */
