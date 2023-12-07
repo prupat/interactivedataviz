@@ -69,7 +69,7 @@ nav ul li a {
 
 /* Sidebar styles */
 #sidebar {
-    width: 300px; 
+    width: 280px; 
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
@@ -115,17 +115,7 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #ddd; /* Add border to the top of the footer */
-    z-index: 5; /* Increase the z-index */
-}
-
-p {
-    background-color: #f0f2f4;
-    color: #333;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 20px 0;
+    z-index: 2; /* Increase the z-index */
 }
 
 a {
@@ -139,10 +129,41 @@ a:hover {
 }
 
 /* Media query for smaller screens */
+
 @media only screen and (max-width: 600px) {
-    p {
-        padding: 10px;
-        font-size: 14px;
+    #map-section {
+        margin-left: 0; /* Adjust map-section for small screens */
+    }
+
+    #sidebar {
+        width: 100%; /* Make the sidebar take full width on small screens */
+        position: relative; /* Reset position for the sidebar */
+        bottom: auto; /* Reset bottom for the sidebar */
+        height: auto; /* Reset height for the sidebar */
+    }
+
+    #map-container {
+        display: block; /* Change to block layout for small screens */
+    }
+
+    #map {
+        height: 300px; /* Adjust map height for small screens */
     }
 }
+
+/* Additional media queries for other screen sizes can be added here */
+
+/* 
+@media only screen and (max-width: 600px) and (orientation : landscape) {
+   
+}
+
+@media only screen and (max-width: 600px) and (orientation : portrait) {
+   
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+   
+} */
+
 
