@@ -39,9 +39,10 @@ footer {
     padding: 10px;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    border-top: 1px solid #ddd; /* Add border to the top of the footer */
-    z-index: 0; /* Increase the z-index */
+    border-top: 1px solid #ddd;
+    z-index: 0;
 }
 
 /* Navigation styles */
@@ -71,9 +72,11 @@ a:hover {
 
 /* Map section styles */
 #map-section {
-    flex: 1;
-    margin-left: 330px; 
-    height: 100vh; /* This takes full viewport height */
+    margin-left: 330px;
+    margin-bottom: 10px; 
+    height: calc(100vh - 10px); /* This adjust the map section height to fit the space between map and footer */
+    padding-bottom: 50px;
+    position: relative; 
 }
 
 /* Style the map */
@@ -81,12 +84,13 @@ a:hover {
     height: 100%;
     width: 100%;
     border: 1px solid #ddd;
-    z-index: 0; /* Set a lower z-index */
+    z-index: 1;
 }
 
 /* styles for the map container */
 #map-container {
     display: flex;
+    flex-direction: column; /*This stacks the map container and sidebar on top of each other */
 }
 
 /* Sidebar styles */
@@ -96,10 +100,10 @@ a:hover {
     border: 1px solid #ddd;
     padding: 20px;
     overflow-y: auto; /* This enables scrolling */
-    position: fixed; /* Fixed position for the sidebar */
+    position: fixed; 
     top: 0;
     left: 0;
-    bottom: 0; /* Adjusted to cover the full height */
+    bottom: 0; 
     z-index: 1; /* This ensures it appears above the map */
 }
 
@@ -109,10 +113,9 @@ a:hover {
     font-size: 24px; 
     margin-bottom: 20px; 
     text-align: center; 
-    border-bottom: 1px dotted #0074D9; /* Dotted underline with the same color */
+    border-bottom: 1px dotted #0074D9; 
     
 }
-
 
 #branch-list {
     list-style: none;
@@ -141,7 +144,6 @@ a:hover {
 }
 
 /* Media query for smaller screens */
-
 @media only screen and (max-width: 600px) {
     #map-section {
         margin-left: 0; /* Adjust map-section for small screens */
