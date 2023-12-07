@@ -145,6 +145,25 @@ a:hover {
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
+    header {
+        padding: 5px;
+    }
+
+    p {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
     #map-section {
         margin-left: 0; /* Adjust map-section for small screens */
     }
@@ -161,7 +180,7 @@ a:hover {
     }
 
     #map {
-        height: 500px; /* Adjust map height for small screens */
+        height: 300px; /* Adjust map height for small screens */
     }
 }
 
