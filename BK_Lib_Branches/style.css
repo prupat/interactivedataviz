@@ -164,67 +164,24 @@ a:hover {
         margin-bottom: 10px;
     }
 
-    #sidebar {
-        display: none; /* Hide the sidebar by default */
-    }
-
-    #branch-list li {
-        display: none; /* Hide branch names by default */
-    }
-
-    #map-section.active {
+    #map-section {
         margin-left: 0;
     }
 
-    #map-container.active {
-        display: block;
+    #sidebar {
+        width: 100%; /* Make the sidebar take full width on small screens */
+        position: relative; /* Reset position for the sidebar */
+        bottom: auto; /* Reset bottom for the sidebar */
+        height: auto; /* Reset height for the sidebar */
     }
 
-    #map.active {
-        height: 300px;
-    }
-}
-
-/* Media query for smaller screens - Landscape */
-@media only screen and (max-width: 600px) and (orientation: landscape) {
-        header {
-            padding: 5px;
-        }
-    
-        p {
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-    
-        footer {
-            padding: 5px;
-        }
-    
-        nav ul li {
-            display: block;
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-    
-        #sidebar {
-            display: none; /* Hide the sidebar by default */
-        }
-    
-        #branch-list li {
-            display: none; /* Hide branch names by default */
-        }
-    
-    #map-section.active {
-        margin-left: 280px; /* Adjust map-section for small screens in landscape mode */
+    #map-container {
+        display: block; /* Change to block layout for small screens */
     }
 
-    #map-container.active {
-        display: block;
-    }
-
-    #map.active {
-        height: 300px;
-    }
+    #map {
+        height: 300px; /* Adjust map height for small screens */
+    } 
 }
 
 
