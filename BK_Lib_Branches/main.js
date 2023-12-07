@@ -92,6 +92,9 @@ fetch('../data/lib-branches.json')
             nameElement.style.cursor = 'pointer'; // Change cursor style
             nameElement.style.textDecoration = 'underline'; // Add underline
             nameElement.title = 'Click on it'; // Add tooltip
+           
+           
+
             nameElement.addEventListener('click', () => {
                 if (currentMarker) {
                     map.removeLayer(currentMarker);
