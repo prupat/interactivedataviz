@@ -42,5 +42,37 @@ regionSelect
   .append("option")
   .text(d => d);
 
+// Variable to store the loaded CSV data
+let occupationsData;
+
+// Load data from CSV file
+d3.csv("../data/Prob_AutoJob.csv").then(rawData => {
   
+// Store the loaded data
+occupationsData = rawData;
+
+// Populate the occupation dropdown
+const occupationSelect = d3.select("#occupation-select");
+occupationSelect
+    .selectAll("option")
+    .data(rawData.map(d => d.Occupation))
+    .enter()
+    .append("option")
+    .text(d => d);
+
+// Initial chart update with the first available occupation and region
+updateChart(rawData[0].Occupation, regionSelect.node().value);
+
+// Event listeners for the dropdowns
+occupationSelect.on("change", function() {
+  updateChart(this.value, regionSelect.node().value);
+});
+
+}).catch(error => {
+  console.error("Error loading the CSV data: ", error);
+});
+
+
+
+
 
