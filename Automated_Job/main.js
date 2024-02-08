@@ -3,6 +3,7 @@ const width = window.innerWidth * 0.5,
 height = window.innerHeight * 0.5,
 margin = { top: 20, bottom: 60, left: 80, right: 60 };
 
+
 // Create a new array to store the region information for each state
 const stateToRegion = {
 
@@ -22,4 +23,12 @@ const stateToRegion = {
   Oregon:"West", Utah:"West", Washington:"West", Wyoming:"West"
 
 };
+
+// Create SVG container
+const svg = d3.select("#chart-container")
+.append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", `translate(${margin.left},${margin.top})`);
 
