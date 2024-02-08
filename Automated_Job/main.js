@@ -32,3 +32,15 @@ const svg = d3.select("#chart-container")
 .append("g")
 .attr("transform", `translate(${margin.left},${margin.top})`);
 
+
+// Populate the region dropdown
+const regionSelect = d3.select("#region-select");
+regionSelect
+  .selectAll("option")
+  .data(Object.values(stateToRegion).filter((v, i, a) => a.indexOf(v) === i)) // Get unique region values
+  .enter()
+  .append("option")
+  .text(d => d);
+
+  
+
