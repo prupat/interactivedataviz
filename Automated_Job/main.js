@@ -68,6 +68,10 @@ occupationSelect.on("change", function() {
   updateChart(this.value, regionSelect.node().value);
 });
 
+regionSelect.on("change", function() {
+  updateChart(occupationSelect.node().value, this.value);
+});
+
 }).catch(error => {
   console.error("Error loading the CSV data: ", error);
 });
@@ -75,7 +79,7 @@ occupationSelect.on("change", function() {
 function updateChart(occupation, region){
 
 // Find the occupation data
-const occupationData = occupationData.find(d => d.Occupation === occupation);
+const occupationData = occupationsData.find(d => d.Occupation === occupation);
 
 // Filter the states based on the selected region
 const statesInRegion = Object.entries(stateToRegion).filter(([state, reg]) => reg === region).map(([state]) => state);
@@ -118,8 +122,22 @@ svg.append("g")
    .call(yAxis);
 
 
+// Bind the bar chart data to the rects
+const bars = svg.selectAll(".bar")
+    .data(barChartData, d => d.state);
 
+bars.enter()
+    .append("rect")
+    .attr("class", "bar")
+    .merge(bars)
+    .duration(500)
+    .attr("x", d => xScale(d.State))
+    .attr("y", d => yScale(d.Jobs))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => height - yScale(d.Jobs))
+    .attr("fill", () => colorScale(region));
 
+bars.exit().remove();    
 }
 
 
