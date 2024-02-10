@@ -72,6 +72,56 @@ occupationSelect.on("change", function() {
   console.error("Error loading the CSV data: ", error);
 });
 
+function updateChart(occupation, region){
+
+// Find the occupation data
+const occupationData = occupationData.find(d => d.Occupation === occupation);
+
+// Filter the states based on the selected region
+const statesInRegion = Object.entries(stateToRegion).filter(([state, reg]) => reg === region).map(([state]) => state);
+
+// Create a new array for the bar chart data
+const barChartData = statesInRegion.map(state => {
+  return{
+    State: state,
+    Jobs: +occupationData[state] // convert the string to a number
+  };
+});
+
+// Define the scales
+const xScale = d3.scaleBand()
+  .domain(statesInRegion)
+  .range([0, width])
+  .padding(0,1);
+
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(barChartData, d => d.Jobs)])
+  .range([height, 0])
+  .nice();
+
+
+// Draw the axes
+svg.selectAll(".axis").remove(); // clear previous axes
+
+const xAxis = d3.axisBottom(xScale);
+svg.append("g")
+  .attr("class", "axis x-axis")
+  .attr("transform", `translate(0,${height})`)
+  .call(xAxis)
+  .selectAll("text")
+  .attr("transform", "rotate(-45)")
+  .style("text-anchor", "end");
+
+const yAxis = d3.axisLeft(yScale);
+svg.append("g")
+   .attr("class", "axis y-axis")
+   .call(yAxis);
+
+
+
+
+}
+
 
 
 
