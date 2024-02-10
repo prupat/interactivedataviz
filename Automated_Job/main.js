@@ -124,18 +124,17 @@ svg.append("g")
 
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
-    .data(barChartData, d => d.state);
+    .data(barChartData, d => d.State);
 
 bars.enter()
     .append("rect")
     .attr("class", "bar")
     .merge(bars)
-    .duration(500)
     .attr("x", d => xScale(d.State))
     .attr("y", d => yScale(d.Jobs))
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.Jobs))
-    .attr("fill", () => colorScale(region));
+    .attr("fill", "steelblue");
 
 bars.exit().remove();    
 }
