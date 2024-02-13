@@ -134,7 +134,7 @@ bars.enter()
     .attr("y", d => yScale(d.Jobs))
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.Jobs))
-    .attr("fill", "steelblue");
+    .attr("fill", "#088F8F");
 
 bars.exit().remove();    
 }
