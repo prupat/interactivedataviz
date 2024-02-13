@@ -45,14 +45,53 @@ regionSelect
 // Variable to store the loaded CSV data
 let occupationsData;
 
+// Variable to store the occupation dropdown
+const occupationSelect = d3.select("#occupation-select");
+
+// Update occupation dropdown based on job type checkboxes
+function updateOccupationDropdown() {
+  const whiteCollarChecked = document.getElementById("white-collar").checked;
+  const blueCollarChecked = document.getElementById("blue-collar").checked;
+
+  let filteredOccupations;
+
+  if (whiteCollarChecked && blueCollarChecked) {
+    filteredOccupations = occupationsData
+      .filter(d => d.JobType === "White Collar" || d.JobType === "Blue Collar")
+      .map(d => d.Occupation);
+  } else if (whiteCollarChecked || blueCollarChecked) {
+    filteredOccupations = occupationsData
+      .filter(d => d.JobType === (whiteCollarChecked ? "White Collar" : "Blue Collar"))
+      .map(d => d.Occupation);
+  } else {
+    filteredOccupations = occupationsData.map(d => d.Occupation);
+  }
+
+  const options = occupationSelect
+    .selectAll("option")
+    .data(filteredOccupations, d => d);
+
+  options.enter()
+    .append("option")
+    .merge(options)
+    .text(d => d);
+
+  options.exit().remove();
+
+  updateChart();
+}
+
+
 // Load data from CSV file
 d3.csv("../data/Prob_AutoJob.csv").then(rawData => {
   
 // Store the loaded data
 occupationsData = rawData;
 
+// Initial population of the occupation dropdown
+updateOccupationDropdown();
+
 // Populate the occupation dropdown
-const occupationSelect = d3.select("#occupation-select");
 occupationSelect
     .selectAll("option")
     .data(rawData.map(d => d.Occupation))
@@ -61,7 +100,8 @@ occupationSelect
     .text(d => d);
 
 // Initial chart update with the first available occupation and region
-updateChart(rawData[0].Occupation, regionSelect.node().value);
+const initialOccupation = occupationsData.map(d => d.Occupation)[0];
+updateChart(initialOccupation, regionSelect.node().value);
 
 // Event listeners for the dropdowns
 occupationSelect.on("change", function() {
@@ -71,6 +111,10 @@ occupationSelect.on("change", function() {
 regionSelect.on("change", function() {
   updateChart(occupationSelect.node().value, this.value);
 });
+
+// Event listeners for the checkboxes
+d3.select("#white-collar").on("change", updateOccupationDropdown);
+d3.select("#blue-collar").on("change", updateOccupationDropdown);
 
 }).catch(error => {
   console.error("Error loading the CSV data: ", error);
