@@ -42,11 +42,14 @@ regionSelect
   .append("option")
   .text(d => d);
 
+
 // Variable to store the loaded CSV data
 let occupationsData;
 
+
 // Variable to store the occupation dropdown
 const occupationSelect = d3.select("#occupation-select");
+
 
 // Update occupation dropdown based on job type checkboxes
 function updateOccupationDropdown() {
@@ -103,6 +106,8 @@ occupationSelect
 const initialOccupation = occupationsData.map(d => d.Occupation)[0];
 updateChart(initialOccupation, regionSelect.node().value);
 
+
+
 // Event listeners for the dropdowns
 occupationSelect.on("change", function() {
   updateChart(this.value, regionSelect.node().value);
@@ -120,6 +125,8 @@ d3.select("#blue-collar").on("change", updateOccupationDropdown);
   console.error("Error loading the CSV data: ", error);
 });
 
+
+
 function updateChart(occupation, region){
 
 // Find the occupation data
@@ -136,6 +143,8 @@ const barChartData = statesInRegion.map(state => {
   };
 });
 
+
+
 // Define the scales
 const xScale = d3.scaleBand()
   .domain(statesInRegion)
@@ -146,6 +155,8 @@ const yScale = d3.scaleLinear()
   .domain([0, d3.max(barChartData, d => d.Jobs)])
   .range([height, 0])
   .nice();
+
+
 
 
 // Draw the axes
@@ -166,6 +177,9 @@ svg.append("g")
    .call(yAxis);
 
 
+
+
+   
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
     .data(barChartData, d => d.State);
