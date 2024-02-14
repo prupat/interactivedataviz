@@ -144,35 +144,6 @@ const barChartData = statesInRegion.map(state => {
 });
 
 
-const colorScale = d3.scaleOrdinal()
-  .domain(["Northeast", "Southeast", "Midwest", "Southwest", "West"])
-  .range(["#a50f15", "#de9c2a", "#06470c", "#135589", "#8c07c2"]);
- 
-  function risk_category(probability) {
-    if (probability < 0.33) {
-      return "Low";
-    } else if (probability < 0.66) {
-      return "Medium";
-    } else {
-      return "High";
-    }
-  }
-  // Table Update
-  const riskCategory = risk_category(occupationsData.Probability); // Assuming you have this function
-
-  // Clear existing table rows
-  d3.select("#table-body").selectAll("tr").remove();
-
-  // Add table row
-  d3.select("#table-body").append("tr")
-    .selectAll("td")
-    .data([occupationsData.Occupation, occupationsData.Probability, riskCategory])
-    .enter()
-    .append("td")
-    .text(d => d === occupationsData.Probability ? (d * 100).toFixed(1) + "%" : d); 
-
-
-
 
 // Define the scales
 const xScale = d3.scaleBand()
@@ -184,8 +155,6 @@ const yScale = d3.scaleLinear()
   .domain([0, d3.max(barChartData, d => d.Jobs)])
   .range([height, 0])
   .nice();
-
-
 
 
 // Draw the axes
@@ -251,7 +220,10 @@ bars.enter()
     .attr("y", d => yScale(d.Jobs))
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.Jobs))
-    .attr("fill", () => colorScale(region));
+    .attr("fill", "blue");
+
+  // select the tooltip and hide it
+  const tooltip = d3.select("#tooltip").style("opacity", 0);
 
 bars.exit().remove();    
 }
