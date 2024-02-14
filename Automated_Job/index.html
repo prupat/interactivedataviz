@@ -9,8 +9,7 @@
 <body>
 
 <header>
-  <h1>Job Automation Risk</h1>
-  <p>To what extent do white-collar occupations, particularly those with limited human or client interaction, face increased job vulnerability in the context of the prevalence of Large Language Models and AI technologies?</p>
+  <h1>“Assessing Job Vulnerability and Employment Growth in the Era of Large Language Models”</h1>
 </header>
 
 <nav>
@@ -20,8 +19,9 @@
 </nav>
 
 <section id="content">
-  <h2>What jobs are more likely to be replaced by LLMs?</h2>
-  <p>This section provides information and interactive charts related to job data.</p>
+  <h2>To what extent do white-collar occupations, particularly those with limited human or client interaction, face increased job vulnerability in the context of the prevalence of Large Language Models and AI technologies?</h2>
+  <p>What jobs are more likely to be replaced by LLMs?</p>
+
 
   <!-- Occupation Filter Dropdown -->
   <label for="occupation-filter">Select Occupation:</label>
@@ -45,6 +45,23 @@
   <!-- Container for SVG charts -->
   <div id="chart-container"></div>
 </section>
+
+div id="table-container">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Occupation</th>
+          <th>Probability</th>
+          <th>Risk of Automation</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Table content here -->
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 <!-- Include D3.js -->

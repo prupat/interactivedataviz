@@ -144,6 +144,35 @@ const barChartData = statesInRegion.map(state => {
 });
 
 
+const colorScale = d3.scaleOrdinal()
+  .domain(["Northeast", "Southeast", "Midwest", "Southwest", "West"])
+  .range(["#a50f15", "#de9c2a", "#06470c", "#135589", "#8c07c2"]);
+ 
+  function risk_category(probability) {
+    if (probability < 0.33) {
+      return "Low";
+    } else if (probability < 0.66) {
+      return "Medium";
+    } else {
+      return "High";
+    }
+  }
+  // Table Update
+  const riskCategory = risk_category(occupationsData.Probability); // Assuming you have this function
+
+  // Clear existing table rows
+  d3.select("#table-body").selectAll("tr").remove();
+
+  // Add table row
+  d3.select("#table-body").append("tr")
+    .selectAll("td")
+    .data([occupationsData.Occupation, occupationsData.Probability, riskCategory])
+    .enter()
+    .append("td")
+    .text(d => d === occupationsData.Probability ? (d * 100).toFixed(1) + "%" : d); 
+
+
+
 
 // Define the scales
 const xScale = d3.scaleBand()
@@ -171,15 +200,30 @@ svg.append("g")
   .attr("transform", "rotate(-45)")
   .style("text-anchor", "end");
 
+// X-axis title
+svg.append("text")             
+   .attr("transform", `translate(${width / 2}, ${height + margin.top + 40})`)
+   .style("text-anchor", "middle")
+   .text("US States");
+
+
 const yAxis = d3.axisLeft(yScale);
 svg.append("g")
    .attr("class", "axis y-axis")
    .call(yAxis);
 
 
+// Y-axis title  
+svg.append("text")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 0 - margin.left)
+   .attr("x",0 - (height / 2))
+   .attr("dy", "1em")
+   .style("text-anchor", "middle")
+   .text("Number of Jobs per State");
 
 
-   
+
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
     .data(barChartData, d => d.State);
@@ -188,11 +232,26 @@ bars.enter()
     .append("rect")
     .attr("class", "bar")
     .merge(bars)
+    .on("mouseover", function(d) {
+      tooltip.transition()
+        .duration(200)
+        .style("opacity", .9);
+      tooltip.html(`Jobs: ${d.Jobs}`)
+        .style("left", (d3.event.pageX) + "px") 
+        .style("top", (d3.event.pageY - 28) + "px");
+    })
+    .on("mouseout", function(d) {
+      tooltip.transition()
+        .duration(500)
+        .style("opacity", 0);
+    })
+    .transition()
+    .duration(500)
     .attr("x", d => xScale(d.State))
     .attr("y", d => yScale(d.Jobs))
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.Jobs))
-    .attr("fill", "#088F8F");
+    .attr("fill", () => colorScale(region));
 
 bars.exit().remove();    
 }
