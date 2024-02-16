@@ -50,26 +50,6 @@ let occupationsData;
 // Variable to store the occupation dropdown
 const occupationSelect = d3.select("#occupation-select");
 
-// Update the table based on selected occupation and probability
-function updateTable(occupation, probability) {
-  const tableBody = d3.select("#table-body");
-  tableBody.html(""); // Clear previous table content
-
-  // Filter data based on selected occupation
-  const filteredData = occupationsData.filter(d => d.Occupation === occupation);
-
-  // Create rows in the table
-  filteredData.forEach(d => {
-    const row = tableBody.append("tr");
-    row.append("td").text(d.Occupation);
-    row.append("td").text(d.Probability);
-    
-    // Add a formula to flag the job as "high" or "low risk" based on the probability
-    const risk = +d.Probability >= probability ? "High" : "Low";
-    row.append("td").text(risk);
-  });
-}
-
 
 // Update occupation dropdown based on job type checkboxes
 function updateOccupationDropdown() {
@@ -87,7 +67,7 @@ function updateOccupationDropdown() {
       .filter(d => d.JobType === (whiteCollarChecked ? "White Collar" : "Blue Collar"))
       .map(d => d.Occupation);
   } else {
-    filteredOccupations = occupationsData.map(d => d.Occupation);
+    filteredOccupations = [];
   }
 
   const options = occupationSelect
@@ -104,23 +84,35 @@ function updateOccupationDropdown() {
   
   // Update the table after updating the dropdown options
   const selectedOccupation = occupationSelect.node().value;
-  const selectedProbability = +document.getElementById("probability-slider").value;
-  updateTable(selectedOccupation, selectedProbability);
-
+  updateTable(selectedOccupation);
   updateChart(selectedOccupation, regionSelect.node().value);
 }
 
+// Update the table based on selected occupation and probability
+function updateTable(occupation, probability) {
+  const tableBody = d3.select("#table-body");
+  tableBody.html(""); // Clear previous table content
+
+  // Filter data based on selected occupation
+  const filteredData = occupationsData.filter(d => d.Occupation === occupation);
+
+  // Create rows in the table
+  filteredData.forEach(d => {
+    const row = tableBody.append("tr");
+    row.append("td").text(d.Occupation);
+    row.append("td").text(d.Probability);
+    
+    // Add a formula to flag the job as "high" or "low risk" based on the probability
+    const risk = probability >= +d.Probability ? "High" : "Low";
+    row.append("td").text(risk);
+  });
+}
 
 // Load data from CSV file
 d3.csv("../data/Prob_AutoJob.csv").then(rawData => {
   
 // Store the loaded data
 occupationsData = rawData;
-
-// Update the table based on selected occupation and default probability
-const defaultProbability = 0.5; // You can adjust this value based on your criteria
-const initialOccupation = occupationsData.map(d => d.Occupation)[0];
-updateTable(initialOccupation, defaultProbability);
 
 // Populate the occupation dropdown
 occupationSelect
@@ -133,12 +125,18 @@ occupationSelect
 // Initial population of the occupation dropdown
 updateOccupationDropdown();
 
+// Update the table based on selected occupation and default probability
+const defaultProbability = 0.5; // You can adjust this value based on your criteria
+const initialOccupation = occupationsData.map(d => d.Occupation)[0];
+updateTable(initialOccupation, defaultProbability);
+
 // Initial chart update with the first available occupation and region
 updateChart(initialOccupation, regionSelect.node().value);
 
 
 // Event listeners for the dropdowns
 occupationSelect.on("change", function() {
+  updateTable(this.value);
   updateChart(this.value, regionSelect.node().value);
 });
 
@@ -147,17 +145,16 @@ regionSelect.on("change", function() {
 });
 
 // Event listeners for the checkboxes
-d3.select("#white-collar").on("change", updateOccupationDropdown);
-d3.select("#blue-collar").on("change", updateOccupationDropdown);
-
-
-// Event listener for the probability slider
-d3.select("#probability-slider").on("input", function() {
-  const probability = +this.value;
-  const selectedOccupation = occupationSelect.node().value;
-  updateTable(selectedOccupation, probability);
-  updateChart(occupationSelect.node().value, regionSelect.node().value);
+d3.select("#white-collar").on("change", function() {
+  updateOccupationDropdown();
 });
+
+d3.select("#blue-collar").on("change", function() {
+  updateOccupationDropdown();
+});
+
+
+
 
 }).catch(error => {
   console.error("Error loading the CSV data: ", error);
