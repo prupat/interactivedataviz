@@ -7,7 +7,7 @@ margin = { top: 20, bottom: 60, left: 80, right: 60 };
 // Create a new array to store the region information for each state
 const stateToRegion = {
 
-  Connecticut:"Northeast", Delaware:"Northeast", "District of Columbia":"Northeast", Maine:"Northeast", Maryland:"Northeast",
+  Connecticut:"Northeast", Delaware:"Northeast", DC:"Northeast", Maine:"Northeast", Maryland:"Northeast",
   Massachusetts:"Northeast", "New Hampshire":"Northeast", "New Jersey":"Northeast", "New York":"Northeast", Pennsylvania:"Northeast",
   "Rhode Island":"Northeast", Vermont:"Northeast", Virginia:"Northeast", "West Virginia":"Northeast"
 ,
@@ -241,9 +241,6 @@ svg.append("text")
 const bars = svg.selectAll(".bar")
     .data(barChartData, d => d.State);
 
-// select the tooltip and hide it
-const tooltip = d3.select("#tooltip");
-
 
 bars.enter()
   .append("rect")
@@ -271,7 +268,10 @@ bars.enter()
   .attr("height", d => height - yScale(d.Jobs))
   .attr("fill", "#7393B3");
 
-  
+// select the tooltip and hide it
+const tooltip = d3.select("#tooltip").style("opacity", 0);
+
+
 bars.exit().remove();    
 }
 
