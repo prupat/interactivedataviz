@@ -88,6 +88,16 @@ function updateOccupationDropdown() {
   updateChart(selectedOccupation, regionSelect.node().value);
 }
 
+// Add a formula to flag the job as "high" or "low risk" based on custom probability thresholds
+const calculateRisk = (probability) => {
+  const numericProbability = +probability; // Convert probability to a number
+  if (numericProbability < 0.5) {
+    return "Low";
+  } else {
+    return "High";
+  }
+};
+
 // Update the table based on selected occupation and probability
 function updateTable(occupation, probability) {
   const tableBody = d3.select("#table-body");
@@ -102,9 +112,9 @@ function updateTable(occupation, probability) {
     row.append("td").text(d.Occupation);
     row.append("td").text(d.Probability);
     
-    // Add a formula to flag the job as "high" or "low risk" based on the probability
-    const risk = probability >= +d.Probability ? "High" : "Low";
-    row.append("td").text(risk);
+   // Calculate risk based on custom probability thresholds
+   const risk = calculateRisk(probability);
+   row.append("td").text(risk);
   });
 }
 
@@ -153,9 +163,6 @@ d3.select("#blue-collar").on("change", function() {
   updateOccupationDropdown();
 });
 
-
-
-
 }).catch(error => {
   console.error("Error loading the CSV data: ", error);
 });
@@ -166,8 +173,10 @@ function updateChart(occupation, region){
 // Find the occupation data
 const occupationData = occupationsData.find(d => d.Occupation === occupation);
 
+
 // Filter the states based on the selected region
 const statesInRegion = Object.entries(stateToRegion).filter(([state, reg]) => reg === region).map(([state]) => state);
+
 
 // Create a new array for the bar chart data
 const barChartData = statesInRegion.map(state => {
@@ -230,38 +239,45 @@ const bars = svg.selectAll(".bar")
     .data(barChartData, d => d.State);
 
 // select the tooltip and hide it
-const tooltip = d3.select("#tooltip").style("opacity", 0);
+const tooltip = d3.select("#tooltip");
 
 bars.enter()
     .append("rect")
     .attr("class", "bar")
     .merge(bars)
     .on("mouseover", function(d) {
-  const barData = d3.select(this).data()[0]; 
-  if (d3.event) { // Check if event exists
+       const barData = d3.select(this).datum(); 
+       const jobs = barData.Jobs;
+       
+// Get mouse coordinates relative to the SVG container
+const [mouseX, mouseY] = d3.mouse(this.parentNode);       
+
+    // Show tooltip
     tooltip.transition()
-      .duration(200)
-      .style("opacity", .9);
-    tooltip.html(`Jobs: ${barData.Jobs}`)
-      .style("left", (d3.event.pageX) + "px") 
-      .style("top", (d3.event.pageY - 28) + "px");
-  }
+    .duration(200)
+    .style("opacity", .9);
+    tooltip.html(`Jobs: ${jobs}`)
+    .style("left", (mouseX + margin.left) + "px") // Adjust for margins
+    .style("top", (mouseY + margin.top - 28) + "px"); // Adjust for margins
 })
     .on("mouseout", function(d) {
-      tooltip.transition()
-        .duration(500)
-        .style("opacity", 0);
+
+      // Hide tooltip
+    tooltip.transition()
+    .duration(500)
+    .style("opacity", 0);
     })
+
     .transition()
     .duration(500)
     .attr("x", d => xScale(d.State))
     .attr("y", d => yScale(d.Jobs))
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.Jobs))
-    .attr("fill", "blue");
+    .attr("fill", "#7393B3");
 
   
-bars.exit().remove();    
+//bars.exit().remove();    
 }
 
 
