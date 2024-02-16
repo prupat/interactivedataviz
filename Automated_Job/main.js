@@ -91,8 +91,11 @@ function updateOccupationDropdown() {
 // Add a formula to flag the job as "high" or "low risk" based on custom probability thresholds
 const calculateRisk = (probability) => {
   const numericProbability = +probability; // Convert probability to a number
-  if (numericProbability < 0.5) {
+  const percentage = (numericProbability * 100); // Calculate percentage
+  if (percentage < 0.5) {
     return "Low";
+  } else if (percentage >= 0.5 && percentage < 0.8) {
+    return "Medium";
   } else {
     return "High";
   }
@@ -247,16 +250,17 @@ bars.enter()
   .attr("class", "bar")
   .merge(bars)
   .on("mouseover", function(d) {
-    tooltip.transition()
-      .duration(200)
-      .style("opacity", .9);
-    tooltip.html(`Jobs: ${d.Jobs}`)
-      .style("left", (d3.event.pageX) + "px") 
+    d3.select(this)
+      .append("div")
+      .attr("id", "tooltip")
+      .classed("tooltip", true)
+      .style("opacity", .9)
+      .html(`Jobs: ${d.Jobs}`)
+      .style("left", (d3.event.pageX) + "px")
       .style("top", (d3.event.pageY - 28) + "px");
   })
   .on("mouseout", function(d) {
-    tooltip.transition()
-      .duration(500)
+    d3.select("#tooltip")
       .style("opacity", 0);
   })
   .transition()
