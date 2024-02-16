@@ -241,43 +241,34 @@ const bars = svg.selectAll(".bar")
 // select the tooltip and hide it
 const tooltip = d3.select("#tooltip");
 
+
 bars.enter()
-    .append("rect")
-    .attr("class", "bar")
-    .merge(bars)
-    .on("mouseover", function(d) {
-       const barData = d3.select(this).datum(); 
-       const jobs = barData.Jobs;
-       
-// Get mouse coordinates relative to the SVG container
-const [mouseX, mouseY] = d3.mouse(this.parentNode);       
-
-    // Show tooltip
+  .append("rect")
+  .attr("class", "bar")
+  .merge(bars)
+  .on("mouseover", function(d) {
     tooltip.transition()
-    .duration(200)
-    .style("opacity", .9);
-    tooltip.html(`Jobs: ${jobs}`)
-    .style("left", (mouseX + margin.left) + "px") // Adjust for margins
-    .style("top", (mouseY + margin.top - 28) + "px"); // Adjust for margins
-})
-    .on("mouseout", function(d) {
-
-      // Hide tooltip
+      .duration(200)
+      .style("opacity", .9);
+    tooltip.html(`Jobs: ${d.Jobs}`)
+      .style("left", (d3.event.pageX) + "px") 
+      .style("top", (d3.event.pageY - 28) + "px");
+  })
+  .on("mouseout", function(d) {
     tooltip.transition()
-    .duration(500)
-    .style("opacity", 0);
-    })
-
-    .transition()
-    .duration(500)
-    .attr("x", d => xScale(d.State))
-    .attr("y", d => yScale(d.Jobs))
-    .attr("width", xScale.bandwidth())
-    .attr("height", d => height - yScale(d.Jobs))
-    .attr("fill", "#7393B3");
+      .duration(500)
+      .style("opacity", 0);
+  })
+  .transition()
+  .duration(500)
+  .attr("x", d => xScale(d.State))
+  .attr("y", d => yScale(d.Jobs))
+  .attr("width", xScale.bandwidth())
+  .attr("height", d => height - yScale(d.Jobs))
+  .attr("fill", "#7393B3");
 
   
-//bars.exit().remove();    
+bars.exit().remove();    
 }
 
 
