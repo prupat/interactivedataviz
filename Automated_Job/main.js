@@ -94,14 +94,7 @@ function updateOccupationDropdown() {
 // Add a formula to flag the job as "high" or "low risk" based on custom probability thresholds
 const calculateRisk = (probability) => {
   const numericProbability = +probability; // Convert probability to a number
-  const percentage = (numericProbability * 100); // Calculate percentage
-  if (percentage < 0.5) {
-    return "Low";
-  } else if (percentage >= 0.5 && percentage < 0.8) {
-    return "Medium";
-  } else {
-    return "High";
-  }
+   return numericProbability >= 0.5 ? "High" : "Low";
 };
 
 // Update the table based on selected occupation and probability
@@ -119,7 +112,7 @@ function updateTable(occupation, probability) {
     row.append("td").text(d.Probability);
     
    // Calculate risk based on custom probability thresholds
-   const risk = calculateRisk(probability);
+   const risk = calculateRisk(d.Probability);
    row.append("td").text(risk);
   });
 }
