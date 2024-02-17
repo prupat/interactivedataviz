@@ -98,7 +98,7 @@ const calculateRisk = (probability) => {
 };
 
 // Update the table based on selected occupation and probability
-function updateTable(occupation, probability) {
+function updateTable(occupation) {
   const tableBody = d3.select("#table-body");
   tableBody.html(""); // Clear previous table content
 
@@ -135,9 +135,9 @@ occupationSelect
 updateOccupationDropdown();
 
 // Update the table based on selected occupation and default probability
-const defaultProbability = 0.5; // You can adjust this value based on your criteria
+//const defaultProbability = 0.5; // You can adjust this value based on your criteria
 const initialOccupation = occupationsData.map(d => d.Occupation)[0];
-updateTable(initialOccupation, defaultProbability);
+updateTable(initialOccupation);
 
 // Initial chart update with the first available occupation and region
 updateChart(initialOccupation, regionSelect.node().value);
