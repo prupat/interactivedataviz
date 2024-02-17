@@ -50,6 +50,9 @@ let occupationsData;
 // Variable to store the occupation dropdown
 const occupationSelect = d3.select("#occupation-select");
 
+// declare tooltip variable
+let tooltip;
+
 
 // Update occupation dropdown based on job type checkboxes
 function updateOccupationDropdown() {
@@ -236,6 +239,15 @@ svg.append("text")
    .style("text-anchor", "middle")
    .text("Number of Jobs per State");
 
+ // Add a tooltip               
+ tooltip = d3.select("body")
+ .append("div")
+ .attr("class", "tooltip")
+ .style("z-index", "10")
+ .style("position", "absolute")
+ .style("visibility", "hidden")
+ .text("tooltip");
+
 
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
@@ -246,20 +258,21 @@ bars.enter()
   .append("rect")
   .attr("class", "bar")
   .merge(bars)
-  .on("mouseover", function(d) {
-    d3.select(this)
-      .append("div")
-      .attr("id", "tooltip")
-      .classed("tooltip", true)
-      .style("opacity", .9)
-      .html(`Jobs: ${d.Jobs}`)
-      .style("left", (d3.event.pageX) + "px")
-      .style("top", (d3.event.pageY - 28) + "px");
-  })
-  .on("mouseout", function(d) {
-    d3.select("#tooltip")
-      .style("opacity", 0);
-  })
+  .on("mouseover", function(event,d,i){
+    return tooltip
+   .html(`<div><b># of Jobs:</b> ${d.Jobs}</div>`) 
+   .style("visibility", "visible")
+   .style("opacity", .8)
+   .style("background", "#91b07d")
+ })
+
+.on("mousemove", function(event){
+  return tooltip.style("top", (event.pageY-10)+"px")
+                .style("left", (event.pageX+10) + "px");})       
+   
+.on("mouseout", function(){
+   return tooltip.style("visibility", "hidden");}) 
+
   .transition()
   .duration(500)
   .attr("x", d => xScale(d.State))
@@ -267,10 +280,6 @@ bars.enter()
   .attr("width", xScale.bandwidth())
   .attr("height", d => height - yScale(d.Jobs))
   .attr("fill", "#7393B3");
-
-// select the tooltip and hide it
-const tooltip = d3.select("#tooltip").style("opacity", 0);
-
 
 bars.exit().remove();    
 }
