@@ -94,7 +94,7 @@ function updateOccupationDropdown() {
 // Add a formula to flag the job as "high" or "low risk" based on custom probability thresholds
 const calculateRisk = (probability) => {
   const numericProbability = +probability; // Convert probability to a number
-   return numericProbability >= 0.5 ? "High" : "Low";
+   return numericProbability >= 0.7 ? "High" : "Low";
 };
 
 // Update the table based on selected occupation and probability
@@ -134,8 +134,7 @@ occupationSelect
 // Initial population of the occupation dropdown
 updateOccupationDropdown();
 
-// Update the table based on selected occupation and default probability
-//const defaultProbability = 0.5; // You can adjust this value based on your criteria
+// Update the table based on selected occupation
 const initialOccupation = occupationsData.map(d => d.Occupation)[0];
 updateTable(initialOccupation);
 
