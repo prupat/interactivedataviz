@@ -1,14 +1,18 @@
-body, h1, h2, p, nav, label, select {
-  margin: 0;
-  padding: 0;
+body, p, label, select {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:medium;
+  width:960px;
+  height: 100%;
+  margin:10px auto;
+  background-image:url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position:top center;
 }
 
-body {
-  font-family: Arial, sans-serif;
-}
 
 header {
-  background-color: #333;
+  background-color: #003366;
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -80,14 +84,9 @@ th, td {
   padding: 8px;
   text-align: center;
 }
-
-footer {
-  background-color: #333;
-  color: #fff;
+#footer {
+  background-color: #003366;
+  color: white;
   text-align: center;
-  padding: 10px;
-  position: sticky; /* Change position to sticky */
-  bottom: 0;
-  width: 100%;
+  padding: 0px;
 }
-
