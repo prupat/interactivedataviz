@@ -19,13 +19,13 @@ header {
 }
 
 nav {
-  background-color: #444;
+  background-color: #C0C0C0;
   padding: 10px;
   text-align: center;
 }
 
 nav a {
-  color: #fff;
+  color: #003366;
   text-decoration: none;
   margin: 0 10px;
 }
