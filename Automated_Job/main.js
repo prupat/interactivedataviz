@@ -240,6 +240,7 @@ svg.append("text")
  .style("visibility", "hidden")
  .text("tooltip");
 
+ const adjustedBandwidth = xScale.bandwidth() * 0.8
 
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
@@ -267,9 +268,9 @@ bars.enter()
 
   .transition()
   .duration(500)
-  .attr("x", d => xScale(d.State))
+  .attr("x", d => xScale(d.State) + (xScale.bandwidth() - adjustedBandwidth) / 2) // Center the bars
   .attr("y", d => yScale(d.Jobs))
-  .attr("width", xScale.bandwidth())
+  .attr("width", adjustedBandwidth)
   .attr("height", d => height - yScale(d.Jobs))
   .attr("fill", "#7393B3");
 
