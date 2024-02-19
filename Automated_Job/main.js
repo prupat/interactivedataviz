@@ -100,7 +100,7 @@ const calculateRisk = (probability) => {
 // Add color to bars based on the regional geographic
 const colorScale = d3.scaleOrdinal()
   .domain(["Northeast", "Southeast", "Midwest", "Southwest", "West"])
-  .range(["#FFCC80", "#B3E5FC", "#FFAB91", "#B0BEC5", "#C5E1A5"]);
+  .range(["#B76F81", "#B3E5FC", "#FFAB91", "#B0BEC5", "#C5E1A5"]);
 
 
 // Update the table based on selected occupation and probability
@@ -206,14 +206,16 @@ const yScale = d3.scaleLinear()
 // Draw the axes
 svg.selectAll(".axis").remove(); // clear previous axes
 
-const xAxis = d3.axisBottom(xScale);
+const xAxis = d3.axisBottom(xScale)
+ .tickSize(8);
 svg.append("g")
   .attr("class", "axis x-axis")
   .attr("transform", `translate(0,${height})`)
   .call(xAxis)
   .selectAll("text")
-  .attr("transform", "rotate(-45)")
+  .attr("transform", "rotate(-25)")
   .style("text-anchor", "end");
+  
 
 // X-axis title
 svg.append("text")             

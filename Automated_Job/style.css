@@ -98,6 +98,14 @@ th, td {
   padding: 8px;
   text-align: center;
 }
+
+.axis text {
+  font-size: 12px;
+  font-weight: bold;
+  fill: gold; 
+}
+
+
 #footer {
   background-color: #003366;
   color: white;
