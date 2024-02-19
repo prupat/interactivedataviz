@@ -97,6 +97,12 @@ const calculateRisk = (probability) => {
    return numericProbability >= 0.7 ? "High" : "Low";
 };
 
+// Add color to bars based on the regional geographic
+const colorScale = d3.scaleOrdinal()
+  .domain(["Northeast", "Southeast", "Midwest", "Southwest", "West"])
+  .range(["#FFCC80", "#B3E5FC", "#FFAB91", "#B0BEC5", "#C5E1A5"]);
+
+
 // Update the table based on selected occupation and probability
 function updateTable(occupation) {
   const tableBody = d3.select("#table-body");
@@ -272,7 +278,7 @@ bars.enter()
   .attr("y", d => yScale(d.Jobs))
   .attr("width", adjustedBandwidth)
   .attr("height", d => height - yScale(d.Jobs))
-  .attr("fill", "#7393B3");
+  .attr("fill", () => colorScale(region));
 
 bars.exit().remove();    
 }
