@@ -28,6 +28,7 @@ nav a {
   color: #003366;
   text-decoration: none;
   margin: 0 10px;
+  font-weight: bold;
 }
 
 nav a:hover {
