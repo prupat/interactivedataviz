@@ -99,10 +99,16 @@ th, td {
   text-align: center;
 }
 
-.axis text {
+.axis.x-axis text {
   font-size: 12px;
   font-weight: bold;
   fill: gold; 
+}
+
+.axis.y-axis text {
+  font-size: 12px;
+  font-weight: bold;
+  fill: black; 
 }
 
 
