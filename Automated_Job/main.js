@@ -206,8 +206,7 @@ const yScale = d3.scaleLinear()
 // Draw the axes
 svg.selectAll(".axis").remove(); // clear previous axes
 
-const xAxis = d3.axisBottom(xScale)
- .tickSize(8);
+const xAxis = d3.axisBottom(xScale);
 svg.append("g")
   .attr("class", "axis x-axis")
   .attr("transform", `translate(0,${height})`)
@@ -221,7 +220,8 @@ svg.append("g")
 svg.append("text")             
    .attr("transform", `translate(${width / 2}, ${height + margin.top + 40})`)
    .style("text-anchor", "middle")
-   .text("US States");
+   .text("US States")
+   .attr("fill", "#0047AB");
 
 
 const yAxis = d3.axisLeft(yScale);
@@ -237,7 +237,8 @@ svg.append("text")
    .attr("x",0 - (height / 2))
    .attr("dy", "1em")
    .style("text-anchor", "middle")
-   .text("Number of Jobs per State");
+   .text("Number of Jobs per State")
+   .attr("fill", "#0047AB");
 
  // Add a tooltip               
  tooltip = d3.select("body")

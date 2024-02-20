@@ -1,4 +1,4 @@
-body, p, label, select {
+body, p {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size:medium;
   width:960px;
@@ -45,10 +45,12 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   text-decoration: underline;
-  
+  color: #0047AB;
 }
 
 select {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:medium;
   padding: 8px;
   margin-bottom: 10px;
   width: 100%;
@@ -59,14 +61,13 @@ select {
 #chart-container {
   margin-top: 20px;
 }
-/* Style for checkbox container */
+
 .checkbox-container {
   border: 2px solid #000; /* Black border */
   border-radius: 5px; /* Rounded corners */
   padding: 10px; /* Add padding for spacing */
 }
 
-/* Style for individual checkboxes */
 .checkbox-container label {
   display: block; /* Display checkboxes vertically */
   margin-bottom: 5px; /* Add space between checkboxes */
@@ -102,7 +103,7 @@ th, td {
 .axis.x-axis text {
   font-size: 12px;
   font-weight: bold;
-  fill: gold; 
+  fill: rgb(31, 31, 27); 
 }
 
 .axis.y-axis text {
@@ -111,6 +112,16 @@ th, td {
   fill: black; 
 }
 
+.data-source-text {
+  font-weight: bold;
+  font-style: italic;
+  font-size:small;
+  text-decoration: underline;
+}
+
+h4, h5{ 
+  border-bottom: solid black
+}
 
 #footer {
   background-color: #003366;
