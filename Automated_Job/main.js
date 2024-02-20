@@ -114,12 +114,22 @@ function updateTable(occupation) {
   // Create rows in the table
   filteredData.forEach(d => {
     const row = tableBody.append("tr");
-    row.append("td").text(d.Occupation);
-    row.append("td").text(d.Probability);
     
    // Calculate risk based on custom probability thresholds
    const risk = calculateRisk(d.Probability);
-   row.append("td").text(risk);
+
+
+   // Apply color to the entire row based on risk level
+    if (risk === "High") {
+      row.style("color", "#B8390E"); // Red color for high risk
+    } else {
+      row.style("color", "green"); // Green color for low risk
+    }
+    
+    // Add data to table cells
+    row.append("td").text(d.Occupation).style("font-weight", "bold"); // Bold font for all cells
+    row.append("td").text(d.Probability).style("font-weight", "bold"); // Bold font for all cells
+    row.append("td").text(risk).style("font-weight", "bold"); // Bold font for all cells
   });
 }
 
