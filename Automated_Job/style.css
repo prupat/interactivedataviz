@@ -10,7 +10,6 @@ body, p {
   background-position:top center;
 }
 
-
 header {
   background-color: #003366;
   color: #fff;
@@ -29,6 +28,11 @@ nav a {
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
+}
+
+h2{
+  color: #0047AB;
+  text-decoration: underline;
 }
 
 nav a:hover {
