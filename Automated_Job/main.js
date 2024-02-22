@@ -127,9 +127,9 @@ function updateTable(occupation) {
     }
     
     // Add data to table cells
-    row.append("td").text(d.Occupation).style("font-weight", "bold"); // Bold font for all cells
-    row.append("td").text(d.Probability).style("font-weight", "bold"); // Bold font for all cells
-    row.append("td").text(risk).style("font-weight", "bold"); // Bold font for all cells
+    row.append("td").text(d.Occupation).style("font-weight", "bold"); 
+    row.append("td").text(d.Probability).style("font-weight", "bold");
+    row.append("td").text(risk).style("font-weight", "bold");
   });
 }
 
