@@ -1,0 +1,135 @@
+body, p {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:medium;
+  width:960px;
+  height: 100%;
+  margin:10px auto;
+  background-image:url(./images/Job_Auto2);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position:top center;
+}
+
+header {
+  background-color: #003366;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  background-color: #C0C0C0;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #003366;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+h2{
+  color: #0047AB;
+  text-decoration: underline;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+#content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #0047AB;
+}
+
+select {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:medium;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 2px solid #000;
+  border-radius: 5px;
+}
+
+#chart-container {
+  margin-top: 20px;
+}
+
+.checkbox-container {
+  border: 2px solid #000; /* Black border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.checkbox-container label {
+  display: block; /* Display checkboxes vertically */
+  margin-bottom: 5px; /* Add space between checkboxes */
+  font-weight: bold; /* Make checkbox labels bold */
+}
+
+#table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  max-height: calc(100vh - 280px); /* Adjust the value to leave enough space for the footer */
+  border: 2px solid #000; /* Black border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+
+.table-wrapper {
+  width: 100%;
+  overflow-y: auto; /* Enable vertical scrolling if the table is taller than its container */
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.axis.x-axis text {
+  font-size: 12px;
+  font-weight: bold;
+  fill: rgb(31, 31, 27); 
+}
+
+.axis.y-axis text {
+  font-size: 12px;
+  font-weight: bold;
+  fill: black; 
+}
+
+.data-source-text {
+  font-weight: bold;
+  font-style: italic;
+  font-size:small;
+  text-decoration: underline;
+}
+
+h4, h5{ 
+  border-bottom: solid black
+}
+
+#footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 0px;
+}
