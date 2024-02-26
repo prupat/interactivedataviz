@@ -14,16 +14,6 @@ const svg = d3.select("#chart-container")
 .attr("transform", `translate(${margin.left},${margin.top})`);
 
 
-// Populate the region dropdown
-const regionSelect = d3.select("#region-select");
-regionSelect
-  .selectAll("option")
-  .data(Object.values(stateToRegion).filter((v, i, a) => a.indexOf(v) === i)) // Get unique region values
-  .enter()
-  .append("option")
-  .text(d => d);
-
-
 // Variable to store the loaded CSV data
 let occupationsData;
 
@@ -69,7 +59,7 @@ function updateOccupationDropdown() {
   // Update the table after updating the dropdown options
   const selectedOccupation = occupationSelect.node().value;
   updateTable(selectedOccupation);
-  updateChart(selectedOccupation, regionSelect.node().value);
+  updateChart(selectedOccupation);
 }
 
 // Add a formula to flag the job as "high" or "low risk" based on custom probability thresholds
