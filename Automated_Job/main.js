@@ -1,6 +1,6 @@
  /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth * 0.5,
-height = window.innerHeight * 0.5,
+height = window.innerHeight * 0.9,
 margin = { top: 20, bottom: 60, left: 80, right: 60 };
 
 
@@ -168,7 +168,7 @@ const xScale = d3.scaleLinear()
 const yScale = d3.scaleBand()
   .domain(barChartData.map((d) => d.State))
   .range([height, 0])
-  .padding(0,2);
+  .padding(0,5);
 
 
 // Draw the axes
@@ -188,7 +188,7 @@ svg.append("g")
 svg.append("text")             
    .attr("transform", `translate(${width / 2}, ${height + margin.top + 40})`)
    .style("text-anchor", "middle")
-   .text("US States")
+   .text("Number of Jobs")
    .attr("fill", "#0047AB");
 
 
@@ -205,7 +205,7 @@ svg.append("text")
    .attr("x",0 - (height / 2))
    .attr("dy", "1em")
    .style("text-anchor", "middle")
-   .text("Number of Jobs per State")
+   .text("US States")
    .attr("fill", "#0047AB");
 
  // Add a tooltip               
@@ -217,7 +217,7 @@ svg.append("text")
  .style("visibility", "hidden")
  .text("tooltip");
 
- const adjustedBandwidth = xScale.bandwidth() * 0.8
+
 
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
@@ -245,11 +245,11 @@ bars.enter()
 
   .transition()
   .duration(500)
-  .attr("x", d => xScale(d.State) + (xScale.bandwidth() - adjustedBandwidth) / 2) // Center the bars
-  .attr("y", d => yScale(d.Jobs))
-  .attr("width", adjustedBandwidth)
-  .attr("height", d => height - yScale(d.Jobs))
-  .attr("fill", () => colorScale(region));
+  .attr("x", 0)
+  .attr("y", d => yScale(d.State))
+  .attr("width", d => xScale(d.Jobs))
+  .attr("height", yScale.bandwidth())
+  .attr("fill", "#0047AB");
 
 bars.exit().remove();    
 }
