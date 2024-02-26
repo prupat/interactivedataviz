@@ -68,12 +68,6 @@ const calculateRisk = (probability) => {
    return numericProbability >= 0.7 ? "High" : "Low";
 };
 
-// Add color to bars based on the regional geographic
-const colorScale = d3.scaleOrdinal()
-  .domain(["Northeast", "Southeast", "Midwest", "Southwest", "West"])
-  .range(["#B76F81", "#B3E5FC", "#FFAB91", "#B0BEC5", "#C5E1A5"]);
-
-
 // Update the table based on selected occupation and probability
 function updateTable(occupation) {
   const tableBody = d3.select("#table-body");
@@ -126,18 +120,15 @@ const initialOccupation = occupationsData.map(d => d.Occupation)[0];
 updateTable(initialOccupation);
 
 // Initial chart update with the first available occupation and region
-updateChart(initialOccupation, regionSelect.node().value);
+updateChart(initialOccupation);
 
 
 // Event listeners for the dropdowns
 occupationSelect.on("change", function() {
   updateTable(this.value);
-  updateChart(this.value, regionSelect.node().value);
+  updateChart(this.value);
 });
 
-regionSelect.on("change", function() {
-  updateChart(occupationSelect.node().value, this.value);
-});
 
 // Event listeners for the checkboxes
 d3.select("#white-collar").on("change", function() {
@@ -153,35 +144,31 @@ d3.select("#blue-collar").on("change", function() {
 });
 
 
-function updateChart(occupation, region){
+function updateChart(occupation){
 
 // Find the occupation data
 const occupationData = occupationsData.find(d => d.Occupation === occupation);
 
 
-// Filter the states based on the selected region
-const statesInRegion = Object.entries(stateToRegion).filter(([state, reg]) => reg === region).map(([state]) => state);
-
-
 // Create a new array for the bar chart data
-const barChartData = statesInRegion.map(state => {
-  return{
-    State: state,
-    Jobs: +occupationData[state] // convert the string to a number
-  };
-});
+const barChartData = Object.entries(occupationData)
+ .filter(([key, value]) => key !== "Occupation")
+.map(([state, jobs]) => ({
+  State: state,
+  Jobs: +jobs // convert the string to a number
+}));
 
 
 // Define the scales
-const xScale = d3.scaleBand()
-  .domain(statesInRegion)
+const xScale = d3.scaleLinear()
+  .domain([0, d3.max(barChartData, (d) => d.Jobs)])
   .range([0, width])
-  .padding(0,1);
-
-const yScale = d3.scaleLinear()
-  .domain([0, d3.max(barChartData, d => d.Jobs)])
-  .range([height, 0])
   .nice();
+
+const yScale = d3.scaleBand()
+  .domain(barChartData.map((d) => d.State))
+  .range([height, 0])
+  .padding(0,2);
 
 
 // Draw the axes
