@@ -85,7 +85,7 @@ function updateTable(occupation) {
 
 // Apply color to the entire row based on risk level
     if (risk === "High") {
-      row.style("color", "#B8390E"); // Red color for high risk
+      row.style("color", "#d8504d"); // Red color for high risk
     } else {
       row.style("color", "green"); // Green color for low risk
     }
@@ -167,7 +167,7 @@ const xScale = d3.scaleLinear()
 const yScale = d3.scaleBand()
   .domain(barChartData.map((d) => d.State))
   .range([height, 0])
-  .padding(0,2);
+  .padding(0.1);
 
 
 // Draw the axes
@@ -217,9 +217,7 @@ svg.append("text")
 
 const colorScale = d3.scaleOrdinal()
  .domain(["low", "High"])
- .range(["green", "#B8390E"]);
-
-
+ .range(["green", "#d8504d"]);
 
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
