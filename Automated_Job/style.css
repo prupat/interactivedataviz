@@ -66,6 +66,13 @@ select {
   margin-top: 20px;
 }
 
+#table-container {
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity here */
+  padding: 10px; /* Add padding as needed */
+  border-radius: 5px; /* Add border radius for styling */
+}
+
+
 .checkbox-container {
   border: 2px solid #000; /* Black border */
   border-radius: 5px; /* Rounded corners */

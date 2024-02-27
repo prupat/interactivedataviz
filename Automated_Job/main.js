@@ -149,7 +149,7 @@ const occupationData = occupationsData.find(d => d.Occupation === occupation);
 
 
 // Create a new array for the bar chart data
-const barChartData = Object.entries(occupationData)
+let barChartData = Object.entries(occupationData)
  .filter(([key, value]) => key !== "Occupation" && key !== "Probability" && key !== "JobType")
 .map(([state, jobs]) => ({
   State: state,
@@ -157,6 +157,8 @@ const barChartData = Object.entries(occupationData)
   Risk: calculateRisk(occupationData.Probability)// Add risk level based on probability
 }));
 
+// Sort the data by Jobs
+//barChartData.sort((a,b) => b.Jobs - a.Jobs);
 
 // Define the scales
 const xScale = d3.scaleLinear()
