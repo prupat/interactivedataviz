@@ -1,8 +1,7 @@
  /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth * 0.5,
 height = window.innerHeight * 0.9,
-margin = { top: 20, bottom: 60, left: 80, right: 60 };
-
+margin = { top: 20, bottom: 70, left: 120, right: 60 };
 
 
 // Create SVG container
@@ -56,7 +55,7 @@ function updateOccupationDropdown() {
   options.exit().remove();
 
   
-  // Update the table after updating the dropdown options
+// Update the table after updating the dropdown options
   const selectedOccupation = occupationSelect.node().value;
   updateTable(selectedOccupation);
   updateChart(selectedOccupation);
@@ -73,18 +72,18 @@ function updateTable(occupation) {
   const tableBody = d3.select("#table-body");
   tableBody.html(""); // Clear previous table content
 
-  // Filter data based on selected occupation
+// Filter data based on selected occupation
   const filteredData = occupationsData.filter(d => d.Occupation === occupation);
 
-  // Create rows in the table
+// Create rows in the table
   filteredData.forEach(d => {
-    const row = tableBody.append("tr");
+  const row = tableBody.append("tr");
     
-   // Calculate risk based on custom probability thresholds
-   const risk = calculateRisk(d.Probability);
+// Calculate risk based on custom probability thresholds
+  const risk = calculateRisk(d.Probability);
 
 
-   // Apply color to the entire row based on risk level
+// Apply color to the entire row based on risk level
     if (risk === "High") {
       row.style("color", "#B8390E"); // Red color for high risk
     } else {
@@ -129,7 +128,6 @@ occupationSelect.on("change", function() {
   updateChart(this.value);
 });
 
-
 // Event listeners for the checkboxes
 d3.select("#white-collar").on("change", function() {
   updateOccupationDropdown();
@@ -152,10 +150,11 @@ const occupationData = occupationsData.find(d => d.Occupation === occupation);
 
 // Create a new array for the bar chart data
 const barChartData = Object.entries(occupationData)
- .filter(([key, value]) => key !== "Occupation")
+ .filter(([key, value]) => key !== "Occupation" && key !== "Probability" && key !== "JobType")
 .map(([state, jobs]) => ({
   State: state,
-  Jobs: +jobs // convert the string to a number
+  Jobs: +jobs, // convert the string to a number
+  Risk: calculateRisk(occupationData.Probability)// Add risk level based on probability
 }));
 
 
@@ -168,7 +167,7 @@ const xScale = d3.scaleLinear()
 const yScale = d3.scaleBand()
   .domain(barChartData.map((d) => d.State))
   .range([height, 0])
-  .padding(0,5);
+  .padding(0,2);
 
 
 // Draw the axes
@@ -183,7 +182,6 @@ svg.append("g")
   .attr("transform", "rotate(-25)")
   .style("text-anchor", "end");
   
-
 // X-axis title
 svg.append("text")             
    .attr("transform", `translate(${width / 2}, ${height + margin.top + 40})`)
@@ -197,7 +195,6 @@ svg.append("g")
    .attr("class", "axis y-axis")
    .call(yAxis);
 
-
 // Y-axis title  
 svg.append("text")
    .attr("transform", "rotate(-90)")
@@ -208,7 +205,7 @@ svg.append("text")
    .text("US States")
    .attr("fill", "#0047AB");
 
- // Add a tooltip               
+// Add a tooltip               
  tooltip = d3.select("body")
  .append("div")
  .attr("class", "tooltip")
@@ -218,10 +215,15 @@ svg.append("text")
  .text("tooltip");
 
 
+const colorScale = d3.scaleOrdinal()
+ .domain(["low", "High"])
+ .range(["green", "#B8390E"]);
+
+
 
 // Bind the bar chart data to the rects
 const bars = svg.selectAll(".bar")
-    .data(barChartData, d => d.State);
+  .data(barChartData, d => d.State);
 
 
 bars.enter()
@@ -233,7 +235,7 @@ bars.enter()
    .html(`<div><b># of Jobs:</b> ${d.Jobs}</div>`) 
    .style("visibility", "visible")
    .style("opacity", .8)
-   .style("background", "#91b07d")
+   .style("background", "#d4d493")
  })
 
 .on("mousemove", function(event){
@@ -249,7 +251,7 @@ bars.enter()
   .attr("y", d => yScale(d.State))
   .attr("width", d => xScale(d.Jobs))
   .attr("height", yScale.bandwidth())
-  .attr("fill", "#0047AB");
+  .attr("fill", d => colorScale(d.Risk)); // Set bar color based on risk level
 
 bars.exit().remove();    
 }
