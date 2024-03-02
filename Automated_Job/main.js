@@ -1,7 +1,7 @@
  /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth * 0.5,
 height = window.innerHeight * 0.9,
-margin = { top: 20, bottom: 70, left: 120, right: 60 };
+margin = { top: 20, bottom: 70, left: 130, right: 60 };
 
 
 // Create SVG container
