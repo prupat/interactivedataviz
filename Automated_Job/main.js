@@ -1,7 +1,7 @@
  /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth * 0.5,
 height = window.innerHeight * 0.9,
-margin = { top: 20, bottom: 70, left: 130, right: 60 };
+margin = { top: 20, bottom: 70, left: 130, right: 30 };
 
 
 // Create SVG container
@@ -163,7 +163,7 @@ let barChartData = Object.entries(occupationData)
 // Define the scales
 const xScale = d3.scaleLinear()
   .domain([0, d3.max(barChartData, (d) => d.Jobs)])
-  .range([0, width])
+  .range([0, width - margin.left - margin.right]) 
   .nice();
 
 const yScale = d3.scaleBand()
