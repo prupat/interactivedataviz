@@ -30,6 +30,8 @@ p {
 footer p {
     background-color: #0074D9;
     color: #fff;
+    margin: 0;
+    padding: 10px;
 }
 
 footer {
@@ -42,8 +44,7 @@ footer {
     left: 0;
     width: 100%;
     border-top: 1px solid #ddd;
-    z-index: 1000;
-    padding-top: 20px;
+    z-index: 0;
 }
 
 /* Navigation styles */
