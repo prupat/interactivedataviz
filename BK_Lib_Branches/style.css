@@ -42,7 +42,8 @@ footer {
     left: 0;
     width: 100%;
     border-top: 1px solid #ddd;
-    z-index: 0;
+    z-index: 1000;
+    padding-top: 20px;
 }
 
 /* Navigation styles */
